@@ -1,0 +1,201 @@
+﻿.student-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--cf-space-1);
+  justify-content: center;
+  margin: 0 auto var(--cf-space-4);
+  padding: 0 var(--cf-space-4);
+  width: min(1120px, 100%);
+}
+
+.student-tabs button[aria-selected="true"] {
+  background: var(--cf-color-accent);
+  border-color: var(--cf-color-accent);
+  color: var(--cf-color-accent-text);
+}
+
+.student-main {
+  display: grid;
+  gap: var(--cf-space-4);
+  margin: 0 auto;
+  padding: 0 var(--cf-space-4) var(--cf-space-4);
+  width: min(1120px, 100%);
+}
+
+.panel {
+  background: var(--cf-color-surface);
+  border: var(--cf-border-width) solid var(--cf-color-border);
+  border-radius: var(--cf-radius-lg);
+  box-shadow: var(--cf-shadow-sm);
+  color: var(--cf-color-text);
+  padding: var(--cf-space-5);
+}
+
+.panel h1,
+.panel h2,
+.panel h3 {
+  color: var(--cf-color-text);
+  font-family: var(--cf-font-heading);
+  line-height: 1.2;
+  margin-top: 0;
+}
+
+.panel p,
+.panel li {
+  color: var(--cf-color-text-muted);
+}
+
+.columns {
+  display: grid;
+  gap: var(--cf-space-4);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.flashgrid {
+  display: grid;
+  align-items: stretch;
+  gap: var(--cf-space-4);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+}
+
+.flash {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  display: block;
+  min-height: clamp(164px, 19vw, 210px);
+  padding: 0;
+  perspective: 1000px;
+  text-align: left;
+  width: 100%;
+}
+
+.flash .inner {
+  display: block;
+  min-height: inherit;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 180ms ease;
+  width: 100%;
+}
+
+.flash.flipped .inner {
+  transform: rotateY(180deg);
+}
+
+.face {
+  align-content: center;
+  backface-visibility: hidden;
+  background: var(--cf-color-surface);
+  border: var(--cf-border-width) solid var(--cf-color-border);
+  border-radius: var(--cf-radius-lg);
+  box-shadow: var(--cf-shadow-sm);
+  color: var(--cf-color-text);
+  display: grid;
+  font-size: clamp(1rem, 1.45vw, 1.2rem);
+  inset: 0;
+  line-height: 1.35;
+  min-height: inherit;
+  min-width: 0;
+  overflow-wrap: break-word;
+  padding: var(--cf-space-4);
+  position: absolute;
+  width: 100%;
+}
+
+.face.back {
+  background: var(--cf-color-accent-soft);
+  transform: rotateY(180deg);
+}
+
+[data-theme="dark"] .face.back {
+  background: var(--cf-color-surface-muted);
+  border-color: var(--cf-color-accent);
+  color: var(--cf-color-text);
+}
+
+.case,
+.test-card {
+  display: grid;
+  gap: var(--cf-space-2);
+}
+
+.test-card h3 {
+  white-space: pre-wrap;
+}
+
+.opts {
+  display: grid;
+  gap: var(--cf-space-2);
+}
+
+.opt {
+  background: var(--cf-color-surface);
+  border: var(--cf-border-width) solid var(--cf-color-border);
+  border-radius: var(--cf-radius-md);
+  color: var(--cf-color-text);
+  cursor: pointer;
+  padding: var(--cf-space-3);
+}
+
+.opt:hover,
+.opt.selected {
+  border-color: var(--cf-color-accent);
+  box-shadow: inset 4px 0 0 var(--cf-color-accent);
+}
+
+.opt.correct {
+  border-color: var(--cf-color-success);
+  box-shadow: inset 4px 0 0 var(--cf-color-success);
+}
+
+.opt.correct::after {
+  color: var(--cf-color-success);
+  content: " Correcta";
+  font-family: var(--cf-font-label);
+  font-weight: 850;
+}
+
+.opt.wrong {
+  border-color: var(--cf-color-danger);
+  box-shadow: inset 4px 0 0 var(--cf-color-danger);
+}
+
+.opt.wrong::after {
+  color: var(--cf-color-danger);
+  content: " Incorrecta";
+  font-family: var(--cf-font-label);
+  font-weight: 850;
+}
+
+.result {
+  color: var(--cf-color-text);
+  font-family: var(--cf-font-label);
+  font-weight: 850;
+}
+
+@media (max-width: 760px) {
+  .columns,
+  .flashgrid {
+    grid-template-columns: 1fr;
+  }
+
+  .flash {
+    min-height: 150px;
+  }
+}
+
+@media (max-width: 560px) {
+  .student-tabs,
+  .student-main {
+    padding-left: var(--cf-space-3);
+    padding-right: var(--cf-space-3);
+  }
+
+  .student-tabs button {
+    width: 100%;
+  }
+}
+
+
+

@@ -1,0 +1,53 @@
+﻿{
+  "producto": "Programar con Python en 2027",
+  "curso": "Programar con Python en 2027",
+  "bloque": "Bloque 1 - Fundamentos y logica",
+  "descripcion": "Primeros programas en notebook: salida, variables, tipos, operadores, decisiones y bucles.",
+  "duracion": "4 h",
+  "fuente": "ingenieria-conocimiento-python-v4.md",
+  "metodologia": "Explicacion breve -> ejemplo -> ejecutar -> modificar -> predecir -> reto -> comprobar",
+  "entorno_inicial": "Notebook / Google Colab",
+  "objetivos": [
+    "Ejecutar codigo Python en notebook o Google Colab.",
+    "Usar print, variables, tipos basicos, casting y f-strings.",
+    "Tomar decisiones con comparaciones, booleanos y operadores logicos.",
+    "Repetir acciones con for, range y while usando break y continue.",
+    "Validar codigo propio y codigo sugerido por IA."
+  ],
+  "slides": [
+    { "titulo": "Abrir un notebook y ejecutar", "conceptos": ["print"], "ejemplo": "print(\"Hola, Python\")", "reto": "Escribe dos print seguidos y predice la salida." },
+    { "titulo": "Variables y tipos basicos", "conceptos": ["variables", "str", "int", "bool"], "ejemplo": "nombre = \"Ana\"\nedad = 12\nprint(nombre, edad)", "reto": "Crea variables que te describan." },
+    { "titulo": "Numeros, operadores y divmod", "conceptos": ["+", "-", "*", "/", "//", "%", "**", "divmod"], "ejemplo": "horas, resto = divmod(137, 60)", "reto": "Calcula cajas completas y sobrantes." },
+    { "titulo": "Strings y f-strings", "conceptos": ["strings", "f-strings", "formato"], "ejemplo": "print(f\"Entrada: {7.5:.2f} euros\")", "reto": "Crea una frase con variables." },
+    { "titulo": "Booleanos y comparaciones", "conceptos": ["True", "False", "==", "!=", ">=", "<="], "ejemplo": "edad = 14\nprint(edad >= 12)", "reto": "Consigue True, False, True cambiando un valor." },
+    { "titulo": "Operadores logicos", "conceptos": ["and", "or", "not"], "ejemplo": "puede_entrar = edad >= 12 and tiene_entrada", "reto": "Define un descuento por edad." },
+    { "titulo": "Entrada de datos y casting", "conceptos": ["input", "int", "float"], "ejemplo": "edad = int(input(\"Edad: \"))", "reto": "Pide precio y cantidad; calcula total." },
+    { "titulo": "Condicionales", "conceptos": ["if", "elif", "else"], "ejemplo": "if edad < 12:\n    precio = 5\nelse:\n    precio = 8", "reto": "Clasifica una nota." },
+    { "titulo": "for, range y conteos", "conceptos": ["for", "range", "contador", "acumulador"], "ejemplo": "for n in range(1, 6):\n    print(n)", "reto": "Cuenta multiplos de 3." },
+    { "titulo": "while, break y continue", "conceptos": ["while", "break", "continue"], "ejemplo": "while intentos < 3:\n    intentos += 1", "reto": "Pide numeros hasta introducir 0." },
+    { "titulo": "IA como ayudante", "conceptos": ["plan", "codigo/IA", "depurar", "validar"], "ejemplo": "# Problema -> plan -> codigo -> validar", "reto": "Explica y corrige codigo generado." }
+  ],
+  "microevaluaciones": [
+    "Que salida produce este codigo?",
+    "Completa la linea.",
+    "Selecciona el operador correcto.",
+    "Detecta el error.",
+    "Ordena mentalmente la ejecucion.",
+    "Que valor tendra esta variable?",
+    "Modifica el codigo para conseguir el resultado.",
+    "Mini-reto ejecutable."
+  ],
+  "practicas": [
+    "Operaciones y divmod",
+    "Tramos de edad y precios",
+    "Media de notas con input y casting",
+    "Bucles, conteos y validacion"
+  ],
+  "lagunas_respetadas": [
+    "No se desarrolla instalacion local paso a paso.",
+    "No se introducen comandos operativos de Git.",
+    "No se documenta PyPDF."
+  ]
+}
+
+

@@ -1,0 +1,267 @@
+﻿{
+  "$schema": "https://circularfab.local/design-system/semantic-tokens.schema.json",
+  "name": "CircularFAB EduSDK semantic tokens",
+  "version": "0.1.0",
+  "strategy": {
+    "relationship": "Semantic tokens consume or reference brand tokens where appropriate, but remain EduSDK interface decisions.",
+    "themes": ["theme.light", "theme.dark"],
+    "status": "EDUSDK_DECISION"
+  },
+  "tokens": {
+    "color": [
+      {
+        "id": "color.background",
+        "category": "semantic-color",
+        "value": { "light": "#EEF4F7", "dark": "#031327" },
+        "source": "Observed EduSDK light and dark backgrounds",
+        "status": "EDUSDK_DECISION",
+        "derives_from": null,
+        "rationale": "Keeps the two observed interface modes while reducing them to a light institutional theme and a dark operational theme."
+      },
+      {
+        "id": "color.surface",
+        "category": "semantic-color",
+        "value": { "light": "#FFFFFF", "dark": "rgba(12, 38, 65, 0.96)" },
+        "source": "Observed cards and panels",
+        "status": "EDUSDK_DECISION",
+        "derives_from": null,
+        "rationale": "Normalizes card and panel surfaces for both themes."
+      },
+      {
+        "id": "color.surfaceRaised",
+        "category": "semantic-color",
+        "value": { "light": "#FFFFFF", "dark": "rgba(15, 54, 95, 0.98)" },
+        "source": "Observed elevated dark surfaces and light cards",
+        "status": "EDUSDK_DECISION",
+        "derives_from": null,
+        "rationale": "Supports raised cards, sticky bars or active surfaces without creating a third visual system."
+      },
+      {
+        "id": "color.surfaceMuted",
+        "category": "semantic-color",
+        "value": { "light": "#EEF3F8", "dark": "rgba(255,255,255,0.07)" },
+        "source": "Observed during curso heredado postmigration in portal, Profesor Plus, exam and blocks",
+        "status": "EDUSDK_DECISION",
+        "derives_from": null,
+        "rationale": "Provides a low-emphasis surface for secondary navigation, sidebars, compact cards and icon slots. This is an EduSDK interface decision, not an official brand token."
+      },
+      {
+        "id": "color.text",
+        "category": "semantic-color",
+        "value": { "light": "#10243A", "dark": "#EAF4FF" },
+        "source": "Observed EduSDK text colors",
+        "status": "EDUSDK_DECISION",
+        "derives_from": null,
+        "contrast": { "light_on_background": 14.17, "dark_on_background": 16.77 },
+        "rationale": "Meets WCAG AA for normal text in both themes."
+      },
+      {
+        "id": "color.textMuted",
+        "category": "semantic-color",
+        "value": { "light": "#587082", "dark": "#9FC6E1" },
+        "source": "Observed muted text colors",
+        "status": "EDUSDK_DECISION",
+        "derives_from": null,
+        "contrast": { "light_on_background": 4.67, "dark_on_background": 10.33 },
+        "rationale": "Preserves existing hierarchy while keeping normal text contrast acceptable."
+      },
+      {
+        "id": "color.border",
+        "category": "semantic-color",
+        "value": { "light": "#D8E4EB", "dark": "rgba(255, 255, 255, 0.12)" },
+        "source": "Observed light card borders and dark exam borders",
+        "status": "EDUSDK_DECISION",
+        "derives_from": null,
+        "rationale": "Defines a subtle default border for cards, panels and controls."
+      },
+      {
+        "id": "color.accent",
+        "category": "semantic-color",
+        "value": { "light": "#32855A", "dark": "#4FBB75" },
+        "source": "Brand green tokens, adjusted by theme for contrast",
+        "status": "EDUSDK_DECISION",
+        "derives_from": { "light": "brand.greenDark", "dark": "brand.greenBright" },
+        "contrast": { "light_accent_with_white_text": 4.53, "dark_accent_on_background": 7.72 },
+        "rationale": "Uses brand greens as the main interface accent where contrast is viable."
+      },
+      {
+        "id": "color.accentHover",
+        "category": "semantic-color",
+        "value": { "light": "#286B49", "dark": "#7CCF95" },
+        "source": "Derived interface hover colors from accent",
+        "status": "EDUSDK_DECISION",
+        "derives_from": "color.accent",
+        "rationale": "Provides a perceptible hover step without introducing another brand color."
+      },
+      {
+        "id": "color.accentSoft",
+        "category": "semantic-color",
+        "value": { "light": "rgba(50, 133, 90, 0.12)", "dark": "rgba(79,187,117,0.16)" },
+        "source": "Observed during curso heredado postmigration in portal, Profesor Plus, exam and blocks",
+        "status": "EDUSDK_DECISION",
+        "derives_from": "color.accent",
+        "rationale": "Supports soft hover, selected and active states, gentle alerts and icon emphasis without using a solid accent fill. This is an EduSDK interface decision, not an official brand token."
+      },
+      {
+        "id": "color.accentText",
+        "category": "semantic-color",
+        "value": { "light": "#FFFFFF", "dark": "#031327" },
+        "source": "Contrast pairing for color.accent",
+        "status": "EDUSDK_DECISION",
+        "derives_from": null,
+        "rationale": "Defines readable text when a component uses the accent as a filled surface."
+      },
+      {
+        "id": "color.focus",
+        "category": "semantic-color",
+        "value": { "light": "#0F6F6B", "dark": "#E5B51A" },
+        "source": "Derived from brand blue/yellow families for visible focus rings",
+        "status": "EDUSDK_DECISION",
+        "derives_from": { "light": "brand.blueBright", "dark": "brand.yellowBright" },
+        "contrast": { "light_on_background": 5.4, "dark_on_background": 9.73 },
+        "rationale": "Focus must be clearly perceptible and not rely on existing accent alone."
+      },
+      {
+        "id": "color.inputBackground",
+        "category": "semantic-color",
+        "value": { "light": "#FFFFFF", "dark": "rgba(3,19,39,0.72)" },
+        "source": "Observed during curso heredado postmigration in portal, Profesor Plus, exam and blocks",
+        "status": "EDUSDK_DECISION",
+        "derives_from": null,
+        "rationale": "Keeps search, form and filter controls legible in both themes without relying on local fallbacks. This is an EduSDK interface decision, not an official brand token."
+      },
+      {
+        "id": "color.success",
+        "category": "semantic-color",
+        "value": { "light": "#32855A", "dark": "#4FBB75" },
+        "source": "Brand green tokens plus existing correct feedback pattern",
+        "status": "EDUSDK_DECISION",
+        "derives_from": { "light": "brand.greenDark", "dark": "brand.greenBright" },
+        "rationale": "Explicit EduSDK decision for positive feedback; components must also use text, icon or shape."
+      },
+      {
+        "id": "color.warning",
+        "category": "semantic-color",
+        "value": { "light": "#775400", "dark": "#E5B51A" },
+        "source": "Derived accessible warning for light theme and brand yellow for dark theme",
+        "status": "EDUSDK_DECISION",
+        "derives_from": { "light": null, "dark": "brand.yellowBright" },
+        "contrast": { "light_on_background": 6.2, "dark_on_background": 9.73 },
+        "rationale": "Avoids low-contrast yellow text on light surfaces while keeping brand-compatible yellow in dark UI."
+      },
+      {
+        "id": "color.danger",
+        "category": "semantic-color",
+        "value": { "light": "#C7362E", "dark": "#EF6B73" },
+        "source": "Brand red for light theme and existing high-contrast dark error color",
+        "status": "EDUSDK_DECISION",
+        "derives_from": { "light": "brand.redBright", "dark": null },
+        "contrast": { "light_with_white_text": 5.26, "dark_on_background": 6.23 },
+        "rationale": "Danger is an EduSDK state decision, not a direct identity rule; dark value preserves current exam readability."
+      },
+      {
+        "id": "color.info",
+        "category": "semantic-color",
+        "value": { "light": "#0F6F6B", "dark": "#4CAEA9" },
+        "source": "Brand blue family adapted by theme",
+        "status": "EDUSDK_DECISION",
+        "derives_from": { "light": "brand.blueBright", "dark": "brand.blueBright" },
+        "contrast": { "light_on_background": 5.4, "dark_on_background": 7.05 },
+        "rationale": "Uses the blue-green brand family for informational emphasis without making it the main accent."
+      }
+    ],
+    "typography": [
+      {
+        "id": "typography.body",
+        "category": "semantic-typography",
+        "value": "Inter, ui-sans-serif, system-ui, sans-serif",
+        "status": "EDUSDK_DECISION",
+        "source": "Observed in exam and Profesor Plus",
+        "rationale": "Inter/system stack supports long-form UI reading without depending on brand fonts."
+      },
+      {
+        "id": "typography.heading",
+        "category": "semantic-typography",
+        "value": "Inter, ui-sans-serif, system-ui, sans-serif",
+        "status": "EDUSDK_DECISION",
+        "source": "Observed in exam and Profesor Plus",
+        "rationale": "Keeps headings aligned with body UI typography until a web font decision is made."
+      },
+      {
+        "id": "typography.label",
+        "category": "semantic-typography",
+        "value": "Inter, ui-sans-serif, system-ui, sans-serif",
+        "status": "EDUSDK_DECISION",
+        "source": "Observed controls and labels",
+        "rationale": "Uses inherited UI font for controls, chips and labels."
+      },
+      {
+        "id": "typography.brandDocument",
+        "category": "semantic-typography",
+        "value": "\"Bebas Neue Pro\", sans-serif",
+        "status": "DOCUMENTED",
+        "source": "Manual de Identidad Corporativa Red Circular FAB",
+        "rationale": "Documented brand document typeface; availability is not guaranteed by these tokens."
+      },
+      {
+        "id": "typography.brandAccent",
+        "category": "semantic-typography",
+        "value": "\"Gotham Black\", sans-serif",
+        "status": "DOCUMENTED",
+        "source": "Manual de Identidad Corporativa Red Circular FAB",
+        "rationale": "Documented brand accent typeface; availability is not guaranteed by these tokens."
+      }
+    ],
+    "space": [
+      { "id": "space.1", "category": "semantic-space", "value": "8px", "status": "EDUSDK_DECISION", "source": "Observed gaps and button internals" },
+      { "id": "space.2", "category": "semantic-space", "value": "12px", "status": "EDUSDK_DECISION", "source": "Observed gaps, bars and compact controls" },
+      { "id": "space.3", "category": "semantic-space", "value": "16px", "status": "EDUSDK_DECISION", "source": "Most common grid gap and mobile padding" },
+      { "id": "space.4", "category": "semantic-space", "value": "20px", "status": "EDUSDK_DECISION", "source": "Observed light cards" },
+      { "id": "space.5", "category": "semantic-space", "value": "24px", "status": "EDUSDK_DECISION", "source": "Common page and card spacing" },
+      { "id": "space.6", "category": "semantic-space", "value": "28px", "status": "EDUSDK_DECISION", "source": "Observed large cards and hero panels" }
+    ],
+    "radius": [
+      { "id": "radius.sm", "category": "semantic-radius", "value": "8px", "status": "EDUSDK_DECISION", "source": "Observed course cards" },
+      { "id": "radius.md", "category": "semantic-radius", "value": "12px", "status": "EDUSDK_DECISION", "source": "Observed buttons and neutral cards" },
+      { "id": "radius.lg", "category": "semantic-radius", "value": "18px", "status": "EDUSDK_DECISION", "source": "Observed mode cards and dark base cards" },
+      { "id": "radius.pill", "category": "semantic-radius", "value": "999px", "status": "EDUSDK_DECISION", "source": "Observed pills and metadata chips" }
+    ],
+    "shadow": [
+      {
+        "id": "shadow.sm",
+        "category": "semantic-shadow",
+        "value": {
+          "light": "0 8px 24px rgba(15, 23, 42, 0.08)",
+          "dark": "0 16px 40px rgba(0,0,0,0.24)"
+        },
+        "status": "EDUSDK_DECISION",
+        "source": "Observed during curso heredado postmigration in portal, Profesor Plus, exam and blocks",
+        "rationale": "Provides a low-hierarchy elevation for compact cards, topbars and small raised elements. This is an EduSDK interface decision, not an official brand token."
+      },
+      {
+        "id": "shadow.raised",
+        "category": "semantic-shadow",
+        "value": "0 24px 60px rgba(0, 0, 0, 0.22)",
+        "status": "EDUSDK_DECISION",
+        "source": "Observed Profesor Plus and exam elevated panels",
+        "rationale": "Single reusable raised shadow; components may disable or soften it in print or flat light contexts."
+      }
+    ],
+    "border": [
+      { "id": "border.width", "category": "semantic-border", "value": "1px", "status": "EDUSDK_DECISION", "source": "Observed cards, panels and controls" },
+      { "id": "border.color", "category": "semantic-border", "value": "color.border", "status": "EDUSDK_DECISION", "source": "Semantic color border" }
+    ],
+    "breakpoint": [
+      { "id": "breakpoint.sm", "category": "semantic-breakpoint", "value": "520px", "status": "EDUSDK_DECISION", "source": "Observed compact mobile breakpoint" },
+      { "id": "breakpoint.md", "category": "semantic-breakpoint", "value": "760px", "status": "EDUSDK_DECISION", "source": "Observed common single-column transition" },
+      { "id": "breakpoint.lg", "category": "semantic-breakpoint", "value": "980px", "status": "EDUSDK_DECISION", "source": "Observed Profesor Plus layout transition" }
+    ]
+  },
+  "accessibility": {
+    "target": "WCAG AA for normal text where semantic colors are used for text",
+    "rule": "Correct, incorrect, warning and focus states must not rely on color alone. Components should add text, icon, border, shape, or an equivalent redundant cue."
+  }
+}
+
+
+

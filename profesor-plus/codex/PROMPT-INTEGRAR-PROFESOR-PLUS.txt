@@ -1,0 +1,23 @@
+﻿Integra Profesor Plus en un curso EduSDK.
+
+Referencia canonica:
+`profesor-plus-base/`
+
+Crea o actualiza una seccion global:
+`profesor-plus/`
+
+Tareas:
+1. Copia y organiza las plantillas Markdown sin modificar su contenido pedagogico.
+2. Crea `profesor-plus/inicio.html` y `profesor-plus/viewer.html`.
+3. Usa el Design System: tokens, semantic-tokens, components y topbar canonica.
+4. Usa `assets/js/theme-toggle.js` para light/dark; no implementes otro cambio de tema.
+5. Usa iconos SVG existentes de `assets/icons/`; no uses letras placeholder como G, F, R o T.
+6. Manten los Markdown como fuente y renderizalos en el viewer.
+7. Si el Markdown contiene `{{...}}`, muestra la etiqueta `Plantilla reutilizable` y no resuelvas las variables sin datos reales.
+8. AÃ±ade enlaces de retorno claros al portal del curso y a Profesor Plus.
+9. La distribucion del curso debe ser autocontenida: copia assets necesarios, no enlaces al repositorio EduSDK.
+10. Comprueba que el acceso funciona por HTTP y que light/dark no rompe contraste.
+
+Al terminar muestra estructura, archivos modificados y pruebas.
+
+

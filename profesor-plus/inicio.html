@@ -1,0 +1,93 @@
+﻿<!doctype html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Profesor Plus - Programar con Python en 2027</title>
+  <link rel="stylesheet" href="../assets/edusdk-design-system/tokens/tokens.css">
+  <link rel="stylesheet" href="../assets/edusdk-design-system/tokens/semantic-tokens.css">
+  <link rel="stylesheet" href="../assets/edusdk-design-system/components/components.css">
+  <script src="../assets/js/theme-toggle.js" defer></script>
+  <style>
+    * { box-sizing: border-box; }
+    body { background: var(--cf-color-background); color: var(--cf-color-text); font-family: var(--cf-font-body); margin: 0; }
+    .wrap { display: grid; gap: var(--cf-space-5); margin: 0 auto; padding: var(--cf-space-5); width: min(1120px, 100%); }
+    .brand { align-items: center; display: inline-flex; gap: var(--cf-space-2); }
+    .brand img { height: 52px; object-fit: contain; width: auto; }
+    .brand span { color: var(--cf-color-text-muted); display: block; font-family: var(--cf-font-label); font-size: .78rem; font-weight: 800; text-transform: uppercase; }
+    .hero { background: var(--cf-color-surface); border: var(--cf-border-width) solid var(--cf-color-border); border-radius: var(--cf-radius-lg); box-shadow: var(--cf-shadow-sm); padding: var(--cf-space-6); }
+    .hero p { color: var(--cf-color-text-muted); max-width: 760px; }
+    h1 { font-family: var(--cf-font-heading); font-size: 2.6rem; line-height: 1; margin: 0; }
+    .grid { display: grid; gap: var(--cf-space-4); grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .card { background: var(--cf-color-surface); border: var(--cf-border-width) solid var(--cf-color-border); border-radius: var(--cf-radius-lg); box-shadow: var(--cf-shadow-sm); color: inherit; display: grid; gap: var(--cf-space-2); min-height: 150px; padding: var(--cf-space-4); text-decoration: none; }
+    .card h2 { font-size: 1.05rem; margin: 0; }
+    .card p { color: var(--cf-color-text-muted); margin: 0; }
+    @media (max-width: 900px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="cf-topbar cf-topbar--course">
+      <div class="brand">
+        <img src="../assets/branding/logo-circular-fab.png" alt="Circular FAB">
+        <span>
+          <span>Circular FAB - Programar con Python en 2027</span>
+          <strong>Profesor Plus</strong>
+        </span>
+      </div>
+      <nav class="cf-nav cf-nav--horizontal" aria-label="Navegacion">
+        <a class="cf-nav__link" href="../inicio.html">Inicio</a>
+        <a class="cf-nav__link is-active" href="inicio.html" aria-current="page">Profesor Plus</a>
+      </nav>
+      <button class="cf-button cf-button--secondary theme-toggle" type="button" data-theme-toggle aria-label="Activar modo oscuro" aria-pressed="false">
+        <span data-theme-icon aria-hidden="true">&#9790;</span>
+        <span data-theme-label>Modo dark</span>
+      </button>
+    </header>
+
+    <section class="hero">
+      <span class="cf-chip cf-chip--accent">Biblioteca docente</span>
+      <h1>Ensenar Python escribiendo codigo</h1>
+      <p>Apoyos para demostraciones, errores habituales, preguntas previsibles, soluciones, retos extra, alumnos que avanzan rapido, alumnos bloqueados y planes B si falla Internet o Colab.</p>
+    </section>
+
+    <section class="grid" aria-label="Plantillas Profesor Plus">
+      <a class="card" href="plantillas/guion-completo.md"><h2>Guion completo</h2><p>Ritmo de aula para B1.</p></a>
+      <a class="card" href="plantillas/frases-clave.md"><h2>Frases clave</h2><p>Activar prediccion y participacion.</p></a>
+      <a class="card" href="plantillas/preguntas-para-la-clase.md"><h2>Preguntas</h2><p>Salida, operador, error y valor.</p></a>
+      <a class="card" href="plantillas/respuestas-esperadas.md"><h2>Respuestas</h2><p>Patrones correctos e incompletos.</p></a>
+      <a class="card" href="plantillas/errores-que-deben-aparecer.md"><h2>Errores utiles</h2><p>Input, casting, range, while e igualdad.</p></a>
+      <a class="card" href="plantillas/mesa-material.md"><h2>Mesa</h2><p>Notebook, Colab y alternativa offline.</p></a>
+      <a class="card" href="plantillas/dinamicas.md"><h2>Dinamicas</h2><p>Predice, cambia una cosa, debug en pareja.</p></a>
+      <a class="card" href="plantillas/adaptaciones.md"><h2>Adaptaciones</h2><p>150, 90, 60 y 30 minutos.</p></a>
+      <a class="card" href="plantillas/b2-guion-estructuras.md"><h2>B2 Guion</h2><p>Estructuras segun necesidad.</p></a>
+      <a class="card" href="plantillas/b2-errores-habituales.md"><h2>B2 Errores</h2><p>Slicing, mutabilidad, sets y claves.</p></a>
+      <a class="card" href="plantillas/b2-preguntas-y-respuestas.md"><h2>B2 Preguntas</h2><p>Prediccion, eleccion y justificacion.</p></a>
+      <a class="card" href="plantillas/b2-ampliaciones-y-plan-b.md"><h2>B2 Apoyos</h2><p>Rapidos, bloqueados y plan B.</p></a>
+      <a class="card" href="plantillas/b3-guion-modularidad.md"><h2>B3 Guion</h2><p>Funciones, archivos y SAMI-Lite.</p></a>
+      <a class="card" href="plantillas/b3-errores-habituales.md"><h2>B3 Errores</h2><p>return, scope, imports y archivos.</p></a>
+      <a class="card" href="plantillas/b3-preguntas-y-respuestas.md"><h2>B3 Preguntas</h2><p>Prediccion, excepciones y modularidad.</p></a>
+      <a class="card" href="plantillas/b3-ampliaciones-y-plan-b.md"><h2>B3 Apoyos</h2><p>Bloqueados, rapidos y plan offline.</p></a>
+      <a class="card" href="plantillas/b4-guion-poo.md"><h2>B4 Guion</h2><p>De datos y funciones a objetos.</p></a>
+      <a class="card" href="plantillas/b4-errores-habituales.md"><h2>B4 Errores</h2><p>Clase/objeto, self, init y relaciones.</p></a>
+      <a class="card" href="plantillas/b4-preguntas-y-respuestas.md"><h2>B4 Preguntas</h2><p>Instancias, encapsulacion y polimorfismo.</p></a>
+      <a class="card" href="plantillas/b4-ampliaciones-y-plan-b.md"><h2>B4 Apoyos</h2><p>Bloqueados, rapidos y plan B.</p></a>
+      <a class="card" href="plantillas/b5-guion-aplicado.md"><h2>B5 Guion</h2><p>Datos, analisis y resultados.</p></a>
+      <a class="card" href="plantillas/b5-numpy-pandas.md"><h2>B5 NumPy/Pandas</h2><p>Arrays, CSV, indices y filtros.</p></a>
+      <a class="card" href="plantillas/b5-web-e-informes.md"><h2>B5 Web/Informes</h2><p>Playwright, parsing e informe conceptual.</p></a>
+      <a class="card" href="plantillas/b5-apoyos-plan-b.md"><h2>B5 Apoyos</h2><p>Errores, bloqueos y plan B.</p></a>
+      <a class="card" href="plantillas/b6-guion-entorno.md"><h2>B6 Guion</h2><p>Notebook a entorno profesional.</p></a>
+      <a class="card" href="plantillas/b6-preparacion-aula.md"><h2>B6 Aula</h2><p>Python, VS Code, PATH y venv.</p></a>
+      <a class="card" href="plantillas/b6-git-debug-ia.md"><h2>B6 Git/Debug/IA</h2><p>Versionado, trazas y asistencia controlada.</p></a>
+      <a class="card" href="plantillas/b6-apoyos-plan-b.md"><h2>B6 Apoyos</h2><p>Bloqueos tecnicos y alternativas.</p></a>
+      <a class="card" href="plantillas/b7-metodologia-antizombi.md"><h2>B7 Metodo</h2><p>IA critica y verificable.</p></a>
+      <a class="card" href="plantillas/b7-contexto-y-prompts.md"><h2>B7 Contexto</h2><p>Mala peticion frente a buena.</p></a>
+      <a class="card" href="plantillas/b7-auditoria-defensa.md"><h2>B7 Auditoria</h2><p>Codigo generado y defensa.</p></a>
+      <a class="card" href="plantillas/b7-planes-b.md"><h2>B7 Planes B</h2><p>Errores, alucinaciones y aula.</p></a>
+    </section>
+  </div>
+</body>
+</html>
+
+

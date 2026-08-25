@@ -1,0 +1,96 @@
+﻿.teacher-layout {
+  display: grid;
+  gap: var(--cf-space-4);
+  grid-template-columns: 300px minmax(0, 1fr);
+  margin: 0 auto;
+  padding: 0 var(--cf-space-4) var(--cf-space-4);
+  width: min(1120px, 100%);
+}
+
+.teacher-sidebar {
+  align-self: start;
+  display: grid;
+  gap: var(--cf-space-3);
+  position: sticky;
+  top: var(--cf-space-3);
+}
+
+.teacher-sidebar h1 {
+  color: var(--cf-color-text);
+  font-family: var(--cf-font-heading);
+  font-size: 1.5rem;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.teacher-sidebar p {
+  color: var(--cf-color-text-muted);
+  margin: 0;
+}
+
+.teacher-nav {
+  display: grid;
+  gap: var(--cf-space-1);
+}
+
+.teacher-nav button {
+  justify-content: flex-start;
+  text-align: left;
+  width: 100%;
+}
+
+.teacher-nav button.active {
+  background: var(--cf-color-accent);
+  border-color: var(--cf-color-accent);
+  color: var(--cf-color-accent-text);
+}
+
+.teacher-content {
+  display: grid;
+  gap: var(--cf-space-3);
+  min-width: 0;
+}
+
+#content {
+  display: grid;
+  gap: var(--cf-space-3);
+}
+
+#content h2,
+#content h3 {
+  color: var(--cf-color-text);
+  font-family: var(--cf-font-heading);
+  margin-top: 0;
+}
+
+#content p,
+#content li,
+#note {
+  color: var(--cf-color-text-muted);
+}
+
+.teacher-card {
+  background: var(--cf-color-surface-muted);
+  border: var(--cf-border-width) solid var(--cf-color-border);
+  border-radius: var(--cf-radius-md);
+  padding: var(--cf-space-3);
+}
+
+@media (max-width: 860px) {
+  .teacher-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .teacher-sidebar {
+    position: static;
+  }
+}
+
+@media (max-width: 560px) {
+  .teacher-layout {
+    padding-left: var(--cf-space-3);
+    padding-right: var(--cf-space-3);
+  }
+}
+
+

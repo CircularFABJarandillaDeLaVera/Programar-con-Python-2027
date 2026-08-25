@@ -1,0 +1,427 @@
+{
+  "producto": "Programar con Python en 2027",
+  "curso": "Programar con Python en 2027",
+  "bloque": "Bloque 4 - Programacion orientada a objetos",
+  "descripcion": "Clases, objetos, atributos, metodos, self, __init__, encapsulacion, composicion, herencia, super() y polimorfismo basico.",
+  "duracion": "4 h",
+  "fuente": "ingenieria-python-bloque4-final.md",
+  "fuentes": [
+    "ingenieria-conocimiento-python-v4.md",
+    "ingenieria-python-bloque4-final.md"
+  ],
+  "metodologia": "Explicacion breve -> codigo minimo -> predecir -> ejecutar -> modificar -> error util -> mini-reto -> feedback -> continuar",
+  "objetivos": [
+    "Explicar por que una clase agrupa estado y comportamiento.",
+    "Distinguir clase, objeto e instancia concreta.",
+    "Crear atributos y metodos de instancia.",
+    "Usar self como referencia al objeto que ejecuta el metodo.",
+    "Inicializar objetos con __init__.",
+    "Mantener estado independiente entre instancias.",
+    "Aplicar encapsulacion basica con validacion clara.",
+    "Distinguir composicion de herencia.",
+    "Usar super() en subclases.",
+    "Sobrescribir metodos y observar polimorfismo basico.",
+    "Evolucionar SAMI-Lite hacia SAMI-OOP sin librerias posteriores."
+  ],
+  "slides": [
+    {
+      "titulo": "Por que aparece la POO",
+      "objetivo": "Ver el limite de diccionarios, funciones y modulos cuando estado y comportamiento crecen juntos.",
+      "guion": "Parte de un producto como diccionario. Muestra que cualquiera puede poner precio negativo y que las funciones quedan separadas del dato.",
+      "pregunta": "Por que usarias una clase aqui en lugar de seguir anadiendo funciones?",
+      "ejemplo": "producto = {\"nombre\": \"Licencia\", \"precio_base\": 80.0}\nproducto[\"precio_base\"] = -500.0\nprint(producto)",
+      "modificar": "Anade una funcion externa calcular_precio_final(producto, iva).",
+      "predecir": "Que problema aparece si el precio se vuelve negativo?",
+      "error_util": "Aceptar datos corruptos porque el diccionario no valida por si solo.",
+      "reto": "Escribe en una frase que datos y comportamiento deberian vivir juntos.",
+      "comprobar": "El alumno identifica la necesidad antes de escribir class."
+    },
+    {
+      "titulo": "Clase y objeto",
+      "objetivo": "Crear un molde y varias instancias concretas.",
+      "guion": "Declara una clase minima Producto, instancia teclado y raton, y compara que son objetos distintos.",
+      "pregunta": "Producto es el molde o el objeto concreto?",
+      "ejemplo": "class Producto:\n    pass\n\nteclado = Producto()\nraton = Producto()\nprint(type(teclado))\nprint(teclado is raton)",
+      "modificar": "Crea una tercera instancia llamada monitor.",
+      "predecir": "Que devuelve teclado is raton?",
+      "error_util": "Escribir teclado = Producto sin parentesis y no crear instancia.",
+      "reto": "Declara Configuracion y crea dos instancias.",
+      "comprobar": "Hay una clase y al menos dos objetos independientes."
+    },
+    {
+      "titulo": "Atributos",
+      "objetivo": "Guardar estado propio dentro de una instancia.",
+      "guion": "Asigna nombre y precio a un objeto. Luego intenta leer un atributo que aun no existe.",
+      "pregunta": "Como accedemos al dato de una instancia?",
+      "ejemplo": "class Producto:\n    pass\n\nteclado = Producto()\nteclado.nombre = \"Teclado\"\nteclado.precio = 50.0\nprint(teclado.nombre, teclado.precio)",
+      "modificar": "Cambia el precio de teclado y crea raton.precio.",
+      "predecir": "Que pasa si lees teclado.stock antes de crearlo?",
+      "error_util": "AttributeError por atributo inexistente.",
+      "reto": "Crea un objeto Cliente con nombre y email.",
+      "comprobar": "Los atributos se leen con punto sobre la instancia."
+    },
+    {
+      "titulo": "Metodos y self",
+      "objetivo": "Pegar comportamiento al objeto que posee los datos.",
+      "guion": "Convierte una funcion externa en metodo. Explica self como la instancia concreta que ejecuta el metodo.",
+      "pregunta": "Hay que pasar self a mano al llamar teclado.mostrar()?",
+      "ejemplo": "class Producto:\n    def mostrar(self):\n        print(self.nombre)\n\nteclado = Producto()\nteclado.nombre = \"Teclado\"\nteclado.mostrar()",
+      "modificar": "Anade un metodo aplicar_impuesto(self, tasa).",
+      "predecir": "Que nombre imprime teclado.mostrar()?",
+      "error_util": "Olvidar self en la firma del metodo.",
+      "reto": "Crea Estudiante con gritar_nombre(self).",
+      "comprobar": "self referencia la instancia que ejecuta el metodo."
+    },
+    {
+      "titulo": "__init__",
+      "objetivo": "Inicializar el estado al crear cada objeto.",
+      "guion": "Muestra que __init__ se ejecuta al instanciar. Crea productos con datos distintos.",
+      "pregunta": "Que ocurre si faltan argumentos obligatorios al crear Producto?",
+      "ejemplo": "class Producto:\n    def __init__(self, nombre, precio_base):\n        self.nombre = nombre\n        self.precio_base = precio_base\n\nteclado = Producto(\"Teclado\", 50.0)\nprint(teclado.nombre)",
+      "modificar": "Anade stock=0 como parametro por defecto.",
+      "predecir": "Que valor tendra teclado.precio_base?",
+      "error_util": "Escribir _init_ en lugar de __init__.",
+      "reto": "Crea Usuario con nombre y email inicializados.",
+      "comprobar": "La instancia nace con sus atributos necesarios."
+    },
+    {
+      "titulo": "Estado independiente",
+      "objetivo": "Comprobar que cada objeto conserva sus propios atributos.",
+      "guion": "Crea dos estudiantes o productos. Cambia uno y verifica que el otro no cambia.",
+      "pregunta": "Que valor conserva p2 si modificas p1?",
+      "ejemplo": "class Producto:\n    def __init__(self, nombre, precio_base):\n        self.nombre = nombre\n        self.precio_base = precio_base\n\np1 = Producto(\"Teclado\", 50.0)\np2 = Producto(\"Raton\", 20.0)\np1.precio_base = 45.0\nprint(p1.precio_base, p2.precio_base)",
+      "modificar": "Anade un tercer objeto y cambia solo uno.",
+      "predecir": "Que imprime la ultima linea?",
+      "error_util": "Usar una variable local cuando querias self.precio_base.",
+      "reto": "Crea tres CalificacionEstudiante con notas distintas.",
+      "comprobar": "Modificar una instancia no cambia las demas."
+    },
+    {
+      "titulo": "Encapsulacion basica",
+      "objetivo": "Validar cambios de estado sin presentar privacidad absoluta.",
+      "guion": "Usa __precio_base para evitar acceso accidental directo y set_precio para validar. Explica name mangling con sencillez.",
+      "pregunta": "__precio_base es privacidad absoluta en Python?",
+      "ejemplo": "class Producto:\n    def __init__(self, nombre, precio_base):\n        self.nombre = nombre\n        self.set_precio(precio_base)\n\n    def set_precio(self, precio):\n        if precio <= 0:\n            raise ValueError(\"Precio no valido\")\n        self.__precio_base = precio\n\n    def get_precio(self):\n        return self.__precio_base",
+      "modificar": "Prueba set_precio(-5) y lee la excepcion.",
+      "predecir": "Que metodo debe usarse para cambiar el precio?",
+      "error_util": "Cambiar un atributo privado como si fuera una regla de seguridad absoluta.",
+      "reto": "Valida que una nota este entre 0 y 10 antes de guardarla.",
+      "comprobar": "La encapsulacion tiene utilidad: evita precios invalidos."
+    },
+    {
+      "titulo": "Composicion",
+      "objetivo": "Modelar un objeto que contiene otros objetos.",
+      "guion": "Crea AuditoriaMercado con una lista de productos. Usa agregar_producto para llenar la coleccion.",
+      "pregunta": "AuditoriaMercado es un Producto o tiene productos?",
+      "ejemplo": "class AuditoriaMercado:\n    def __init__(self):\n        self.productos = []\n\n    def agregar_producto(self, producto):\n        self.productos.append(producto)",
+      "modificar": "Agrega dos productos y cuenta la lista.",
+      "predecir": "Que longitud tendra productos despues de dos llamadas?",
+      "error_util": "Usar herencia cuando la relacion real es tiene un.",
+      "reto": "Crea Aula que tenga una lista de estudiantes.",
+      "comprobar": "La relacion se expresa como contiene, no como es."
+    },
+    {
+      "titulo": "Herencia",
+      "objetivo": "Crear especializaciones cuando un objeto es un tipo concreto de otro.",
+      "guion": "ProductoDigital y ProductoHardware heredan de Producto. Verifica isinstance.",
+      "pregunta": "ProductoHardware es un Producto o tiene un Producto?",
+      "ejemplo": "class Producto:\n    pass\n\nclass ProductoHardware(Producto):\n    pass\n\nteclado = ProductoHardware()\nprint(isinstance(teclado, Producto))",
+      "modificar": "Crea ProductoLicencia heredando de Producto.",
+      "predecir": "Que imprime isinstance?",
+      "error_util": "Olvidar poner la clase padre entre parentesis.",
+      "reto": "Crea EstudiantePresencial como especializacion de Estudiante.",
+      "comprobar": "La herencia expresa una relacion es un."
+    },
+    {
+      "titulo": "super()",
+      "objetivo": "Inicializar atributos heredados desde la clase padre.",
+      "guion": "Muestra una subclase con dato extra y llamada a super().__init__.",
+      "pregunta": "Por que no se pasa self dentro de super().__init__?",
+      "ejemplo": "class Producto:\n    def __init__(self, nombre, precio_base):\n        self.nombre = nombre\n        self.precio_base = precio_base\n\nclass ProductoHardware(Producto):\n    def __init__(self, nombre, precio_base, peso_kg):\n        super().__init__(nombre, precio_base)\n        self.peso_kg = peso_kg",
+      "modificar": "Anade ProductoLicencia con clave_activacion.",
+      "predecir": "Que atributo faltaria si quitas super()?",
+      "error_util": "Escribir super().__init__(self, nombre, precio_base).",
+      "reto": "Inicializa una subclase con un atributo heredado y uno propio.",
+      "comprobar": "La subclase tiene atributos del padre y atributos propios."
+    },
+    {
+      "titulo": "Sobrescritura",
+      "objetivo": "Cambiar el comportamiento heredado cuando la especializacion lo necesita.",
+      "guion": "Producto define calcular_precio_final. Las subclases lo sobreescriben con reglas distintas.",
+      "pregunta": "Que metodo se ejecuta si el objeto real es ProductoLicencia?",
+      "ejemplo": "class Producto:\n    def calcular_precio_final(self):\n        return 100\n\nclass ProductoLicencia(Producto):\n    def calcular_precio_final(self):\n        return 95\n\np = ProductoLicencia()\nprint(p.calcular_precio_final())",
+      "modificar": "Cambia el descuento de la licencia.",
+      "predecir": "Que imprime el codigo?",
+      "error_util": "Sobrescribir con una firma incompatible.",
+      "reto": "Sobrescribe calcular_matricula en dos tipos de estudiante.",
+      "comprobar": "El mismo nombre de metodo puede tener comportamiento especializado."
+    },
+    {
+      "titulo": "Polimorfismo basico",
+      "objetivo": "Recorrer objetos distintos con una misma llamada de metodo.",
+      "guion": "Crea una lista con ProductoHardware y ProductoLicencia. Recorre y llama calcular_precio_final en cada uno.",
+      "pregunta": "Por que no necesitas preguntar de que tipo exacto es cada producto?",
+      "ejemplo": "productos = [hardware, licencia]\nfor producto in productos:\n    print(producto.calcular_precio_final(0.21))",
+      "modificar": "Anade otro producto de una subclase distinta.",
+      "predecir": "Que regla aplica cada objeto?",
+      "error_util": "Romper la interfaz comun pidiendo parametros distintos en cada hijo.",
+      "reto": "Calcula el total de una lista mixta de productos.",
+      "comprobar": "La llamada es comun; el comportamiento depende del objeto real."
+    },
+    {
+      "titulo": "Proyecto B4: SAMI-OOP",
+      "objetivo": "Evolucionar SAMI-Lite a objetos manteniendo el problema conocido.",
+      "guion": "Reorganiza Producto, ProductoHardware, ProductoLicencia, AuditoriaMercado y ManejadorDatos en modulos.",
+      "pregunta": "Que mejora aporta SAMI-OOP respecto a SAMI-Lite?",
+      "ejemplo": "from analizador import AuditoriaMercado, ProductoHardware, ProductoLicencia\n\nauditoria = AuditoriaMercado(umbral_alerta=100)\nauditoria.agregar_producto(ProductoHardware(\"Teclado\", 80, 1.2))\nauditoria.agregar_producto(ProductoLicencia(\"Suite\", 140, \"ABC-123\"))\nprint(auditoria.generar_reporte(0.21))",
+      "modificar": "Anade una nueva licencia y observa el total.",
+      "predecir": "Que clase contiene la lista de productos?",
+      "error_util": "Crear un unico archivo enorme y perder separacion de responsabilidades.",
+      "reto": "Entrega SAMI-OOP con analizador.py, persistencia.py y main.py.",
+      "comprobar": "El proyecto usa objetos sin depender de librerias posteriores."
+    }
+  ],
+  "flashcards": [
+    [
+      "Que es una clase?",
+      "Un molde que define datos y comportamiento comunes."
+    ],
+    [
+      "Que es un objeto?",
+      "Una instancia concreta creada a partir de una clase."
+    ],
+    [
+      "Que es un atributo?",
+      "Un dato asociado a una instancia."
+    ],
+    [
+      "Que es un metodo?",
+      "Una funcion definida dentro de una clase."
+    ],
+    [
+      "Que representa self?",
+      "La instancia concreta que ejecuta el metodo."
+    ],
+    [
+      "Para que sirve __init__?",
+      "Para inicializar el estado al crear el objeto."
+    ],
+    [
+      "Que es estado independiente?",
+      "Cada objeto conserva sus propios atributos."
+    ],
+    [
+      "Para que encapsular?",
+      "Para controlar cambios y validar datos antes de guardarlos."
+    ],
+    [
+      "Composicion significa...",
+      "Un objeto tiene o contiene otros objetos."
+    ],
+    [
+      "Herencia significa...",
+      "Una clase hija es un tipo especializado de otra."
+    ],
+    [
+      "Que hace super()?",
+      "Llama al constructor o metodo de la clase padre."
+    ],
+    [
+      "Que es polimorfismo basico?",
+      "Objetos distintos responden a la misma llamada con su comportamiento propio."
+    ]
+  ],
+  "casos": [
+    {
+      "titulo": "Diccionario de producto",
+      "situacion": "Un producto permite precio negativo si cualquier parte modifica el diccionario.",
+      "preguntas": [
+        "Que dato debe validarse?",
+        "Que metodo controlaria el cambio?",
+        "Por que aqui ayuda una clase?"
+      ]
+    },
+    {
+      "titulo": "Dos instancias",
+      "situacion": "Teclado y raton nacen del mismo molde, pero tienen precios distintos.",
+      "preguntas": [
+        "Que comparten?",
+        "Que estado es independiente?",
+        "Que pasaria si cambias solo teclado?"
+      ]
+    },
+    {
+      "titulo": "Falta self",
+      "situacion": "Un metodo se declara sin self y falla al llamarlo desde un objeto.",
+      "preguntas": [
+        "Quien envia la instancia?",
+        "Que firma hay que corregir?",
+        "Por que no se pasa self a mano?"
+      ]
+    },
+    {
+      "titulo": "Tiene un o es un",
+      "situacion": "AuditoriaMercado agrupa productos; ProductoHardware especializa Producto.",
+      "preguntas": [
+        "Donde hay composicion?",
+        "Donde hay herencia?",
+        "Que relacion explica cada caso?"
+      ]
+    },
+    {
+      "titulo": "Lista polimorfica",
+      "situacion": "Hardware y licencia calculan precio final con reglas distintas.",
+      "preguntas": [
+        "Que metodo comparten?",
+        "Que subclase decide la regla?",
+        "Que debe mantener la firma?"
+      ]
+    }
+  ],
+  "test": [
+    {
+      "tipo": "clase-objeto",
+      "pregunta": "Completa para crear una clase e instanciar un objeto:\n\n_______ Articulo:\n    pass\n\nrecurso = _______()",
+      "opciones": [
+        "class / Articulo",
+        "def / Articulo",
+        "class / recurso"
+      ],
+      "correcta": 0,
+      "explicacion": "class define el molde y Articulo() crea una instancia."
+    },
+    {
+      "tipo": "objeto",
+      "pregunta": "Si teclado = Producto(), que es teclado?",
+      "opciones": [
+        "Un objeto",
+        "Una clase",
+        "Un metodo"
+      ],
+      "correcta": 0,
+      "explicacion": "teclado es una instancia concreta de Producto."
+    },
+    {
+      "tipo": "atributo",
+      "pregunta": "Como lees el nombre guardado en una instancia producto?",
+      "opciones": [
+        "producto.nombre",
+        "Producto(nombre)",
+        "nombre.producto"
+      ],
+      "correcta": 0,
+      "explicacion": "Los atributos de instancia se leen con punto sobre el objeto."
+    },
+    {
+      "tipo": "self",
+      "pregunta": "Por que falla este metodo?\n\nclass A:\n    def mostrar():\n        print(\"ok\")\n\nA().mostrar()",
+      "opciones": [
+        "Falta self",
+        "Falta return",
+        "Falta import"
+      ],
+      "correcta": 0,
+      "explicacion": "Python pasa la instancia automaticamente y el metodo necesita recibirla como self."
+    },
+    {
+      "tipo": "__init__",
+      "pregunta": "Completa el constructor:\n\nclass Producto:\n    def _______(self, nombre):\n        self.nombre = nombre",
+      "opciones": [
+        "__init__",
+        "_init_",
+        "init"
+      ],
+      "correcta": 0,
+      "explicacion": "__init__ se ejecuta al crear la instancia."
+    },
+    {
+      "tipo": "estado",
+      "pregunta": "Que imprime?\n\np1.precio = 45\np2.precio = 20\np1.precio = 50\nprint(p1.precio, p2.precio)",
+      "opciones": [
+        "50 20",
+        "50 50",
+        "45 20"
+      ],
+      "correcta": 0,
+      "explicacion": "Cada instancia conserva su propio estado."
+    },
+    {
+      "tipo": "encapsulacion",
+      "pregunta": "Que afirmacion sobre __precio es correcta?",
+      "opciones": [
+        "No es privacidad absoluta; ayuda a evitar acceso accidental directo",
+        "Impide cualquier acceso en Python",
+        "Solo sirve para decorar codigo"
+      ],
+      "correcta": 0,
+      "explicacion": "Python aplica name mangling; la validacion debe estar en metodos claros."
+    },
+    {
+      "tipo": "composicion",
+      "pregunta": "AuditoriaMercado contiene una lista de productos. Que relacion es?",
+      "opciones": [
+        "Composicion",
+        "Herencia",
+        "Sobrescritura"
+      ],
+      "correcta": 0,
+      "explicacion": "La auditoria tiene productos; no es un producto."
+    },
+    {
+      "tipo": "herencia",
+      "pregunta": "ProductoHardware hereda de Producto. Que relacion expresa?",
+      "opciones": [
+        "Es un Producto",
+        "Tiene un Producto",
+        "Es un CSV"
+      ],
+      "correcta": 0,
+      "explicacion": "La herencia expresa especializacion: hardware es un tipo de producto."
+    },
+    {
+      "tipo": "super",
+      "pregunta": "Completa en una subclase:\n\nsuper()._______(nombre, precio_base)",
+      "opciones": [
+        "__init__",
+        "self",
+        "Producto"
+      ],
+      "correcta": 0,
+      "explicacion": "super().__init__(...) llama al constructor del padre sin pasar self."
+    },
+    {
+      "tipo": "sobrescritura",
+      "pregunta": "Una subclase redefine calcular_precio_final. Como se llama eso?",
+      "opciones": [
+        "Sobrescritura",
+        "Composicion",
+        "Instanciacion"
+      ],
+      "correcta": 0,
+      "explicacion": "Sobrescribir cambia el comportamiento heredado manteniendo la interfaz."
+    },
+    {
+      "tipo": "polimorfismo",
+      "pregunta": "Si una lista contiene ProductoHardware y ProductoLicencia, que permite llamar producto.calcular_precio_final(0.21) a todos?",
+      "opciones": [
+        "Polimorfismo basico",
+        "CSV",
+        "Docstring"
+      ],
+      "correcta": 0,
+      "explicacion": "La misma llamada ejecuta el metodo propio del objeto real."
+    }
+  ],
+  "proyecto": {
+    "titulo": "SAMI-OOP",
+    "evolucion": "SAMI-Lite -> SAMI-OOP",
+    "estructura": [
+      "analizador.py",
+      "persistencia.py",
+      "main.py"
+    ],
+    "evidencia": "Jerarquia Producto, subclases, composicion en AuditoriaMercado, persistencia y ejecucion con errores controlados.",
+    "alcance": "POO basica aplicada a un problema conocido sin librerias posteriores."
+  },
+  "mapa_mental_fuente": "recursos/mapa-mental.md"
+}

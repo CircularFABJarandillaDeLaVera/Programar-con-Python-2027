@@ -1,0 +1,49 @@
+﻿<!doctype html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Mapa mental - Bloque 7</title>
+  <link rel="stylesheet" href="../../../../assets/edusdk-map/edusdk-map-viewer.css">
+  <script src="../../../../assets/js/theme-toggle.js" defer></script>
+</head>
+<body>
+  <main class="edusdk-map-app">
+    <header class="edusdk-map-top">
+      <img class="edusdk-map-logo" src="../../../../assets/branding/logo-circular-fab.png" alt="Circular FAB">
+      <div class="edusdk-map-brand">
+        <b id="mapBrand">Circular FAB - Programar con Python en 2027</b>
+        <h1 id="mapTitle">Mapa mental interactivo</h1>
+      </div>
+      <div class="edusdk-map-actions" aria-label="Controles del mapa mental">
+        <a id="backLink" class="secondary" href="../index.html">Recursos</a>
+        <a class="secondary" href="../../alumno/index.html">Alumno</a>
+        <button class="secondary" type="button" data-theme-toggle aria-label="Activar modo oscuro" aria-pressed="false"><span data-theme-icon aria-hidden="true">&#9790;</span><span data-theme-label>Modo dark</span></button>
+        <button id="zoomOut" class="secondary" type="button" aria-label="Reducir zoom">-</button>
+        <button id="zoomReset" class="secondary" type="button" aria-label="Restablecer zoom">100%</button>
+        <button id="zoomIn" class="secondary" type="button" aria-label="Ampliar zoom">+</button>
+        <button id="expandAll" class="secondary" type="button">Expandir todo</button>
+        <button id="collapseAll" class="secondary" type="button">Contraer ramas</button>
+        <button id="fullscreen" class="secondary" type="button">Pantalla completa</button>
+        <button id="printMode" type="button">Imprimir</button>
+      </div>
+    </header>
+    <section class="edusdk-map-workspace">
+      <div id="mapWrap" class="edusdk-map-wrap" tabindex="0" aria-label="Mapa mental desplazable">
+        <div id="mapScale" class="edusdk-map-scale">
+          <div id="map" class="edusdk-map-canvas">
+            <svg id="links" class="edusdk-map-links" aria-hidden="true"></svg>
+            <div id="printNote" class="edusdk-map-print-note"></div>
+          </div>
+        </div>
+      </div>
+      <aside id="detail" class="edusdk-map-detail" aria-live="polite"></aside>
+    </section>
+  </main>
+  <script src="mapa-data.js"></script>
+  <script src="../../../../assets/edusdk-map/edusdk-map-viewer.js"></script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,66 @@
+﻿Integra el generador de bloques EduSDK en un curso.
+
+Referencia canonica:
+`generador-bloques-base/`
+
+OBJETIVO
+Crear una herramienta interna `generador-bloques/` para preparar nuevos bloques sin modificar bloques existentes.
+
+CONTRATOS OBLIGATORIOS
+1. El curso generado debe ser autocontenido.
+2. No enlazar a repositorios externos desde el curso.
+3. Usar `assets/edusdk-design-system/` local para tokens, semantic-tokens y components.
+4. Usar un unico `assets/js/theme-toggle.js` compartido por curso.
+5. No generar `theme-toggle.js` por bloque.
+6. Usar topbar compacta con identidad: `Circular FAB · [producto]`, `[curso] · Bloque X`.
+7. No hardcodear nombres de cursos, entidades, certificaciones, lugares ni marcas de un laboratorio concreto.
+8. Mantener contenido pedagogico separado de presentacion.
+9. Mantener clases funcionales y anadir clases visuales `.cf-*` cuando proceda.
+10. Usar el mapa canonico en `recursos/mapas/index.html`.
+
+TAREAS
+1. Copia el generador y su plantilla.
+2. Configura el script para que:
+   - reciba un JSON de configuracion;
+   - valide `numero`, `slug` y `titulo`;
+   - cree `bloques/bloqueX/` o el slug configurado;
+   - renombre `data/bloque.json` a `data/bloqueX.json`;
+   - renombre `data/bloque.js` a `data/bloqueX.js`;
+   - sustituya placeholders genericos;
+   - falle de forma segura si el bloque ya existe;
+   - tenga modo `--dry-run`.
+3. Verifica que las vistas del bloque cargan:
+   - `assets/edusdk-design-system/tokens/tokens.css`;
+   - `assets/edusdk-design-system/tokens/semantic-tokens.css`;
+   - `assets/edusdk-design-system/components/components.css`;
+   - `assets/js/theme-toggle.js`;
+   - `bloque-theme.css`.
+4. Genera estructura:
+   - `inicio.html`;
+   - `index.html`;
+   - `alumno/index.html`, `alumno/style.css`, `alumno/app.js`;
+   - `profesor/index.html`, `profesor/style.css`, `profesor/app.js`;
+   - `recursos/index.html`;
+   - `recursos/mapas/index.html`, `recursos/mapas/mapa-data.js`;
+   - `data/bloqueX.js`, `data/bloqueX.json`.
+5. En Alumno, el boton `Mapa mental` debe navegar directamente a `../recursos/mapas/index.html`.
+6. En Recursos, el mapa debe enlazar al visor canonico, no a Markdown crudo.
+7. No duplicar mapa, exam engine ni Profesor Plus por bloque si son piezas compartidas del curso.
+8. Ejecutar una prueba con `--dry-run` y, si se prueba escritura, usar una carpeta temporal.
+9. No publicar el generador en el portal publico del curso.
+
+VALIDAR
+- HTML con rutas relativas.
+- CSS sin dark-only.
+- JS sin dependencias externas.
+- JSON valido.
+- Sin CDN.
+- Sin rutas absolutas.
+- Sin enlaces al repositorio EduSDK.
+- Sin referencias a cursos o laboratorios concretos.
+- Light/dark preparado.
+- GitHub Pages compatible.
+
+Al terminar muestra archivos creados, prueba realizada e incidencias.
+
+

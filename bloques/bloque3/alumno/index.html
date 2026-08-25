@@ -1,0 +1,53 @@
+﻿<!doctype html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Programar con Python en 2027 · Alumno · Bloque 3</title>
+  <link rel="stylesheet" href="../../../assets/edusdk-design-system/tokens/tokens.css">
+  <link rel="stylesheet" href="../../../assets/edusdk-design-system/tokens/semantic-tokens.css">
+  <link rel="stylesheet" href="../../../assets/edusdk-design-system/components/components.css">
+  <link rel="stylesheet" href="../bloque-theme.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="../../../assets/js/theme-toggle.js" defer></script>
+</head>
+<body class="block-page block-page--alumno">
+  <header class="cf-topbar cf-topbar--course block-topbar">
+    <a class="block-brand" href="../inicio.html" aria-label="Inicio del Bloque 3">
+      <img src="../../../assets/branding/logo-circular-fab.png" alt="Circular FAB">
+      <span>
+        <b>Circular FAB · Programar con Python en 2027</b>
+        <span>Programar con Python en 2027 · Alumno · Bloque 3</span>
+      </span>
+    </a>
+    <nav class="cf-nav cf-nav--horizontal block-nav" aria-label="Navegacion del Bloque 3">
+      <a class="cf-nav__link" href="../inicio.html">Inicio</a>
+      <a class="cf-nav__link" href="../index.html">Aula</a>
+      <a class="cf-nav__link" href="../profesor/index.html">Profesor</a>
+      <a class="cf-nav__link is-active" href="index.html" aria-current="page">Alumno</a>
+      <a class="cf-nav__link" href="../recursos/index.html">Recursos</a>
+    </nav>
+    <button class="cf-button cf-button--secondary theme-toggle" type="button" data-theme-toggle aria-label="Activar modo oscuro" aria-pressed="false">
+      <span data-theme-icon aria-hidden="true">&#9790;</span>
+      <span data-theme-label>Modo dark</span>
+    </button>
+  </header>
+
+  <nav class="student-tabs" aria-label="Vistas del alumno">
+    <button class="cf-button cf-button--secondary" type="button" data-view="ficha">Ficha</button>
+    <button class="cf-button cf-button--secondary" type="button" data-view="flash">Flashcards</button>
+    <button class="cf-button cf-button--secondary" type="button" data-view="casos">Casos</button>
+    <button class="cf-button cf-button--secondary" type="button" data-view="test">Mini test</button>
+    <button class="cf-button cf-button--secondary" type="button" data-view="mapa">Mapa mental</button>
+    <button class="cf-button cf-button--secondary" type="button" onclick="window.print()">Imprimir</button>
+  </nav>
+
+  <main id="main" class="student-main"></main>
+
+  <script src="../data/bloque3.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
+
+
+

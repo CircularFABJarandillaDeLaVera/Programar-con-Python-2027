@@ -1,0 +1,69 @@
+﻿<!doctype html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Programar con Python en 2027</title>
+  <link rel="stylesheet" href="assets/edusdk-design-system/tokens/tokens.css">
+  <link rel="stylesheet" href="assets/edusdk-design-system/tokens/semantic-tokens.css">
+  <link rel="stylesheet" href="assets/edusdk-design-system/components/components.css">
+  <script src="assets/js/theme-toggle.js" defer></script>
+  <style>
+    body { margin: 0; background: var(--cf-color-background); color: var(--cf-color-text); font-family: var(--cf-font-body); }
+    .shell { display: grid; gap: var(--cf-space-5); margin: 0 auto; padding: var(--cf-space-5); width: min(1180px, 100%); }
+    .brand { align-items: center; color: inherit; display: flex; gap: var(--cf-space-2); text-decoration: none; }
+    .brand img { height: 52px; width: auto; }
+    .brand span { color: var(--cf-color-text-muted); display: block; font-family: var(--cf-font-label); font-size: .82rem; font-weight: 800; text-transform: uppercase; }
+    .hero { background: linear-gradient(135deg, var(--cf-color-surface), var(--cf-color-surface-muted)); border: var(--cf-border-width) solid var(--cf-color-border); border-radius: var(--cf-radius-lg); box-shadow: var(--cf-shadow-sm); padding: clamp(28px, 6vw, 64px); }
+    .hero h1 { font-size: clamp(2.7rem, 7vw, 5.8rem); line-height: .95; margin: 10px 0 16px; max-width: 860px; }
+    .hero p { color: var(--cf-color-text-muted); font-size: 1.18rem; line-height: 1.6; margin: 0; max-width: 760px; }
+    .grid { display: grid; gap: var(--cf-space-4); grid-template-columns: repeat(7, minmax(0, 1fr)); }
+    .card { color: inherit; display: flex; flex-direction: column; gap: var(--cf-space-3); min-height: 220px; text-decoration: none; }
+    .card h2 { font-size: 1.1rem; line-height: 1.2; margin: 0; }
+    .card p { color: var(--cf-color-text-muted); line-height: 1.45; margin: 0; }
+    .tools { display: grid; gap: var(--cf-space-4); grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    @media (max-width: 1120px) { .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+    @media (max-width: 720px) { .grid, .tools { grid-template-columns: 1fr; } .shell { padding: var(--cf-space-3); } }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header class="cf-topbar cf-topbar--course">
+      <a class="brand" href="inicio.html" aria-label="Inicio del curso">
+        <img src="assets/branding/logo-circular-fab.png" alt="Circular FAB">
+        <strong>Circular FAB<span>Curso independiente</span></strong>
+      </a>
+      <nav class="cf-nav cf-nav--horizontal" aria-label="Navegacion del curso">
+        <a class="cf-nav__link is-active" href="inicio.html" aria-current="page">Inicio</a>
+        <a class="cf-nav__link" href="profesor-plus/inicio.html">Profesor Plus</a>
+      </nav>
+      <button class="cf-button cf-button--secondary theme-toggle" type="button" data-theme-toggle aria-label="Activar modo oscuro" aria-pressed="false">
+        <span data-theme-icon aria-hidden="true">&#9790;</span>
+        <span data-theme-label>Modo dark</span>
+      </button>
+    </header>
+
+    <section class="hero">
+      <span class="cf-chip cf-chip--accent">Aprender haciendo + IA</span>
+      <h1>Programar con Python en 2027</h1>
+      <p>Itinerario progresivo: notebook, script, proyecto y programacion asistida por IA. El Bloque 1 empieza con codigo ejecutable desde el primer minuto.</p>
+    </section>
+
+    <section class="grid" aria-label="Bloques del curso">
+      <a class="card cf-card cf-card--interactive" href="bloques/bloque1/inicio.html"><span class="cf-chip cf-chip--success">Generado</span><h2>B1 · Fundamentos y logica</h2><p>Print, variables, tipos, operadores, condicionales y bucles.</p></a>
+      <a class="card cf-card cf-card--interactive" href="bloques/bloque2/inicio.html"><span class="cf-chip cf-chip--success">Generado</span><h2>B2 · Estructuras de datos</h2><p>Cadenas, listas, tuplas, conjuntos, diccionarios y comprehensions.</p></a>
+      <a class="card cf-card cf-card--interactive" href="bloques/bloque3/inicio.html"><span class="cf-chip cf-chip--success">Generado</span><h2>B3 · Funciones y modularidad</h2><p>Def, parametros, return, scope, try/except, archivos y modulos.</p></a>
+      <a class="card cf-card cf-card--interactive" href="bloques/bloque4/inicio.html"><span class="cf-chip cf-chip--success">Generado</span><h2>B4 · Programacion orientada a objetos</h2><p>Clases, objetos, metodos, composicion, herencia y polimorfismo.</p></a>
+      <a class="card cf-card cf-card--interactive" href="bloques/bloque5/inicio.html"><span class="cf-chip cf-chip--success">Generado</span><h2>B5 · Python aplicado y librerias</h2><p>NumPy, Pandas, Playwright, parsing conceptual e informes.</p></a>
+      <a class="card cf-card cf-card--interactive" href="bloques/bloque6/inicio.html"><span class="cf-chip cf-chip--success">Generado</span><h2>B6 · Entorno profesional</h2><p>Script, VS Code, venv, Git, GitHub, debugger e IA controlada.</p></a>
+      <a class="card cf-card cf-card--interactive" href="bloques/bloque7/inicio.html"><span class="cf-chip cf-chip--success">Generado</span><h2>B7 · Python + IA</h2><p>Programacion asistida critica, SAMI Final, defensa y LangGraph opcional.</p></a>
+    </section>
+
+    <section class="tools">
+      <a class="cf-card cf-card--interactive" href="profesor-plus/inicio.html"><h2>Profesor Plus</h2><p>Biblioteca docente adaptada a programacion practica.</p></a>
+    </section>
+  </main>
+</body>
+</html>
+
+

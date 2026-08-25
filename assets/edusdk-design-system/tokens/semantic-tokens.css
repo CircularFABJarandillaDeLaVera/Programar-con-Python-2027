@@ -1,0 +1,81 @@
+﻿:root {
+  color-scheme: light;
+
+  --cf-color-background: #EEF4F7;
+  --cf-color-surface: #FFFFFF;
+  --cf-color-surface-raised: #FFFFFF;
+  --cf-color-surface-muted: #EEF3F8;
+  --cf-color-text: #10243A;
+  --cf-color-text-muted: #587082;
+  --cf-color-border: #D8E4EB;
+
+  --cf-color-accent: var(--cf-brand-green-dark, #32855A);
+  --cf-color-accent-hover: #286B49;
+  --cf-color-accent-soft: rgba(50, 133, 90, 0.12);
+  --cf-color-accent-text: #FFFFFF;
+  --cf-color-focus: #0F6F6B;
+
+  --cf-color-input-background: #FFFFFF;
+
+  --cf-color-success: var(--cf-brand-green-dark, #32855A);
+  --cf-color-warning: #775400;
+  --cf-color-danger: var(--cf-brand-red-bright, #C7362E);
+  --cf-color-info: #0F6F6B;
+
+  --cf-font-body: Inter, ui-sans-serif, system-ui, sans-serif;
+  --cf-font-heading: Inter, ui-sans-serif, system-ui, sans-serif;
+  --cf-font-label: Inter, ui-sans-serif, system-ui, sans-serif;
+  --cf-font-brand-document: "Bebas Neue Pro", sans-serif;
+  --cf-font-brand-accent: "Gotham Black", sans-serif;
+
+  --cf-space-1: 8px;
+  --cf-space-2: 12px;
+  --cf-space-3: 16px;
+  --cf-space-4: 20px;
+  --cf-space-5: 24px;
+  --cf-space-6: 28px;
+
+  --cf-radius-sm: 8px;
+  --cf-radius-md: 12px;
+  --cf-radius-lg: 18px;
+  --cf-radius-pill: 999px;
+
+  --cf-shadow-sm: 0 8px 24px rgba(15, 23, 42, 0.08);
+  --cf-shadow-raised: 0 24px 60px rgba(0, 0, 0, 0.22);
+
+  --cf-border-width: 1px;
+  --cf-border-color: var(--cf-color-border);
+
+  --cf-breakpoint-sm: 520px;
+  --cf-breakpoint-md: 760px;
+  --cf-breakpoint-lg: 980px;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --cf-color-background: #031327;
+  --cf-color-surface: rgba(12, 38, 65, 0.96);
+  --cf-color-surface-raised: rgba(15, 54, 95, 0.98);
+  --cf-color-surface-muted: rgba(255,255,255,0.07);
+  --cf-color-text: #EAF4FF;
+  --cf-color-text-muted: #9FC6E1;
+  --cf-color-border: rgba(255, 255, 255, 0.12);
+
+  --cf-color-accent: var(--cf-brand-green-bright, #4FBB75);
+  --cf-color-accent-hover: #7CCF95;
+  --cf-color-accent-soft: rgba(79,187,117,0.16);
+  --cf-color-accent-text: #031327;
+  --cf-color-focus: var(--cf-brand-yellow-bright, #E5B51A);
+
+  --cf-color-input-background: rgba(3,19,39,0.72);
+
+  --cf-color-success: var(--cf-brand-green-bright, #4FBB75);
+  --cf-color-warning: var(--cf-brand-yellow-bright, #E5B51A);
+  --cf-color-danger: #EF6B73;
+  --cf-color-info: var(--cf-brand-blue-bright, #4CAEA9);
+
+  --cf-shadow-sm: 0 16px 40px rgba(0,0,0,0.24);
+}
+
+

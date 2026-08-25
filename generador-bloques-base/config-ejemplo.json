@@ -1,0 +1,25 @@
+﻿{
+  "numero": 1,
+  "slug": "bloque-neutral",
+  "producto": "Producto EduSDK",
+  "curso": "Curso o itinerario",
+  "titulo": "Titulo del bloque",
+  "duracion": "2 h",
+  "descripcion": "Descripcion breve del bloque",
+  "color_acento": "green",
+  "recursos": {
+    "flashcards": 0,
+    "preguntas_test": 0,
+    "casos": 0,
+    "practicas": 0,
+    "guias_rapidas": 0,
+    "mapas": 0
+  },
+  "evaluacion_final": {
+    "activar": false,
+    "config": "examen-final/exam-config.json",
+    "motor": "assets/edusdk-exam/"
+  }
+}
+
+

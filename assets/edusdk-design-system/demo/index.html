@@ -1,0 +1,480 @@
+﻿<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EduSDK Design System Demo</title>
+    <link rel="stylesheet" href="../tokens/tokens.css">
+    <link rel="stylesheet" href="../tokens/semantic-tokens.css">
+    <link rel="stylesheet" href="../components/components.css">
+    <link rel="stylesheet" href="./demo.css">
+    <script src="../../assets/js/theme-toggle.js" defer></script>
+    <script src="./demo.js" defer></script>
+  </head>
+  <body>
+    <header class="demo-shell__header">
+      <div>
+        <p class="demo-eyebrow">Circular FAB EduSDK</p>
+        <h1>Catalogo visual de componentes</h1>
+      </div>
+      <button class="cf-button cf-button--secondary theme-toggle" type="button" data-theme-toggle aria-label="Activar modo oscuro" aria-pressed="false">
+        <span data-theme-icon aria-hidden="true">&#9790;</span>
+        <span data-theme-label>Modo dark</span>
+      </button>
+    </header>
+
+    <main class="demo-shell">
+      <section class="demo-section" aria-labelledby="identity-title">
+        <div class="demo-section__heading">
+          <p class="demo-eyebrow">Identidad Circular FAB</p>
+          <h2 id="identity-title">Marca, isotipo y composicion institucional</h2>
+        </div>
+
+        <div class="demo-identity-grid">
+          <article class="demo-asset-card">
+            <p class="demo-asset-card__label">ISOTIPO</p>
+            <div class="demo-asset-frame demo-asset-frame--center">
+              <img src="../../assets/branding/logo-circular-fab.png" alt="Isotipo C de Circular FAB">
+            </div>
+            <p>Recurso de marca disponible en `assets/branding/`. No se usa como icono funcional de interfaz.</p>
+          </article>
+
+          <article class="demo-asset-card demo-asset-card--wide">
+            <p class="demo-asset-card__label">MARCA + COMPOSICION INSTITUCIONAL</p>
+            <div class="demo-asset-frame">
+              <img src="../fuentes/logos/Logos_CFAB_2026_con-Ministerio.png" alt="Logotipo Circular FAB con instituciones">
+            </div>
+            <p>Composicion completa disponible para contextos institucionales.</p>
+          </article>
+
+          <article class="demo-asset-card">
+            <p class="demo-asset-card__label">LOGOS AUXILIARES</p>
+            <div class="demo-asset-frame demo-asset-frame--dark">
+              <img src="../fuentes/logos/Logos_CFAB_2026_con-Ministerio_SOLO.png" alt="Logos institucionales auxiliares">
+            </div>
+            <p>Recurso auxiliar de convivencia institucional, no equivalente al logotipo Circular FAB completo.</p>
+          </article>
+
+          <article class="demo-asset-card">
+            <p class="demo-asset-card__label">VARIANTE BLANCA</p>
+            <div class="demo-asset-frame demo-asset-frame--logo-white">
+              <img src="../fuentes/logos/Logos_CFAB_2026_con-Ministerio_blanco.png" alt="Variante blanca de logos Circular FAB e instituciones">
+            </div>
+            <p>Se muestra sobre fondo oscuro. No se recolorea mediante CSS.</p>
+          </article>
+        </div>
+
+        <header class="cf-topbar cf-topbar--course demo-brand-topbar">
+          <div class="demo-brand-topbar__identity">
+            <img src="../../assets/branding/logo-circular-fab.png" alt="Circular FAB">
+            <div>
+              <p class="cf-topbar__meta">Demo de convivencia</p>
+              <h3 class="cf-topbar__title">Circular FAB + EduSDK</h3>
+            </div>
+          </div>
+          <div class="demo-brand-topbar__course">
+            <span class="cf-chip cf-chip--accent">Curso IA aplicada</span>
+            <button class="cf-button cf-button--primary" type="button">Continuar</button>
+          </div>
+        </header>
+
+        <div class="demo-system-split" aria-label="Comparacion entre identidad corporativa e interfaz EduSDK">
+          <article>
+            <h3>Identidad corporativa</h3>
+            <p>Logos, isotipo, espacios, tramas y recursos institucionales o de comunicacion.</p>
+          </article>
+          <article>
+            <h3>Interfaz EduSDK</h3>
+            <p>Button, Card, Panel, Navigation, Question, Answer, Feedback y el resto de componentes funcionales.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="demo-section" aria-labelledby="spaces-title">
+        <div class="demo-section__heading">
+          <p class="demo-eyebrow">Los cinco espacios</p>
+          <h2 id="spaces-title">Iconografia corporativa de espacios</h2>
+        </div>
+        <div class="demo-grid demo-grid--five">
+          <article class="demo-space-card">
+            <img src="../fuentes/espacios/espacio-conocer.svg" alt="Espacio Conocer">
+            <h3>Conocer</h3>
+          </article>
+          <article class="demo-space-card">
+            <img src="../fuentes/espacios/espacio-inventar.svg" alt="Espacio Inventar">
+            <h3>Inventar</h3>
+          </article>
+          <article class="demo-space-card">
+            <img src="../fuentes/espacios/espacio-fabricar.svg" alt="Espacio Fabricar">
+            <h3>Fabricar</h3>
+          </article>
+          <article class="demo-space-card">
+            <img src="../fuentes/espacios/espacio-coordinacion.svg" alt="Espacio Coordinacion">
+            <h3>Coordinacion</h3>
+          </article>
+          <article class="demo-space-card">
+            <img src="../fuentes/espacios/espacio-compartir.svg" alt="Espacio Compartir">
+            <h3>Compartir</h3>
+          </article>
+        </div>
+        <p class="demo-note">Estos SVG representan espacios Circular FAB. No son iconos funcionales generales del EduSDK.</p>
+      </section>
+
+      <section class="demo-section" aria-labelledby="patterns-title">
+        <div class="demo-section__heading">
+          <p class="demo-eyebrow">Tramas corporativas</p>
+          <h2 id="patterns-title">Recursos graficos documentados</h2>
+        </div>
+        <div class="demo-grid demo-grid--four">
+          <article class="demo-pattern-card">
+            <img src="../fuentes/tramas/Trama_CFab.png" alt="Trama Circular FAB PNG">
+            <h3>Trama_CFab.png</h3>
+          </article>
+          <article class="demo-pattern-card">
+            <img src="../fuentes/tramas/Trama_CFab.jpg" alt="Trama Circular FAB JPG">
+            <h3>Trama_CFab.jpg</h3>
+          </article>
+          <article class="demo-pattern-card">
+            <img src="../fuentes/tramas/Trama-Doble_CFab.jpg" alt="Trama doble Circular FAB">
+            <h3>Trama-Doble_CFab.jpg</h3>
+          </article>
+          <article class="demo-pattern-card">
+            <img src="../fuentes/tramas/03_Trama.png" alt="Trama corporativa 03">
+            <h3>03_Trama.png</h3>
+          </article>
+        </div>
+
+        <article class="demo-pattern-hero">
+          <img src="../fuentes/tramas/Trama_CFab.png" alt="" aria-hidden="true">
+          <div>
+            <p class="demo-eyebrow">Composicion de ejemplo</p>
+            <h3>Trama como recurso decorativo</h3>
+            <p>El contenido conserva contraste y legibilidad. Esta muestra no convierte la trama en componente obligatorio.</p>
+          </div>
+        </article>
+      </section>
+
+      <section class="demo-section" aria-labelledby="communication-title">
+        <div class="demo-section__heading">
+          <p class="demo-eyebrow">Recursos de comunicacion</p>
+          <h2 id="communication-title">Canales y piezas auxiliares</h2>
+        </div>
+        <article class="demo-asset-card demo-communication-card">
+          <p class="demo-asset-card__label">RECURSO AUXILIAR</p>
+          <div class="demo-asset-frame demo-asset-frame--center">
+            <img src="../fuentes/logos/icono_facebook.png" alt="Icono de Facebook disponible como recurso de comunicacion">
+          </div>
+          <p>Se muestra como recurso disponible. No se convierte en token, no entra en Navigation y no se usa como icono funcional general.</p>
+        </article>
+      </section>
+
+      <section class="demo-section" aria-labelledby="center-hero-title">
+        <div class="demo-section__heading">
+          <p class="demo-eyebrow">Portada de centro + curso</p>
+          <h2 id="center-hero-title">Marca de red y contexto local</h2>
+        </div>
+        <section class="cf-center-hero" aria-labelledby="center-hero-demo-title">
+          <img class="cf-center-hero__pattern" src="../fuentes/tramas/Trama-Doble_CFab.jpg" alt="" aria-hidden="true">
+          <div class="cf-center-hero__content">
+            <div class="cf-center-hero__brand">
+              <img src="../../assets/branding/logo-circular-fab.png" alt="Circular FAB">
+              <p class="cf-center-hero__meta">Circular FAB · Jarandilla de la Vera</p>
+            </div>
+            <h2 class="cf-center-hero__title" id="center-hero-demo-title">Curso EduSDK de IA aplicada</h2>
+            <p class="cf-center-hero__subtitle">Portada experimental para cursos asociados a un centro. La marca general sigue siendo Circular FAB y el centro aporta contexto local, no una identidad paralela.</p>
+            <div class="demo-row">
+              <a class="cf-button cf-button--primary" href="#components-title">Ver componentes</a>
+              <a class="cf-button cf-button--secondary" href="#identity-title">Ver identidad</a>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <section class="demo-section" aria-labelledby="media-card-title">
+        <div class="demo-section__heading">
+          <p class="demo-eyebrow">Card editorial</p>
+          <h2 id="media-card-title">Actualidad, recursos y eventos</h2>
+        </div>
+        <div class="demo-grid demo-grid--two">
+          <article class="cf-card cf-card--media">
+            <img class="cf-card__media" src="../fuentes/tramas/Trama_CFab.jpg" alt="Muestra de trama Circular FAB aplicada como imagen editorial">
+            <div class="cf-card__body">
+              <span class="cf-chip cf-chip--info">Recurso EduSDK</span>
+              <h3 class="cf-card__title">Guia visual para actividades de innovacion</h3>
+              <p class="cf-card__summary">Ejemplo de card con imagen, metadato, titulo, resumen y accion para contenidos editoriales o formativos.</p>
+              <a class="cf-card__link" href="#feedback-title">Ver feedback pedagogico</a>
+            </div>
+          </article>
+          <article class="cf-card cf-card--media">
+            <img class="cf-card__media" src="../fuentes/tramas/03_Trama.png" alt="Muestra grafica de trama corporativa en una card editorial">
+            <div class="cf-card__body">
+              <span class="cf-chip cf-chip--accent">Centro</span>
+              <h3 class="cf-card__title">Jarandilla de la Vera como contexto de aprendizaje</h3>
+              <p class="cf-card__summary">La card puede presentar noticias, eventos o recursos asociados a centros sin mezclar identidad corporativa con controles de interfaz.</p>
+              <a class="cf-card__link" href="#center-hero-title">Ver portada de centro</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="demo-section" aria-labelledby="brand-title">
+        <div class="demo-section__heading">
+          <p class="demo-eyebrow">A. Brand</p>
+          <h2 id="brand-title">Colores oficiales</h2>
+        </div>
+        <div class="demo-grid demo-grid--six">
+          <article class="demo-swatch">
+            <span class="demo-swatch__color" style="--demo-swatch: var(--cf-brand-green-bright);"></span>
+            <h3>Verde Brillante</h3>
+            <p>#4FBB75</p>
+          </article>
+          <article class="demo-swatch">
+            <span class="demo-swatch__color" style="--demo-swatch: var(--cf-brand-green-dark);"></span>
+            <h3>Verde Oscuro</h3>
+            <p>#32855A</p>
+          </article>
+          <article class="demo-swatch">
+            <span class="demo-swatch__color" style="--demo-swatch: var(--cf-brand-blue-bright);"></span>
+            <h3>Azul Brillante</h3>
+            <p>#4CAEA9</p>
+          </article>
+          <article class="demo-swatch">
+            <span class="demo-swatch__color" style="--demo-swatch: var(--cf-brand-yellow-bright);"></span>
+            <h3>Amarillo Brillante</h3>
+            <p>#E5B51A</p>
+          </article>
+          <article class="demo-swatch">
+            <span class="demo-swatch__color" style="--demo-swatch: var(--cf-brand-red-bright);"></span>
+            <h3>Rojo Brillante</h3>
+            <p>#C7362E</p>
+          </article>
+          <article class="demo-swatch">
+            <span class="demo-swatch__color" style="--demo-swatch: var(--cf-brand-pink-pale-intense);"></span>
+            <h3>Rosa Palo Intenso</h3>
+            <p>#F1B3AA</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="demo-section" aria-labelledby="semantic-title">
+        <div class="demo-section__heading">
+          <p class="demo-eyebrow">B. Semantic</p>
+          <h2 id="semantic-title">Tokens semanticos</h2>
+        </div>
+        <div class="demo-grid demo-grid--tokens">
+          <span class="demo-token demo-token--background">background</span>
+          <span class="demo-token demo-token--surface">surface</span>
+          <span class="demo-token demo-token--text">text</span>
+          <span class="demo-token demo-token--border">border</span>
+          <span class="demo-token demo-token--accent">accent</span>
+          <span class="demo-token demo-token--focus">focus</span>
+          <span class="demo-token demo-token--success">success</span>
+          <span class="demo-token demo-token--warning">warning</span>
+          <span class="demo-token demo-token--danger">danger</span>
+          <span class="demo-token demo-token--info">info</span>
+        </div>
+      </section>
+
+      <section class="demo-section" aria-labelledby="typography-title">
+        <div class="demo-section__heading">
+          <p class="demo-eyebrow">C. Typography</p>
+          <h2 id="typography-title">Tipografia de interfaz</h2>
+        </div>
+        <div class="demo-type">
+          <p class="demo-type__heading">Heading: Exploracion guiada de IA aplicada</p>
+          <p class="demo-type__body">Body: texto largo de lectura comoda para instrucciones, explicaciones y contenido formativo.</p>
+          <p class="demo-type__label">Label: ESTADO, METADATO O ACCION</p>
+        </div>
+      </section>
+
+      <section class="demo-section" aria-labelledby="components-title">
+        <div class="demo-section__heading">
+          <p class="demo-eyebrow">D. Components</p>
+          <h2 id="components-title">Componentes y estados</h2>
+        </div>
+
+        <div class="demo-stack">
+          <div class="demo-sample">
+            <h3>Button</h3>
+            <div class="demo-row">
+              <button class="cf-button cf-button--primary" type="button">Primary</button>
+              <button class="cf-button cf-button--secondary" type="button">Secondary</button>
+              <button class="cf-button cf-button--ghost" type="button">Ghost</button>
+              <button class="cf-button cf-button--danger" type="button">Danger</button>
+              <button class="cf-button cf-button--secondary" type="button" disabled>Disabled</button>
+            </div>
+          </div>
+
+          <div class="demo-grid demo-grid--two">
+            <article class="cf-card">
+              <h3>Card</h3>
+              <p>Contenedor basico para resumenes y accesos no interactivos.</p>
+            </article>
+            <article class="cf-card cf-card--interactive" tabindex="0">
+              <h3>Card interactive</h3>
+              <p>Estado hover y foco visible para una card accionable.</p>
+            </article>
+          </div>
+
+          <section class="cf-panel cf-panel--raised">
+            <h3>Panel raised</h3>
+            <p>Bloque estructural para una zona de trabajo o lectura.</p>
+          </section>
+
+          <div class="demo-sample">
+            <h3>Chip</h3>
+            <div class="demo-row">
+              <span class="cf-chip cf-chip--neutral">Neutral</span>
+              <span class="cf-chip cf-chip--accent">Accent</span>
+              <span class="cf-chip cf-chip--info">Info</span>
+              <span class="cf-chip cf-chip--success">Correcto</span>
+              <span class="cf-chip cf-chip--warning">Aviso</span>
+              <span class="cf-chip cf-chip--danger">Riesgo</span>
+            </div>
+          </div>
+
+          <header class="cf-topbar cf-topbar--app">
+            <div>
+              <p class="cf-topbar__meta">Topbar app</p>
+              <h3 class="cf-topbar__title">Profesor Plus</h3>
+            </div>
+            <nav class="cf-nav cf-nav--horizontal" aria-label="Demo principal">
+              <a class="cf-nav__link" href="#components-title" aria-current="page">Componentes</a>
+              <a class="cf-nav__link" href="#question-title">Pregunta</a>
+              <a class="cf-nav__link" href="#feedback-title">Feedback</a>
+            </nav>
+          </header>
+
+          <div class="demo-grid demo-grid--two">
+            <nav class="cf-nav cf-nav--sidebar" aria-label="Demo lateral">
+              <a class="cf-nav__link" href="#brand-title" aria-current="page">Brand</a>
+              <a class="cf-nav__link" href="#semantic-title">Semantic</a>
+              <a class="cf-nav__link" href="#typography-title">Typography</a>
+            </nav>
+
+            <div class="cf-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="68">
+              <div class="cf-progress__label">
+                <span>Progreso del bloque</span>
+                <span data-progress-label>68%</span>
+              </div>
+              <span class="cf-progress__track">
+                <span class="cf-progress__fill" style="--cf-progress-value: 68%;"></span>
+              </span>
+            </div>
+          </div>
+
+          <div class="demo-grid demo-grid--two">
+            <aside class="cf-alert cf-alert--info" role="status">
+              <h3 class="cf-alert__title"><span class="cf-signal" aria-hidden="true">i</span>Informacion</h3>
+              <p class="cf-alert__body">Mensaje contextual con texto, borde y senal visual.</p>
+            </aside>
+            <aside class="cf-alert cf-alert--danger" role="alert">
+              <h3 class="cf-alert__title"><span class="cf-signal" aria-hidden="true">!</span>Atencion</h3>
+              <p class="cf-alert__body">Un error critico puede usar role alert.</p>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="demo-section" aria-labelledby="question-title">
+        <div class="demo-section__heading">
+          <p class="demo-eyebrow">E. States</p>
+          <h2 id="question-title">Question y Answer Option</h2>
+        </div>
+        <article class="cf-question">
+          <p class="cf-question__meta">Pregunta 3 de 8 · Modo estudio</p>
+          <h3 class="cf-question__title">Que practica mejora la trazabilidad al crear tokens de diseno?</h3>
+          <p class="cf-question__body">Selecciona una opcion para ver el estado elegido. Los estados correcto e incorrecto muestran texto, borde y senal adicional.</p>
+          <div class="cf-answer-list" data-answer-demo>
+            <button class="cf-answer" type="button" aria-pressed="false">
+              <span>Usar siempre valores hardcoded en cada componente.</span>
+              <span class="cf-answer__status">Sin seleccionar</span>
+            </button>
+            <button class="cf-answer" type="button" aria-pressed="false">
+              <span>Consumir tokens semanticos y documentar las excepciones.</span>
+              <span class="cf-answer__status">Sin seleccionar</span>
+            </button>
+            <button class="cf-answer is-correct" type="button">
+              <span>Estado correcto persistente.</span>
+              <span class="cf-answer__status">Correcto: senal + borde + texto</span>
+            </button>
+            <button class="cf-answer is-incorrect" type="button">
+              <span>Estado incorrecto persistente.</span>
+              <span class="cf-answer__status">Incorrecto: senal + borde + texto</span>
+            </button>
+            <button class="cf-answer" type="button" disabled>
+              <span>Opcion deshabilitada.</span>
+              <span class="cf-answer__status">Disabled</span>
+            </button>
+          </div>
+        </article>
+      </section>
+
+      <section class="demo-section" aria-labelledby="feedback-title">
+        <div class="demo-section__heading">
+          <p class="demo-eyebrow">F. Feedback</p>
+          <h2 id="feedback-title">Estados pedagogicos</h2>
+        </div>
+        <div class="demo-grid demo-grid--two">
+          <section class="cf-feedback cf-feedback--correct">
+            <h3 class="cf-feedback__title"><span class="cf-signal" aria-hidden="true">OK</span>Correcto</h3>
+            <p class="cf-feedback__body">Has identificado una decision trazable y reutilizable.</p>
+          </section>
+          <section class="cf-feedback cf-feedback--incorrect">
+            <h3 class="cf-feedback__title"><span class="cf-signal" aria-hidden="true">X</span>Incorrecto</h3>
+            <p class="cf-feedback__body">Revisa si la opcion depende de color o valores hardcoded.</p>
+          </section>
+          <section class="cf-feedback cf-feedback--info">
+            <h3 class="cf-feedback__title"><span class="cf-signal" aria-hidden="true">i</span>Informacion</h3>
+            <p class="cf-feedback__body">El mismo componente funciona en light y dark.</p>
+          </section>
+          <section class="cf-feedback cf-feedback--warning">
+            <h3 class="cf-feedback__title"><span class="cf-signal" aria-hidden="true">!</span>Aviso</h3>
+            <p class="cf-feedback__body">Falta definir tokens de movimiento antes de animaciones mas ricas.</p>
+          </section>
+        </div>
+      </section>
+
+      <section class="demo-section" aria-labelledby="footer-title">
+        <div class="demo-section__heading">
+          <p class="demo-eyebrow">Footer institucional</p>
+          <h2 id="footer-title">Cierre de pagina con marca, enlaces y logos</h2>
+        </div>
+        <footer class="cf-footer" aria-labelledby="footer-demo-title">
+          <div class="cf-footer__main">
+            <section class="cf-footer__brand">
+              <img src="../../assets/branding/logo-circular-fab.png" alt="Circular FAB">
+              <h3 class="cf-footer__title" id="footer-demo-title">Circular FAB EduSDK</h3>
+              <p class="cf-footer__text">Ejemplo institucional para cerrar una pagina de curso o recurso manteniendo separada la identidad de marca y la interfaz EduSDK.</p>
+            </section>
+            <nav class="cf-footer__group" aria-label="Enlaces institucionales de demo">
+              <h3 class="cf-footer__title">Enlaces</h3>
+              <div class="cf-footer__nav">
+                <a href="#identity-title">Identidad Circular FAB</a>
+                <a href="#spaces-title">Cinco espacios</a>
+                <a href="#components-title">Componentes EduSDK</a>
+              </div>
+            </nav>
+            <section class="cf-footer__group" aria-labelledby="footer-social-title">
+              <h3 class="cf-footer__title" id="footer-social-title">Comunicacion</h3>
+              <p>Zona opcional de recursos sociales. No existe todavia un componente social independiente.</p>
+              <div class="cf-footer__social">
+                <a href="#communication-title">Facebook</a>
+                <a href="#communication-title">Instagram</a>
+                <a href="#communication-title">YouTube</a>
+              </div>
+            </section>
+          </div>
+          <section class="cf-footer__logos" aria-labelledby="footer-logos-title">
+            <h3 class="cf-footer__title" id="footer-logos-title">Convivencia institucional</h3>
+            <div class="cf-footer__logo-row">
+              <img src="../fuentes/logos/Logos_CFAB_2026_con-Ministerio.png" alt="Logotipo Circular FAB con instituciones">
+            </div>
+          </section>
+        </footer>
+      </section>
+    </main>
+  </body>
+</html>
+
+

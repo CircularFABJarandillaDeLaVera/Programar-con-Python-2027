@@ -1,0 +1,99 @@
+﻿{
+  "version": "1.1",
+  "descripcion": "Plantilla reutilizable Profesor Plus para EduSDK",
+  "plantillas": [
+    {
+      "id": "guion-completo",
+      "titulo": "Guion completo",
+      "descripcion": "Estructura para dirigir la clase, narrar la sesion y coordinar transiciones.",
+      "icon": "../assets/icons/guias.svg",
+      "iconAlt": "Guia",
+      "file": "plantillas/guion-completo.md",
+      "category": "guiones"
+    },
+    {
+      "id": "frases-clave",
+      "titulo": "Frases clave",
+      "descripcion": "Frases de apertura, participacion, reconduccion y cierre.",
+      "icon": "../assets/icons/recursos.svg",
+      "iconAlt": "Comunicacion",
+      "file": "plantillas/frases-clave.md",
+      "category": "frases"
+    },
+    {
+      "id": "preguntas-para-la-clase",
+      "titulo": "Preguntas para la clase",
+      "descripcion": "Preguntas activadoras, comparativas, de aplicacion y de examen.",
+      "icon": "../assets/icons/test.svg",
+      "iconAlt": "Preguntas",
+      "file": "plantillas/preguntas-para-la-clase.md",
+      "category": "preguntas"
+    },
+    {
+      "id": "respuestas-esperadas",
+      "titulo": "Respuestas esperadas",
+      "descripcion": "Patrones de respuesta correcta, incompleta e intuitiva.",
+      "icon": "../assets/icons/test.svg",
+      "iconAlt": "Respuestas",
+      "file": "plantillas/respuestas-esperadas.md",
+      "category": "respuestas"
+    },
+    {
+      "id": "errores-que-deben-aparecer",
+      "titulo": "Errores utiles",
+      "descripcion": "Errores provocadores para preguntar, justificar y corregir.",
+      "icon": "../assets/icons/casos.svg",
+      "iconAlt": "Aviso",
+      "file": "plantillas/errores-que-deben-aparecer.md",
+      "category": "errores"
+    },
+    {
+      "id": "mesa-material",
+      "titulo": "Mesa del instructor",
+      "descripcion": "Lista de materiales, dispositivos y preparacion para la sesion.",
+      "icon": "../assets/icons/profesor.svg",
+      "iconAlt": "Profesor",
+      "file": "plantillas/mesa-material.md",
+      "category": "mesa"
+    },
+    {
+      "id": "dinamicas",
+      "titulo": "Dinamicas",
+      "descripcion": "Diez dinamicas reutilizables para enganchar al grupo.",
+      "icon": "../assets/icons/practicas.svg",
+      "iconAlt": "Actividad",
+      "file": "plantillas/dinamicas.md",
+      "category": "dinamicas"
+    },
+    {
+      "id": "adaptaciones",
+      "titulo": "Adaptaciones temporales",
+      "descripcion": "Formatos para 150, 90, 60 y 30 minutos.",
+      "icon": "../assets/icons/bloque.svg",
+      "iconAlt": "Tiempo",
+      "file": "plantillas/adaptaciones.md",
+      "category": "adaptaciones"
+    }
+  ],
+  "pantalla": {
+    "id": "",
+    "titulo": "",
+    "objetivo": "",
+    "guion": "",
+    "preguntas": [],
+    "respuestas_esperadas": [],
+    "errores_que_deben_aparecer": [],
+    "como_reconducir": "",
+    "demostracion": "",
+    "material": [],
+    "dinamica": "",
+    "versiones": {
+      "150_min": "",
+      "90_min": "",
+      "60_min": "",
+      "30_min": ""
+    }
+  }
+}
+
+

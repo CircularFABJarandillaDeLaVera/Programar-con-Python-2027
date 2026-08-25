@@ -1,0 +1,424 @@
+{
+  "producto": "Programar con Python en 2027",
+  "curso": "Programar con Python en 2027",
+  "bloque": "Bloque 3 - Funciones y programacion modular",
+  "descripcion": "Funciones, parametros, return, scope, excepciones, archivos TXT, JSON, CSV, modulos e imports.",
+  "duracion": "4 h",
+  "fuente": "ingenieria-python-bloque3-final.md",
+  "fuentes": [
+    "ingenieria-conocimiento-python-v4.md",
+    "ingenieria-python-bloque3-final.md"
+  ],
+  "metodologia": "Explicacion breve -> codigo -> predecir -> ejecutar -> modificar -> error util -> mini-reto -> feedback -> continuar",
+  "objetivos": [
+    "Definir funciones con def y llamarlas desde un flujo principal.",
+    "Distinguir parametros, argumentos y valores por defecto.",
+    "Usar return para reutilizar datos y diferenciarlo de print().",
+    "Reconocer ambito local y global, usando global solo en experimentos controlados.",
+    "Documentar funciones con docstrings breves y utiles.",
+    "Capturar errores con try/except y leer la excepcion antes de corregir.",
+    "Leer y escribir TXT, JSON y CSV con with open().",
+    "Separar responsabilidades en varios archivos e importarlas con import.",
+    "Construir SAMI-Lite como programa modular de consola."
+  ],
+  "slides": [
+    {
+      "titulo": "De script lineal a funcion",
+      "objetivo": "Entender que una funcion agrupa una tarea repetible bajo un nombre.",
+      "guion": "Parte de dos calculos repetidos. Encapsula el calculo con def, llama la funcion y compara el codigo.",
+      "pregunta": "Que gana el programa cuando una tarea repetida se convierte en funcion?",
+      "ejemplo": "def calcular_iva(precio):\n    return precio * 0.21\n\nprint(calcular_iva(100))",
+      "modificar": "Cambia el precio y crea otra llamada con 250.",
+      "predecir": "Que valor devuelve calcular_iva(100)?",
+      "error_util": "Olvidar los dos puntos despues de la cabecera def.",
+      "reto": "Crea una funcion calcular_descuento(precio) que devuelva el 10% del precio.",
+      "comprobar": "La funcion se llama mas de una vez sin copiar el calculo."
+    },
+    {
+      "titulo": "print() no es return",
+      "objetivo": "Distinguir mostrar un valor de devolverlo para seguir calculando.",
+      "guion": "Muestra dos funciones: una imprime y otra retorna. Intenta usar ambas en una suma posterior.",
+      "pregunta": "Por que una funcion que solo imprime puede devolver None?",
+      "ejemplo": "def mostrar_doble(n):\n    print(n * 2)\n\ndef devolver_doble(n):\n    return n * 2\n\nvalor = devolver_doble(5)\nprint(valor + 1)",
+      "modificar": "Guarda el resultado de mostrar_doble(5) y observa que contiene.",
+      "predecir": "Que imprime valor + 1?",
+      "error_util": "Usar el resultado de una funcion sin return como si fuera un numero.",
+      "reto": "Convierte una funcion que imprime un total en una funcion que lo devuelva.",
+      "comprobar": "El valor retornado puede guardarse en una variable y reutilizarse."
+    },
+    {
+      "titulo": "Parametros y argumentos",
+      "objetivo": "Separar los nombres de entrada de los valores que se pasan al llamar.",
+      "guion": "Subraya la firma. El alumno predice que cambia si se alteran los argumentos.",
+      "pregunta": "Cual es el parametro y cual es el argumento en saludar(\"Ana\")?",
+      "ejemplo": "def saludar(nombre):\n    return \"Hola, \" + nombre\n\nmensaje = saludar(\"Ana\")\nprint(mensaje)",
+      "modificar": "Llama saludar con tres nombres distintos.",
+      "predecir": "Que mensaje se construye antes de ejecutar?",
+      "error_util": "Llamar a una funcion sin pasar un argumento obligatorio.",
+      "reto": "Crea una funcion etiqueta(nombre, curso) que devuelva una frase.",
+      "comprobar": "Cada llamada cambia por sus argumentos, no por editar el cuerpo."
+    },
+    {
+      "titulo": "Parametros por defecto",
+      "objetivo": "Crear llamadas flexibles con valores opcionales al final de la firma.",
+      "guion": "Usa una funcion de precio formateado. Primero llamada corta, luego cambio de moneda y decimales.",
+      "pregunta": "Por que los parametros con valor por defecto van al final?",
+      "ejemplo": "def formatear_precio(monto, moneda=\"EUR\", decimales=2):\n    return str(round(monto, decimales)) + \" \" + moneda\n\nprint(formatear_precio(12.3456))\nprint(formatear_precio(12.3456, decimales=1))",
+      "modificar": "Cambia moneda a USD y prueba decimales=0.",
+      "predecir": "Que salida tiene la llamada con un solo argumento?",
+      "error_util": "Poner un parametro obligatorio despues de uno con valor por defecto.",
+      "reto": "Crea calcular_envio(peso_kg, coste_base=5.0).",
+      "comprobar": "La llamada corta funciona y la llamada con opcion modifica el resultado."
+    },
+    {
+      "titulo": "Ambito local y global",
+      "objetivo": "Ver donde vive una variable y evitar cambios exteriores accidentales.",
+      "guion": "Primero crea una variable externa y otra interna con el mismo nombre. Luego usa global en un contador controlado.",
+      "pregunta": "Que valor se imprime fuera de la funcion?",
+      "ejemplo": "usuario = \"Invitado\"\n\ndef cambiar_nombre():\n    usuario = \"Admin\"\n    return usuario\n\nprint(cambiar_nombre())\nprint(usuario)",
+      "modificar": "Crea visitas = 0 y una funcion que use global visitas para aumentarla.",
+      "predecir": "Que imprime cada print?",
+      "error_util": "Leer y asignar una variable exterior dentro de una funcion sin declararlo.",
+      "reto": "Implementa registrar_visita() con un limite de 5 visitas.",
+      "comprobar": "El uso de global aparece solo en el experimento de contador."
+    },
+    {
+      "titulo": "Docstrings",
+      "objetivo": "Documentar que recibe y que devuelve una funcion.",
+      "guion": "Anade una cadena triple justo debajo del def. Lee __doc__ para comprobarla.",
+      "pregunta": "Donde se coloca el docstring?",
+      "ejemplo": "def cuadrado(numero):\n    \"\"\"Devuelve el cuadrado de un numero.\"\"\"\n    return numero ** 2\n\nprint(cuadrado.__doc__)",
+      "modificar": "Cambia el docstring para explicar parametros y retorno.",
+      "predecir": "Que imprime cuadrado.__doc__?",
+      "error_util": "Escribir el comentario fuera del cuerpo de la funcion.",
+      "reto": "Documenta calcular_envio con una frase de entrada y salida.",
+      "comprobar": "La primera linea dentro de la funcion explica la responsabilidad."
+    },
+    {
+      "titulo": "try y except",
+      "objetivo": "Capturar una excepcion, leerla y responder sin detener el programa.",
+      "guion": "Provoca ValueError con float('abc'), captura el error y repite con dato valido.",
+      "pregunta": "Que parte se ejecuta solo cuando aparece el error?",
+      "ejemplo": "texto = \"abc\"\ntry:\n    precio = float(texto)\n    print(precio)\nexcept ValueError:\n    print(\"Precio no valido\")",
+      "modificar": "Cambia texto a '12.5' y observa la diferencia.",
+      "predecir": "Que ocurre antes de ejecutar con texto = 'abc'?",
+      "error_util": "Capturar un error demasiado amplio y no saber que fallo.",
+      "reto": "Pide una edad y captura ValueError si no es numero.",
+      "comprobar": "El programa no se detiene y el mensaje ayuda a corregir."
+    },
+    {
+      "titulo": "else y finally en excepciones",
+      "objetivo": "Ordenar el flujo cuando no hay error y cuando siempre hay que cerrar una accion.",
+      "guion": "Usa else para el camino correcto y finally para un mensaje de cierre.",
+      "pregunta": "Cuando se ejecuta else?",
+      "ejemplo": "texto = \"8\"\ntry:\n    numero = int(texto)\nexcept ValueError:\n    print(\"No es entero\")\nelse:\n    print(numero * 2)\nfinally:\n    print(\"Intento terminado\")",
+      "modificar": "Cambia texto a 'ocho'.",
+      "predecir": "Que lineas aparecen en cada caso?",
+      "error_util": "Meter todo en try y perder claridad sobre que puede fallar.",
+      "reto": "Valida una cantidad y muestra resultado solo en else.",
+      "comprobar": "else solo aparece si no hubo excepcion; finally aparece siempre."
+    },
+    {
+      "titulo": "with open() y TXT",
+      "objetivo": "Leer y escribir texto sin dejar archivos abiertos.",
+      "guion": "Escribe una linea, lee el archivo y confirma que el contenido vuelve como string.",
+      "pregunta": "Que ventaja tiene with open() frente a abrir y cerrar manualmente?",
+      "ejemplo": "with open(\"nota.txt\", \"w\", encoding=\"utf-8\") as archivo:\n    archivo.write(\"Primera nota\")\n\nwith open(\"nota.txt\", \"r\", encoding=\"utf-8\") as archivo:\n    contenido = archivo.read()\nprint(contenido)",
+      "modificar": "Anade una segunda linea con modo 'a'.",
+      "predecir": "Que texto se lee despues de escribir?",
+      "error_util": "Usar modo 'w' cuando querias conservar contenido anterior.",
+      "reto": "Crea un log de errores en texto plano.",
+      "comprobar": "El archivo existe y puede abrirse con un editor externo."
+    },
+    {
+      "titulo": "JSON",
+      "objetivo": "Guardar y recuperar diccionarios con json.dump y json.load.",
+      "guion": "Configura un diccionario, guardalo en JSON, cargalo y valida que vuelve como diccionario.",
+      "pregunta": "Que estructura de Python se recupera al leer un objeto JSON?",
+      "ejemplo": "import json\nconfig = {\"umbral_alerta\": 100.0, \"iva\": 0.21}\nwith open(\"config.json\", \"w\", encoding=\"utf-8\") as archivo:\n    json.dump(config, archivo, indent=2)\nwith open(\"config.json\", \"r\", encoding=\"utf-8\") as archivo:\n    cargada = json.load(archivo)\nprint(cargada[\"iva\"])",
+      "modificar": "Anade una clave activa con valor True.",
+      "predecir": "Que imprime cargada['iva']?",
+      "error_util": "Escribir varios objetos JSON seguidos en modo append y romper el formato.",
+      "reto": "Crea preferencias.json si no existe y carga su contenido.",
+      "comprobar": "El archivo JSON se abre y conserva claves y valores."
+    },
+    {
+      "titulo": "CSV",
+      "objetivo": "Registrar datos tabulares con el modulo csv.",
+      "guion": "Escribe cabecera y filas. Luego lee las filas para comprobar el formato.",
+      "pregunta": "Cuando conviene CSV frente a JSON?",
+      "ejemplo": "import csv\nwith open(\"notas.csv\", \"w\", newline=\"\", encoding=\"utf-8\") as archivo:\n    escritor = csv.writer(archivo)\n    escritor.writerow([\"nombre\", \"nota\"])\n    escritor.writerow([\"Ana\", 9])",
+      "modificar": "Anade dos estudiantes mas.",
+      "predecir": "Cuantas filas tendra el archivo contando la cabecera?",
+      "error_util": "Olvidar newline=\"\" y obtener saltos extra en algunos sistemas.",
+      "reto": "Guarda transacciones con producto, precio y estado.",
+      "comprobar": "El CSV tiene columnas claras y filas consistentes."
+    },
+    {
+      "titulo": "Modulos e imports",
+      "objetivo": "Separar responsabilidades en archivos y conectar piezas con import.",
+      "guion": "Divide utilidad, analisis y main. Cada archivo tiene una responsabilidad clara.",
+      "pregunta": "Que archivo debe coordinar el programa completo?",
+      "ejemplo": "# analizador.py\n# def calcular_precio_final(precio, tasa): ...\n\n# main.py\nfrom analizador import calcular_precio_final\nprint(calcular_precio_final(100, 0.21))",
+      "modificar": "Cambia un import selectivo por import del modulo completo y ajusta la llamada.",
+      "predecir": "Que pasa si el nombre importado no existe?",
+      "error_util": "Importar desde el archivo equivocado o crear dependencias cruzadas.",
+      "reto": "Organiza SAMI-Lite en persistencia.py, analizador.py y main.py.",
+      "comprobar": "main.py coordina; los otros archivos no preguntan datos al usuario."
+    },
+    {
+      "titulo": "Proyecto B3: SAMI-Lite",
+      "objetivo": "Integrar funciones, responsabilidades, imports, validacion, excepciones, JSON y CSV.",
+      "guion": "Construye primero analizador.py, despues persistencia.py y por ultimo main.py. Ejecuta, observa errores, interpreta y corrige.",
+      "pregunta": "Que responsabilidad tiene cada archivo?",
+      "ejemplo": "from persistencia import cargar_configuracion, registrar_transaccion_csv\nfrom analizador import calcular_precio_final, evaluar_alerta_precio\n\nconfig = cargar_configuracion(\"config.json\")\nprecio_final = calcular_precio_final(100, config[\"iva_aplicado\"])\nestado = evaluar_alerta_precio(precio_final, config[\"umbral_alerta\"])\nregistrar_transaccion_csv(\"transacciones.csv\", \"pieza\", 100, precio_final, estado)",
+      "modificar": "Anade otro producto y prueba una entrada no numerica.",
+      "predecir": "Que archivo se modifica si cambia la forma de guardar CSV?",
+      "error_util": "Mezclar lectura de teclado dentro del modulo de calculo.",
+      "reto": "Entrega los tres archivos y evidencia de JSON, CSV y log.",
+      "comprobar": "El programa modular se ejecuta sin detenerse ante errores de entrada."
+    }
+  ],
+  "flashcards": [
+    [
+      "Que hace def?",
+      "Crea una funcion con nombre para reutilizar una tarea."
+    ],
+    [
+      "Parametro o argumento?",
+      "Parametro es el nombre en la firma; argumento es el valor enviado en la llamada."
+    ],
+    [
+      "Para que sirve return?",
+      "Para devolver un dato y poder seguir trabajando con el."
+    ],
+    [
+      "print() sustituye a return?",
+      "No. print() muestra; return devuelve."
+    ],
+    [
+      "Que es una variable local?",
+      "Una variable que existe dentro de una funcion."
+    ],
+    [
+      "Cuando usar global?",
+      "Solo en casos controlados donde una funcion debe modificar una variable exterior."
+    ],
+    [
+      "Donde va un docstring?",
+      "Justo despues de la cabecera def, dentro de la funcion."
+    ],
+    [
+      "Que captura except ValueError?",
+      "Errores de conversion o valor no valido."
+    ],
+    [
+      "Cuando se ejecuta else en try?",
+      "Cuando no se produjo ninguna excepcion."
+    ],
+    [
+      "Que aporta with open()?",
+      "Gestiona el archivo de forma segura y lo cierra al terminar."
+    ],
+    [
+      "JSON o CSV?",
+      "JSON para datos estructurados; CSV para tablas sencillas."
+    ],
+    [
+      "Que hace import?",
+      "Permite usar codigo definido en otro archivo o modulo."
+    ]
+  ],
+  "casos": [
+    {
+      "titulo": "Retorno invisible",
+      "situacion": "Una funcion imprime el total, pero al intentar multiplicar su resultado aparece None.",
+      "preguntas": [
+        "Donde falta return?",
+        "Que variable recibe None?",
+        "Como lo comprobarias con print(type(...))?"
+      ]
+    },
+    {
+      "titulo": "Firma flexible",
+      "situacion": "Un calculo de envio debe funcionar con peso solo, o con coste base personalizado.",
+      "preguntas": [
+        "Que parametro es obligatorio?",
+        "Que parametro tiene valor por defecto?",
+        "Donde colocas cada uno?"
+      ]
+    },
+    {
+      "titulo": "Scope controlado",
+      "situacion": "Un contador de visitas debe aumentar desde una funcion.",
+      "preguntas": [
+        "La variable es local o exterior?",
+        "Hace falta global?",
+        "Como evitas usarlo en calculos normales?"
+      ]
+    },
+    {
+      "titulo": "Archivo ausente",
+      "situacion": "El programa intenta cargar config.json y no existe todavia.",
+      "preguntas": [
+        "Que excepcion esperas?",
+        "Que archivo se crea por defecto?",
+        "Como vuelve a continuar el programa?"
+      ]
+    },
+    {
+      "titulo": "Separar responsabilidades",
+      "situacion": "SAMI-Lite mezcla calculo, archivos y consola en un unico script.",
+      "preguntas": [
+        "Que va a analizador.py?",
+        "Que va a persistencia.py?",
+        "Que deja main.py?"
+      ]
+    }
+  ],
+  "test": [
+    {
+      "tipo": "salida",
+      "pregunta": "Que imprime este codigo?\n\ndef doble(n):\n    return n * 2\n\nprint(doble(4))",
+      "opciones": [
+        "8",
+        "doble",
+        "None"
+      ],
+      "correcta": 0,
+      "explicacion": "return devuelve 8 y print muestra ese valor."
+    },
+    {
+      "tipo": "print-return",
+      "pregunta": "Que guarda resultado?\n\ndef mostrar(n):\n    print(n)\n\nresultado = mostrar(5)",
+      "opciones": [
+        "None",
+        "5",
+        "\"5\""
+      ],
+      "correcta": 0,
+      "explicacion": "La funcion imprime 5, pero al no usar return devuelve None."
+    },
+    {
+      "tipo": "parametros",
+      "pregunta": "Completa la firma para que moneda sea opcional:\n\ndef precio(monto, ______):",
+      "opciones": [
+        "moneda=\"EUR\"",
+        "\"EUR\"=moneda",
+        "moneda==\"EUR\""
+      ],
+      "correcta": 0,
+      "explicacion": "Un parametro por defecto usa asignacion en la firma."
+    },
+    {
+      "tipo": "argumentos",
+      "pregunta": "En saludar(\"Ana\"), que es \"Ana\"?",
+      "opciones": [
+        "Un argumento",
+        "Un parametro",
+        "Una cabecera"
+      ],
+      "correcta": 0,
+      "explicacion": "El argumento es el valor real que viaja a la funcion."
+    },
+    {
+      "tipo": "scope",
+      "pregunta": "Que imprime?\n\nx = 10\ndef cambiar():\n    x = 3\n    return x\nprint(cambiar())\nprint(x)",
+      "opciones": [
+        "3 y 10",
+        "3 y 3",
+        "10 y 10"
+      ],
+      "correcta": 0,
+      "explicacion": "La x de dentro es local; la exterior sigue valiendo 10."
+    },
+    {
+      "tipo": "global",
+      "pregunta": "Que palabra permite modificar visitas exterior dentro de una funcion?",
+      "opciones": [
+        "global",
+        "return",
+        "import"
+      ],
+      "correcta": 0,
+      "explicacion": "global indica que se modifica la variable exterior declarada en el script."
+    },
+    {
+      "tipo": "docstring",
+      "pregunta": "Donde se coloca un docstring?",
+      "opciones": [
+        "Primera linea dentro de la funcion",
+        "Despues de llamar a la funcion",
+        "Solo al final del archivo"
+      ],
+      "correcta": 0,
+      "explicacion": "El docstring va justo dentro del cuerpo de la funcion."
+    },
+    {
+      "tipo": "except",
+      "pregunta": "Que except encaja con float(\"abc\")?",
+      "opciones": [
+        "except ValueError:",
+        "except FileNotFoundError:",
+        "except ImportError:"
+      ],
+      "correcta": 0,
+      "explicacion": "La conversion falla por valor no numerico."
+    },
+    {
+      "tipo": "else-finally",
+      "pregunta": "En try/except, cuando se ejecuta else?",
+      "opciones": [
+        "Si no hubo excepcion",
+        "Siempre",
+        "Solo si el archivo no existe"
+      ],
+      "correcta": 0,
+      "explicacion": "else representa el camino correcto tras el try."
+    },
+    {
+      "tipo": "open",
+      "pregunta": "Que modo anade texto al final sin borrar?",
+      "opciones": [
+        "\"a\"",
+        "\"w\"",
+        "\"r\""
+      ],
+      "correcta": 0,
+      "explicacion": "El modo append anade al final; w reescribe y r solo lee."
+    },
+    {
+      "tipo": "json-csv",
+      "pregunta": "Que modulo usas para guardar un diccionario en archivo .json?",
+      "opciones": [
+        "json",
+        "csv",
+        "math"
+      ],
+      "correcta": 0,
+      "explicacion": "json.dump y json.load trabajan con JSON."
+    },
+    {
+      "tipo": "modulos",
+      "pregunta": "Como importas una funcion concreta desde analizador.py?",
+      "opciones": [
+        "from analizador import calcular_precio_final",
+        "import calcular_precio_final from analizador",
+        "open analizador calcular_precio_final"
+      ],
+      "correcta": 0,
+      "explicacion": "La sintaxis from modulo import nombre trae una funcion concreta."
+    }
+  ],
+  "proyecto": {
+    "titulo": "SAMI-Lite",
+    "estructura": [
+      "persistencia.py",
+      "analizador.py",
+      "main.py"
+    ],
+    "evidencia": "Tres archivos Python, config.json generado, transacciones CSV, log TXT y captura de ejecucion con error controlado.",
+    "alcance": "Programa modular de consola con funciones, imports, validacion, excepciones y persistencia local."
+  },
+  "mapa_mental_fuente": "recursos/mapa-mental.md"
+}

@@ -1,0 +1,25 @@
+﻿{
+  "numero": 1,
+  "slug": "bloque1",
+  "producto": "Programar con Python en 2027",
+  "curso": "Programar con Python en 2027",
+  "titulo": "Fundamentos y logica",
+  "duracion": "4 h",
+  "descripcion": "Primeros programas en notebook: salida, variables, tipos, operadores, decisiones y bucles.",
+  "color_acento": "green",
+  "recursos": {
+    "flashcards": 12,
+    "preguntas_test": 12,
+    "casos": 6,
+    "practicas": 4,
+    "guias_rapidas": 2,
+    "mapas": 1
+  },
+  "evaluacion_final": {
+    "activar": false,
+    "config": "examen-final/exam-config.json",
+    "motor": "assets/edusdk-exam/"
+  }
+}
+
+

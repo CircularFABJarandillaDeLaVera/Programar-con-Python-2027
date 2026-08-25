@@ -1,0 +1,230 @@
+﻿* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--cf-color-background);
+  color: var(--cf-color-text);
+  font-family: var(--cf-font-body);
+}
+
+body {
+  background: var(--cf-color-background);
+  color: var(--cf-color-text);
+  margin: 0;
+  min-width: 320px;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.block-page {
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--cf-color-accent) 8%, transparent), transparent 280px),
+    var(--cf-color-background);
+}
+
+.block-shell {
+  display: grid;
+  gap: var(--cf-space-4);
+  margin: 0 auto;
+  padding: var(--cf-space-4);
+  width: min(1120px, 100%);
+}
+
+.block-topbar {
+  border-left: 4px solid var(--cf-color-accent);
+  border-radius: var(--cf-radius-md);
+  box-shadow: var(--cf-shadow-sm);
+  flex-wrap: wrap;
+}
+
+.block-brand {
+  align-items: center;
+  border-radius: var(--cf-radius-sm);
+  display: flex;
+  gap: var(--cf-space-2);
+  min-width: 220px;
+  text-decoration: none;
+}
+
+.block-brand:focus-visible,
+.access-card:focus-visible,
+.student-tabs button:focus-visible,
+.resource-card:focus-visible,
+.navbtn:focus-visible {
+  outline: 3px solid var(--cf-color-focus);
+  outline-offset: 3px;
+}
+
+.block-brand img {
+  background: var(--cf-color-surface-muted);
+  border: var(--cf-border-width) solid var(--cf-color-border);
+  border-radius: var(--cf-radius-sm);
+  height: 46px;
+  object-fit: contain;
+  padding: 7px;
+  width: 46px;
+}
+
+.block-brand b {
+  color: var(--cf-color-text);
+  display: block;
+  font-family: var(--cf-font-heading);
+  font-size: 0.95rem;
+  font-weight: 850;
+  line-height: 1.15;
+}
+
+.block-brand span span {
+  color: var(--cf-color-text-muted);
+  display: block;
+  font-family: var(--cf-font-label);
+  font-size: 0.82rem;
+  font-weight: 750;
+  line-height: 1.2;
+}
+
+.block-nav {
+  margin-left: auto;
+}
+
+.theme-toggle {
+  min-height: 38px;
+  padding: 8px 12px;
+}
+
+.block-hero {
+  background: var(--cf-color-surface);
+  border: var(--cf-border-width) solid var(--cf-color-border);
+  border-radius: var(--cf-radius-lg);
+  color: var(--cf-color-text);
+  display: grid;
+  gap: var(--cf-space-2);
+  box-shadow: var(--cf-shadow-sm);
+}
+
+.block-hero--compact {
+  padding: var(--cf-space-5);
+}
+
+.block-hero h1,
+.access-card h2,
+.panel-title {
+  color: var(--cf-color-text);
+  font-family: var(--cf-font-heading);
+  line-height: 1.15;
+  margin: 0;
+}
+
+.block-hero h1 {
+  font-size: clamp(2rem, 6vw, 4rem);
+  letter-spacing: 0;
+}
+
+.block-hero p,
+.access-card p,
+.resource-card p {
+  color: var(--cf-color-text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.block-access-grid,
+.resource-grid {
+  display: grid;
+  gap: var(--cf-space-3);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.access-card,
+.resource-card {
+  color: var(--cf-color-text);
+  display: grid;
+  gap: var(--cf-space-2);
+  min-height: 0;
+  text-decoration: none;
+}
+
+.access-card h2,
+.resource-card h2 {
+  font-size: 1.15rem;
+  margin: 0;
+}
+
+.icon-slot {
+  align-items: center;
+  background: var(--cf-color-accent-soft);
+  border: var(--cf-border-width) solid color-mix(in srgb, var(--cf-color-accent) 30%, transparent);
+  border-radius: var(--cf-radius-md);
+  display: inline-flex;
+  height: 46px;
+  justify-content: center;
+  width: 46px;
+}
+
+.icon-slot img {
+  height: 26px;
+  width: 26px;
+}
+
+[data-theme="dark"] .icon-slot img {
+  filter: brightness(0) saturate(100%) invert(83%) sepia(24%) saturate(674%) hue-rotate(80deg) brightness(91%) contrast(87%);
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+@media (max-width: 860px) {
+  .block-topbar {
+    align-items: stretch;
+  }
+
+  .block-nav,
+  .block-nav .cf-nav__link,
+  .theme-toggle {
+    margin-left: 0;
+  }
+
+  .block-access-grid,
+  .resource-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .block-shell {
+    padding: var(--cf-space-3);
+  }
+
+  .block-brand,
+  .block-nav,
+  .block-nav .cf-nav__link,
+  .theme-toggle {
+    width: 100%;
+  }
+}
+
+@media print {
+  .block-topbar,
+  .theme-toggle {
+    display: none !important;
+  }
+}
+
+

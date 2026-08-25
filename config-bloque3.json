@@ -1,0 +1,12 @@
+﻿{
+  "numero": 3,
+  "slug": "bloque3",
+  "producto": "Programar con Python en 2027",
+  "curso": "Programar con Python en 2027",
+  "titulo": "Funciones y modularidad",
+  "duracion": "Pendiente",
+  "descripcion": "Estructura preparada para funciones, parametros, scope, errores y persistencia JSON/CSV.",
+  "color_acento": "green"
+}
+
+

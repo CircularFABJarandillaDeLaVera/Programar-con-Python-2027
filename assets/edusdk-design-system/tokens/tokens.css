@@ -1,0 +1,21 @@
+﻿:root {
+  --cf-brand-green-bright: #4FBB75;
+  --cf-brand-green-bright-rgb: 79, 187, 117;
+
+  --cf-brand-green-dark: #32855A;
+  --cf-brand-green-dark-rgb: 50, 133, 90;
+
+  --cf-brand-blue-bright: #4CAEA9;
+  --cf-brand-blue-bright-rgb: 76, 174, 169;
+
+  --cf-brand-yellow-bright: #E5B51A;
+  --cf-brand-yellow-bright-rgb: 229, 181, 26;
+
+  --cf-brand-red-bright: #C7362E;
+  --cf-brand-red-bright-rgb: 199, 54, 46;
+
+  --cf-brand-pink-pale-intense: #F1B3AA;
+  --cf-brand-pink-pale-intense-rgb: 241, 179, 170;
+}
+
+
