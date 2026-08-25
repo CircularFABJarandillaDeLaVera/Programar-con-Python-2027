@@ -1,0 +1,358 @@
+# 04 · GUÍA INTEGRAL DE PRÁCTICAS, APOYOS Y PLANES B
+
+Este documento contiene el inventario exhaustivo de todas las prácticas del curso **"Programar con Python en 2027"** (Bloques 1 a 7), estructuradas como herramienta de intervención directa para el formador de la **Red Circular FAB**.
+
+Para cada práctica se detalla:
+* **Objetivo y Código Base:** Qué debe escribir o ejecutar el alumno.
+* **Puntos Críticos de Bloqueo:** Dónde tropiezan habitualmente los estudiantes.
+* **Estrategia de Pistas en 3 Niveles (Guía Socrática):** Cómo orientar sin dar la solución hecha.
+* **Plan B / Adaptación:** Qué hacer si falta tiempo o el grupo tiene dificultades.
+
+---
+
+# BLOQUE 1: FUNDAMENTOS Y LÓGICA
+
+## Práctica 1.1: Operaciones Aritméticas y `divmod()`
+* **Objetivo:** Usar operadores y `divmod()` para convertir 137 minutos a horas y minutos, y resolver el reparto de 29 piezas en cajas de 6.
+* **Código Base:**
+  ```python
+  minutos = 137
+  horas, resto = divmod(minutos, 60)
+  print(f"{horas} h y {resto} min")
+  ```
+* **Reto Alumno:** Calcular cajas completas y sobrantes para 29 piezas en cajas de 6.
+* **Pistas Graduales para el Docente:**
+  * *Nivel 1:* "¿Qué dos números representan el total de piezas y la capacidad de cada caja?"
+  * *Nivel 2:* "Recuerda que `divmod(dividendo, divisor)` te devuelve dos valores: el primero es cuántas cajas llenas y el segundo cuántas te sobran."
+  * *Nivel 3:* `cajas, sobran = divmod(29, 6)`
+* **Salida Esperada:** `4 cajas y 5 piezas sobrantes` (porque `4 * 6 = 24`, sobran `5`).
+* **Plan B:** Si un alumno se bloquea con el desempaquetado doble, permitirle hacer `cajas = 29 // 6` y `sobran = 29 % 6` por separado antes de unificarlos con `divmod()`.
+
+---
+
+## Práctica 1.2: Tramos de Edad y Precios de Entrada
+* **Objetivo:** Tomar decisiones con `if / elif / else` para calcular precios: `< 12` años (5 €), `12 a 64` años (8 €), `>= 65` años (4 €).
+* **Código Base:**
+  ```python
+  edad = 14
+  if edad < 12:
+      precio = 5
+  elif edad <= 64:
+      precio = 8
+  else:
+      precio = 4
+  print(f"Precio de la entrada: {precio:.2f} €")
+  ```
+* **Pistas Graduales:**
+  * *Nivel 1:* "¿En qué orden estás evaluando las edades? Si pones primero `>= 65`, ¿dónde debe ir el `elif`?"
+  * *Nivel 2:* "Comprueba la indentación (los 4 espacios) dentro de cada bloque de condición."
+  * *Nivel 3:* Revisa que los dos puntos `:` estén al final de cada línea de `if`, `elif` y `else`.
+* **Plan B:** Probar con edades de prueba: 8, 14, 70 para validar visualmente que entra por las tres ramas.
+
+---
+
+## Práctica 1.3: Media de Notas con `input()` y Casting
+* **Objetivo:** Pedir 3 notas al usuario mediante consola, convertirlas a decimal (`float`) y calcular la media aritmética formateada.
+* **Código Base:**
+  ```python
+  n1 = float(input("Nota 1: "))
+  n2 = float(input("Nota 2: "))
+  n3 = float(input("Nota 3: "))
+  media = (n1 + n2 + n3) / 3
+  print(f"Media final: {media:.2f}")
+  ```
+* **Pistas Graduales:**
+  * *Nivel 1:* "Si divides `n1 + n2 + n3 / 3` sin paréntesis, ¿qué operación hace Python primero?"
+  * *Nivel 2:* "El orden de precedencia matemática divide primero `n3 / 3`. Agrupa la suma entre paréntesis."
+  * *Nivel 3:* `(n1 + n2 + n3) / 3`
+* **Plan B:** Si Colab da problemas con la ventana emergente de `input()`, definir las variables directamente como números fijos en la celda (`n1 = 7.5; n2 = 8.0; n3 = 6.5`).
+
+---
+
+## Práctica 1.4: Bucles, Conteos y Validación
+* **Objetivo:** Recorrer con un bucle `for` los números del 1 al 20, contar cuántos son múltiplos de 3 (`n % 3 == 0`) y mostrar el total acumulado.
+* **Código Base:**
+  ```python
+  contador = 0
+  for n in range(1, 21):
+      if n % 3 == 0:
+          contador += 1
+          print(f"Múltiplo encontrado: {n}")
+  print(f"Total de múltiplos de 3: {contador}")
+  ```
+* **Pistas Graduales:**
+  * *Nivel 1:* "¿Dónde debe crearse la variable `contador`? ¿Dentro o fuera del bucle?"
+  * *Nivel 2:* "Si pones `contador = 0` dentro del bucle, se reiniciará a cero en cada vuelta."
+  * *Nivel 3:* `range(1, 21)` llega hasta el 20 inclusive.
+
+---
+
+# BLOQUE 2: ESTRUCTURAS DE DATOS
+
+## Práctica 2.1: Slicing y Reversión
+* **Objetivo:** Extraer subcadenas con índices positivos y negativos sobre `"Pradera"` e invertir cadenas con paso negativo.
+* **Código Clave:**
+  ```python
+  texto = "Pradera"
+  sub = texto[1:5]    # "rade"
+  inv = texto[::-1]   # "aredarP"
+  ```
+* **Pistas:** Recordar que el límite final no se incluye. El paso `-1` indica recorrer de derecha a izquierda.
+
+---
+
+## Práctica 2.2: Listas y Mutabilidad
+* **Objetivo:** Crear una lista de inventario, modificar un elemento por índice, añadir elementos con `.append()` y eliminar con `.pop()`.
+* **Código Clave:**
+  ```python
+  piezas = ["Tornillo", "Tuerca", "Arandela"]
+  piezas[0] = "Tornillo M4"
+  piezas.append("Remache")
+  ```
+
+---
+
+## Práctica 2.3: Sets y Diccionarios con `.get()`
+* **Objetivo:** Eliminar correos duplicados con `set()` y crear un diccionario de dispositivo donde las lecturas ausentes se rescatan de forma segura con `.get()`.
+* **Código Clave:**
+  ```python
+  emails = ["a@fab.org", "b@fab.org", "a@fab.org"]
+  unicos = set(emails)
+  
+  sensor = {"id": "S1", "tipo": "Humedad"}
+  valor = sensor.get("temperatura", "Dato no disponible")
+  ```
+* **Pistas:** Explicar por qué `sensor["temperatura"]` lanzaría un error `KeyError` y cómo `.get()` previene la caída del programa.
+
+---
+
+## Práctica 2.4: List & Dict Comprehensions
+* **Objetivo:** Filtrar números pares y transformarlos al cuadrado en una sola línea.
+* **Código Clave:**
+  ```python
+  numeros = [1, 2, 3, 4, 5, 6]
+  pares_cuadrados = [x**2 for x in numeros if x % 2 == 0]
+  # Resultado: [4, 16, 36]
+  ```
+
+---
+
+## Proyecto B2: Clasificador e Indexador de Palabras
+* **Objetivo:** Analizar un párrafo de texto, limpiar signos de puntuación, calcular palabras únicas con `set()`, contar frecuencias con un diccionario y listar palabras con longitud superior a 5 letras mediante comprensión.
+
+---
+
+# BLOQUE 3: FUNCIONES Y MODULARIDAD
+
+## Práctica 3.1: Definición `def` y `return` frente a `print`
+* **Objetivo:** Diseñar funciones que calculen totales con impuestos devolviendo el dato con `return` para encadenar operaciones.
+* **Código Base:**
+  ```python
+  def calcular_subtotal(precio_base, cantidad):
+      """Calcula el importe sin impuestos."""
+      return precio_base * cantidad
+
+  def aplicar_iva(importe, iva=0.21):
+      """Aplica el porcentaje de IVA al importe."""
+      return importe * (1 + iva)
+  ```
+* **Pistas:** Forzar al alumno a comprobar `type(calcular_subtotal(10, 2))` para verificar que es un número (`float`/`int`) y no `NoneType`.
+
+---
+
+## Práctica 3.2: Parámetros Opcionales y Ámbito (Scope)
+* **Objetivo:** Comprobar el aislamiento de variables locales y el comportamiento de parámetros por defecto.
+* **Pistas:** Explicar que modificar una variable con el mismo nombre dentro de una función no altera la variable homónima del programa principal.
+
+---
+
+## Práctica 3.3: Docstrings y Excepciones `try-except`
+* **Objetivo:** Documentar una función con formato docstring formal y envolver divisiones y conversiones en un bloque `try-except` capturando `ZeroDivisionError` y `ValueError`.
+* **Código Clave:**
+  ```python
+  def dividir(a, b):
+      """Divide dos números de forma segura."""
+      try:
+          return a / b
+      except ZeroDivisionError:
+          print("Error: No se puede dividir entre cero.")
+          return None
+  ```
+
+---
+
+## Práctica 3.4: Persistencia con `with open()` en JSON y CSV
+* **Objetivo:** Guardar un diccionario de configuración en disco con `json.dump()` y volver a cargarlo con `json.load()`.
+* **Código Clave:**
+  ```python
+  import json
+  config = {"centro": "Jarandilla", "sensores_activos": 4}
+  
+  with open("config.json", "w", encoding="utf-8") as f:
+      json.dump(config, f, indent=2)
+      
+  with open("config.json", "r", encoding="utf-8") as f:
+      recuperado = json.load(f)
+  ```
+
+---
+
+## Proyecto B3: SAMI-Lite (Gestor Modular y Persistencia)
+* **Objetivo:** Construir un programa de consola interactivo estructurado en funciones (`registrar_evento()`, `cargar_historial()`, `guardar_historial()`) que permita añadir lecturas de sensores y persistirlas en `eventos.json` y `eventos.csv`.
+
+---
+
+# BLOQUE 4: PROGRAMACIÓN ORIENTADA A OBJETOS (POO)
+
+## Práctica 4.1: De Diccionario a Clase
+* **Objetivo:** Transformar un diccionario de sensor disperso en una clase `Sensor` con atributos formales y método `mostrar_info()`.
+
+---
+
+## Práctica 4.2: Constructor `__init__` y `self`
+* **Objetivo:** Crear una clase `Dispositivo` donde el constructor valida que el identificador no esté vacío y almacena un estado operativo inicial (`activo=True`).
+
+---
+
+## Práctica 4.3: Encapsulación
+* **Objetivo:** Ocultar la lista de lecturas con `self._lecturas` y proporcionar métodos públicos `agregar_lectura(valor)` y `obtener_promedio()`.
+
+---
+
+## Práctica 4.4: Composición, Herencia y `super()`
+* **Objetivo:** Crear la clase base `Sensor` y especializarla en `SensorTemperatura` y `SensorPresion`, llamando a `super().__init__()` y añadiendo unidades específicas (`"°C"`, `"hPa"`).
+* **Código Clave:**
+  ```python
+  class Sensor:
+      def __init__(self, id_sensor):
+          self.id_sensor = id_sensor
+          
+  class SensorTemperatura(Sensor):
+      def __init__(self, id_sensor, unidad="°C"):
+          super().__init__(id_sensor)
+          self.unidad = unidad
+  ```
+
+---
+
+## Práctica 4.5: Polimorfismo
+* **Objetivo:** Crear una lista heterogénea de sensores e iterar sobre ellos ejecutando el método común `.calibrar()` independientemente del tipo de sensor.
+
+---
+
+## Proyecto B4: SAMI-OOP
+* **Objetivo:** Arquitectura orientada a objetos de SAMI con jerarquía `Dispositivo` ➔ `Sensor` / `Actuador`, clase gestora `FabLabManager` (composición) y método polimórfico de exportación de estado.
+
+---
+
+# BLOQUE 5: PYTHON APLICADO Y LIBRERÍAS
+
+## Práctica 5.1: Operaciones Vectorizadas con NumPy
+* **Objetivo:** Crear un array NumPy de precios, aplicar un incremento porcentual directo (`precios * 1.05`) y calcular media, desviación y valor máximo sin bucles `for`.
+* **Código Clave:**
+  ```python
+  import numpy as np
+  precios = np.array([12.50, 45.00, 18.20, 99.90])
+  con_iva = precios * 1.21
+  promedio = np.mean(con_iva)
+  ```
+
+---
+
+## Práctica 5.2: Carga y Exploración con Pandas (`got_1.csv`)
+* **Objetivo:** Cargar el dataset de Game of Thrones, explorar dimensiones con `.shape`, tipos con `.info()` y primeras filas con `.head()`.
+
+---
+
+## Práctica 5.3: Filtrado Booleano y Ordenación en Pandas
+* **Objetivo:** Filtrar personajes por casa o puntuación y ordenar descendentemente con `.sort_values(by="Score", ascending=False)`.
+
+---
+
+## Práctica 5.4: Automatización Web con Playwright
+* **Objetivo:** Navegar a una página web de prueba, esperar a que cargue el selector y extraer el texto de un elemento informativo.
+
+---
+
+## Práctica 5.5: Informes en PDF con ReportLab
+* **Objetivo:** Construir un documento PDF simple con `SimpleDocTemplate`, un título con `Paragraph` y una tabla resumen con `Table`.
+
+---
+
+## Proyecto B5: SAMI-Applied
+* **Objetivo:** Pipeline integral: simulación o scraping de precios ➔ cálculo estadístico con NumPy ➔ estructuración y filtrado con Pandas ➔ generación de informe final en PDF con ReportLab.
+
+---
+
+# BLOQUE 6: DEL NOTEBOOK AL ENTORNO PROFESIONAL
+
+## Práctica 6.1: De Notebook a Script `.py`
+* **Objetivo:** Migrar código de celdas sueltas a un archivo `main.py` organizado con imports arriba, funciones intermedias y bloque `if __name__ == '__main__':` abajo.
+
+---
+
+## Práctica 6.2: VS Code y Terminal
+* **Objetivo:** Abrir una carpeta de proyecto en VS Code, abrir la terminal integrada y ejecutar `python main.py`.
+
+---
+
+## Práctica 6.3: Entornos Virtuales y `requirements.txt`
+* **Objetivo:** Crear un entorno con `python -m venv venv`, activarlo (`venv\Scripts\activate` en Windows / `source venv/bin/activate` en Linux/Mac) e instalar dependencias desde `requirements.txt`.
+
+---
+
+## Práctica 6.4: Control de Versiones con Git y GitHub
+* **Objetivo:** Inicializar repositorio con `git init`, crear `.gitignore`, preparar cambios con `git add .` y realizar commit con `git commit -m "feat: SAMI local modular"`.
+
+---
+
+## Práctica 6.5: Depuración Interactiva con Breakpoints
+* **Objetivo:** Colocar un breakpoint en VS Code, iniciar depuración con `F5`, inspeccionar variables en el panel lateral y avanzar paso a paso con `F10`.
+
+---
+
+## Proyecto B6: SAMI-Local
+* **Objetivo:** Proyecto local completamente estructurado en disco con su carpeta `venv`, archivo `requirements.txt`, repositorio Git inicializado y ejecución depurada.
+
+---
+
+# BLOQUE 7: PYTHON + IA
+
+## Práctica 7.1: Formulación de Plan y Contexto para IA
+* **Objetivo:** Escribir una especificación técnica clara (entradas, salidas, tipos y casos de error) antes de solicitar código a un asistente.
+
+---
+
+## Práctica 7.2: Auditoría Crítica de Código Generado
+* **Objetivo:** Tomar una función sugerida por IA, analizar línea a línea su lógica y detectar posibles alucinaciones o ineficiencias antes de integrarla.
+
+---
+
+## Práctica 7.3: Depuración Guiada de Tracebacks con IA
+* **Objetivo:** Proporcionar a la IA un código con fallo y el Traceback de la consola para obtener y entender la corrección exacta.
+
+---
+
+## Práctica 7.4: Refactorización y Plan de Validación
+* **Objetivo:** Rediseñar una función para mejorar su legibilidad y ejecutar una batería de pruebas con valores extremos (`None`, cadenas vacías, números negativos).
+
+---
+
+## Práctica 7.5: Defensa Técnica de SAMI Final
+* **Objetivo:** Presentación oral donde el alumno explica su proyecto ante el formador justificando su arquitectura y demostrando que no ha caído en el "desarrollo zombi".
+
+---
+
+## Proyecto B7: SAMI Final & Documentación
+* **Entregables obligatorios:**
+  1. `sami_final/` (código fuente modular ejecutable en VS Code).
+  2. `registro-ia.md` (diario de prompts, respuestas de IA y correcciones manuales aplicadas).
+  3. `plan-validacion.md` (casos de prueba y resultados obtenidos).
+  4. `README-defensa.md` (justificación arquitectónica del sistema).
+
+---
+
+## Ampliación Opcional: Grafos con Estado en LangGraph
+* **Carácter:** Estrictamente opcional / Avanzado.
+* **Objetivo:** Introducir la orquestación de flujos de IA conversacionales cíclicos mediante nodos, bordes condicionales, memoria persistente por hilos (*checkpointers*) e intervención humana (*human-in-the-loop*).
+
