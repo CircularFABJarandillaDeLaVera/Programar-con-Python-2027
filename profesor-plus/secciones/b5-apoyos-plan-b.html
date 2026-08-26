@@ -1,0 +1,95 @@
+﻿<!doctype html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="source-md" content="plantillas/b5-apoyos-plan-b.md">
+  <title>B5 Apoyos y plan B - Profesor Plus</title>
+  <link rel="stylesheet" href="../../assets/edusdk-design-system/tokens/tokens.css">
+  <link rel="stylesheet" href="../../assets/edusdk-design-system/tokens/semantic-tokens.css">
+  <link rel="stylesheet" href="../../assets/edusdk-design-system/components/components.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../../assets/js/theme-toggle.js" defer></script>
+</head>
+<body>
+  <main class="pp-shell">
+    <header class="cf-topbar cf-topbar--course">
+      <a class="pp-brand" href="../inicio.html" aria-label="Volver a Profesor Plus">
+        <img src="../../assets/branding/logo-circular-fab.png" alt="Circular FAB">
+        <span><span>Circular FAB - Programar con Python en 2027</span><strong>Profesor Plus</strong></span>
+      </a>
+      <nav class="cf-nav cf-nav--horizontal" aria-label="Navegación">
+        <a class="cf-nav__link" href="../../inicio.html">Inicio</a>
+        <a class="cf-nav__link" href="../inicio.html">Profesor Plus</a>
+      </nav>
+      <button class="cf-button cf-button--secondary theme-toggle" type="button" data-theme-toggle aria-label="Activar modo oscuro" aria-pressed="false">
+        <span data-theme-icon aria-hidden="true">&#9790;</span>
+        <span data-theme-label>Modo dark</span>
+      </button>
+    </header>
+
+    <article class="pp-content">
+      <section class="pp-section-hero">
+        <div class="pp-section-hero__top">
+          <span class="cf-chip cf-chip--accent">B5</span>
+          <a class="pp-action pp-action--secondary" href="../inicio.html">Volver a Profesor Plus</a>
+        </div>
+        <h1>B5 Apoyos y plan B</h1>
+        <p>Errores, bloqueos y plan B.</p>
+      </section>
+
+      <section class="pp-panel pp-panel--error">
+<h2>Errores habituales</h2>
+<ul>
+<li>Usar strings de precio antes de convertir a numero.</li>
+<li>Interpretar <code>np.nan</code> como cero.</li>
+<li>Confundir <code>loc</code> con <code>iloc</code>.</li>
+<li>Escribir <code>and</code> u <code>or</code> en filtros Pandas.</li>
+<li>Olvidar <code>browser.close()</code> en Playwright.</li>
+<li>Mezclar <code>got_1.csv</code> con SAMI-Applied.</li>
+<li>Intentar meter textos largos en <code>Table</code> sin envolverlos en <code>Paragraph</code>.</li>
+<li>Llamar a <code>build()</code> antes de completar la <code>story</code>.</li>
+<li>Usar Canvas como si fuera obligatorio.</li>
+</ul>
+</section>
+
+      <section class="pp-panel pp-panel--default">
+<h2>Alumnos bloqueados</h2>
+<ul>
+<li>Dar un CSV de tres filas.</li>
+<li>Pedir una sola consulta <code>df.head()</code>.</li>
+<li>Pasar despues a <code>set_index</code>.</li>
+<li>Hacer un filtro con una condicion antes de pasar a dos.</li>
+</ul>
+</section>
+
+      <section class="pp-panel pp-panel--default">
+<h2>Alumnos rápidos</h2>
+<ul>
+<li>Anadir otra categoria de hardware.</li>
+<li>Comparar precio medio antes y despues de filtrar stock.</li>
+<li>Escribir una conclusion ejecutiva de tres lineas.</li>
+<li>Anadir un descuento condicional a la factura antes de calcular el IVA.</li>
+</ul>
+</section>
+
+      <section class="pp-panel pp-panel--planb">
+<h2>Plan B</h2>
+<ul>
+<li>Si Playwright no esta disponible, usar datos mock de hardware.</li>
+<li>Si el CSV falla, comprobar carpeta actual y nombre exacto.</li>
+<li>Si ReportLab no esta instalado, comprobar el entorno y repetir la ejecucion tras instalar la dependencia indicada por el profesor.</li>
+<li>Si el PDF no aparece, comprobar carpeta actual, nombre de salida y llamada final a <code>doc.build(story)</code>.</li>
+<li>Si el logo no aparece, generar el PDF sin logo y revisar despues la ruta relativa del asset.</li>
+</ul>
+</section>
+
+      <nav class="pp-pager" aria-label="Navegación de secciones Profesor Plus">
+        <div class="pp-pager__group"><a class="pp-action pp-action--secondary" href="b5-web-e-informes.html">Anterior: B5 Web/Informes</a></div>
+        <a class="pp-action pp-action--primary" href="../inicio.html">Volver a Profesor Plus</a>
+        <div class="pp-pager__group"><a class="pp-action pp-action--secondary" href="b6-guion-entorno.html">Siguiente: B6 Guion</a></div>
+      </nav>
+    </article>
+  </main>
+</body>
+</html>

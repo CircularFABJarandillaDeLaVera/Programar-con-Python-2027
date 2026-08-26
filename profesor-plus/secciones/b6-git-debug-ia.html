@@ -1,0 +1,85 @@
+﻿<!doctype html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="source-md" content="plantillas/b6-git-debug-ia.md">
+  <title>B6 Git, debug e IA - Profesor Plus</title>
+  <link rel="stylesheet" href="../../assets/edusdk-design-system/tokens/tokens.css">
+  <link rel="stylesheet" href="../../assets/edusdk-design-system/tokens/semantic-tokens.css">
+  <link rel="stylesheet" href="../../assets/edusdk-design-system/components/components.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../../assets/js/theme-toggle.js" defer></script>
+</head>
+<body>
+  <main class="pp-shell">
+    <header class="cf-topbar cf-topbar--course">
+      <a class="pp-brand" href="../inicio.html" aria-label="Volver a Profesor Plus">
+        <img src="../../assets/branding/logo-circular-fab.png" alt="Circular FAB">
+        <span><span>Circular FAB - Programar con Python en 2027</span><strong>Profesor Plus</strong></span>
+      </a>
+      <nav class="cf-nav cf-nav--horizontal" aria-label="Navegación">
+        <a class="cf-nav__link" href="../../inicio.html">Inicio</a>
+        <a class="cf-nav__link" href="../inicio.html">Profesor Plus</a>
+      </nav>
+      <button class="cf-button cf-button--secondary theme-toggle" type="button" data-theme-toggle aria-label="Activar modo oscuro" aria-pressed="false">
+        <span data-theme-icon aria-hidden="true">&#9790;</span>
+        <span data-theme-label>Modo dark</span>
+      </button>
+    </header>
+
+    <article class="pp-content">
+      <section class="pp-section-hero">
+        <div class="pp-section-hero__top">
+          <span class="cf-chip cf-chip--accent">B6</span>
+          <a class="pp-action pp-action--secondary" href="../inicio.html">Volver a Profesor Plus</a>
+        </div>
+        <h1>B6 Git, debug e IA</h1>
+        <p>Versionado, trazas y asistencia controlada.</p>
+      </section>
+
+      <section class="pp-panel pp-panel--default">
+<h2>Git local</h2>
+<p class="pp-label">Flujo que debe entenderse:</p>
+<pre class="pp-code"><code class="language-text">cambios -&gt; git status -&gt; git add -&gt; git commit</code></pre>
+</section>
+
+      <section class="pp-panel pp-panel--default">
+<h2>GitHub</h2>
+<p class="pp-label">Mapa conceptual:</p>
+<pre class="pp-code"><code class="language-text">repositorio local -&gt; remote -&gt; push/pull</code></pre>
+<p>Autenticacion y remotos detallados quedan como laguna tecnica.</p>
+</section>
+
+      <section class="pp-panel pp-panel--default">
+<h2>Traceback</h2>
+<p class="pp-label">Leer:</p>
+<ol>
+<li>ultima linea significativa;</li>
+<li>tipo de error;</li>
+<li>archivo;</li>
+<li>linea;</li>
+<li>dato que lo provoca.</li>
+</ol>
+</section>
+
+      <section class="pp-panel pp-panel--default">
+<h2>Breakpoint</h2>
+<p>Pedir al alumno que escriba una hipotesis antes de pausar.</p>
+</section>
+
+      <section class="pp-panel pp-panel--default">
+<h2>IA controlada</h2>
+<p>Usos permitidos: explicar codigo, cambio pequeno, funcion sencilla, localizar error o revisar propuesta.</p>
+<p>Regla: no aceptar nada sin leer, probar y validar.</p>
+</section>
+
+      <nav class="pp-pager" aria-label="Navegación de secciones Profesor Plus">
+        <div class="pp-pager__group"><a class="pp-action pp-action--secondary" href="b6-preparacion-aula.html">Anterior: B6 Aula</a></div>
+        <a class="pp-action pp-action--primary" href="../inicio.html">Volver a Profesor Plus</a>
+        <div class="pp-pager__group"><a class="pp-action pp-action--secondary" href="b6-apoyos-plan-b.html">Siguiente: B6 Apoyos</a></div>
+      </nav>
+    </article>
+  </main>
+</body>
+</html>

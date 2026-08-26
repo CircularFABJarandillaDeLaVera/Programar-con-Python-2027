@@ -1,78 +1,237 @@
-﻿{
-  "version": "1.1",
-  "descripcion": "Plantilla reutilizable Profesor Plus para EduSDK",
-  "plantillas": [
+{
+  "version": "2.0",
+  "descripcion": "Catalogo Profesor Plus para Programar con Python en 2027. Markdown como fuente interna; HTML como experiencia docente navegable.",
+  "secciones": [
     {
       "id": "guion-completo",
       "titulo": "Guion completo",
-      "descripcion": "Estructura para dirigir la clase, narrar la sesion y coordinar transiciones.",
-      "icon": "../assets/icons/guias.svg",
-      "iconAlt": "Guia",
-      "file": "plantillas/guion-completo.md",
-      "category": "guiones"
+      "bloque": "B1",
+      "sourceMd": "plantillas/guion-completo.md",
+      "html": "secciones/guion-completo.html"
     },
     {
       "id": "frases-clave",
       "titulo": "Frases clave",
-      "descripcion": "Frases de apertura, participacion, reconduccion y cierre.",
-      "icon": "../assets/icons/recursos.svg",
-      "iconAlt": "Comunicacion",
-      "file": "plantillas/frases-clave.md",
-      "category": "frases"
+      "bloque": "B1",
+      "sourceMd": "plantillas/frases-clave.md",
+      "html": "secciones/frases-clave.html"
     },
     {
       "id": "preguntas-para-la-clase",
       "titulo": "Preguntas para la clase",
-      "descripcion": "Preguntas activadoras, comparativas, de aplicacion y de examen.",
-      "icon": "../assets/icons/test.svg",
-      "iconAlt": "Preguntas",
-      "file": "plantillas/preguntas-para-la-clase.md",
-      "category": "preguntas"
+      "bloque": "B1",
+      "sourceMd": "plantillas/preguntas-para-la-clase.md",
+      "html": "secciones/preguntas-para-la-clase.html"
     },
     {
       "id": "respuestas-esperadas",
       "titulo": "Respuestas esperadas",
-      "descripcion": "Patrones de respuesta correcta, incompleta e intuitiva.",
-      "icon": "../assets/icons/test.svg",
-      "iconAlt": "Respuestas",
-      "file": "plantillas/respuestas-esperadas.md",
-      "category": "respuestas"
+      "bloque": "B1",
+      "sourceMd": "plantillas/respuestas-esperadas.md",
+      "html": "secciones/respuestas-esperadas.html"
     },
     {
       "id": "errores-que-deben-aparecer",
-      "titulo": "Errores utiles",
-      "descripcion": "Errores provocadores para preguntar, justificar y corregir.",
-      "icon": "../assets/icons/casos.svg",
-      "iconAlt": "Aviso",
-      "file": "plantillas/errores-que-deben-aparecer.md",
-      "category": "errores"
+      "titulo": "Errores útiles",
+      "bloque": "B1",
+      "sourceMd": "plantillas/errores-que-deben-aparecer.md",
+      "html": "secciones/errores-que-deben-aparecer.html"
     },
     {
       "id": "mesa-material",
       "titulo": "Mesa del instructor",
-      "descripcion": "Lista de materiales, dispositivos y preparacion para la sesion.",
-      "icon": "../assets/icons/profesor.svg",
-      "iconAlt": "Profesor",
-      "file": "plantillas/mesa-material.md",
-      "category": "mesa"
+      "bloque": "B1",
+      "sourceMd": "plantillas/mesa-material.md",
+      "html": "secciones/mesa-material.html"
     },
     {
       "id": "dinamicas",
-      "titulo": "Dinamicas",
-      "descripcion": "Diez dinamicas reutilizables para enganchar al grupo.",
-      "icon": "../assets/icons/practicas.svg",
-      "iconAlt": "Actividad",
-      "file": "plantillas/dinamicas.md",
-      "category": "dinamicas"
+      "titulo": "Dinámicas",
+      "bloque": "B1",
+      "sourceMd": "plantillas/dinamicas.md",
+      "html": "secciones/dinamicas.html"
     },
     {
       "id": "adaptaciones",
       "titulo": "Adaptaciones temporales",
-      "descripcion": "Formatos para 150, 90, 60 y 30 minutos.",
-      "icon": "../assets/icons/bloque.svg",
-      "iconAlt": "Tiempo",
-      "file": "plantillas/adaptaciones.md",
-      "category": "adaptaciones"
+      "bloque": "B1",
+      "sourceMd": "plantillas/adaptaciones.md",
+      "html": "secciones/adaptaciones.html"
+    },
+    {
+      "id": "b2-guion-estructuras",
+      "titulo": "B2 Guion de estructuras",
+      "bloque": "B2",
+      "sourceMd": "plantillas/b2-guion-estructuras.md",
+      "html": "secciones/b2-guion-estructuras.html"
+    },
+    {
+      "id": "b2-errores-habituales",
+      "titulo": "B2 Errores habituales",
+      "bloque": "B2",
+      "sourceMd": "plantillas/b2-errores-habituales.md",
+      "html": "secciones/b2-errores-habituales.html"
+    },
+    {
+      "id": "b2-preguntas-y-respuestas",
+      "titulo": "B2 Preguntas y respuestas",
+      "bloque": "B2",
+      "sourceMd": "plantillas/b2-preguntas-y-respuestas.md",
+      "html": "secciones/b2-preguntas-y-respuestas.html"
+    },
+    {
+      "id": "b2-ampliaciones-y-plan-b",
+      "titulo": "B2 Ampliaciones y plan B",
+      "bloque": "B2",
+      "sourceMd": "plantillas/b2-ampliaciones-y-plan-b.md",
+      "html": "secciones/b2-ampliaciones-y-plan-b.html"
+    },
+    {
+      "id": "b3-guion-modularidad",
+      "titulo": "B3 Guion de modularidad",
+      "bloque": "B3",
+      "sourceMd": "plantillas/b3-guion-modularidad.md",
+      "html": "secciones/b3-guion-modularidad.html"
+    },
+    {
+      "id": "b3-errores-habituales",
+      "titulo": "B3 Errores habituales",
+      "bloque": "B3",
+      "sourceMd": "plantillas/b3-errores-habituales.md",
+      "html": "secciones/b3-errores-habituales.html"
+    },
+    {
+      "id": "b3-preguntas-y-respuestas",
+      "titulo": "B3 Preguntas y respuestas",
+      "bloque": "B3",
+      "sourceMd": "plantillas/b3-preguntas-y-respuestas.md",
+      "html": "secciones/b3-preguntas-y-respuestas.html"
+    },
+    {
+      "id": "b3-ampliaciones-y-plan-b",
+      "titulo": "B3 Ampliaciones y plan B",
+      "bloque": "B3",
+      "sourceMd": "plantillas/b3-ampliaciones-y-plan-b.md",
+      "html": "secciones/b3-ampliaciones-y-plan-b.html"
+    },
+    {
+      "id": "b4-guion-poo",
+      "titulo": "B4 Guion POO",
+      "bloque": "B4",
+      "sourceMd": "plantillas/b4-guion-poo.md",
+      "html": "secciones/b4-guion-poo.html"
+    },
+    {
+      "id": "b4-errores-habituales",
+      "titulo": "B4 Errores habituales",
+      "bloque": "B4",
+      "sourceMd": "plantillas/b4-errores-habituales.md",
+      "html": "secciones/b4-errores-habituales.html"
+    },
+    {
+      "id": "b4-preguntas-y-respuestas",
+      "titulo": "B4 Preguntas y respuestas",
+      "bloque": "B4",
+      "sourceMd": "plantillas/b4-preguntas-y-respuestas.md",
+      "html": "secciones/b4-preguntas-y-respuestas.html"
+    },
+    {
+      "id": "b4-ampliaciones-y-plan-b",
+      "titulo": "B4 Apoyos y plan B",
+      "bloque": "B4",
+      "sourceMd": "plantillas/b4-ampliaciones-y-plan-b.md",
+      "html": "secciones/b4-ampliaciones-y-plan-b.html"
+    },
+    {
+      "id": "b5-guion-aplicado",
+      "titulo": "B5 Guion aplicado",
+      "bloque": "B5",
+      "sourceMd": "plantillas/b5-guion-aplicado.md",
+      "html": "secciones/b5-guion-aplicado.html"
+    },
+    {
+      "id": "b5-numpy-pandas",
+      "titulo": "B5 NumPy/Pandas",
+      "bloque": "B5",
+      "sourceMd": "plantillas/b5-numpy-pandas.md",
+      "html": "secciones/b5-numpy-pandas.html"
+    },
+    {
+      "id": "b5-web-e-informes",
+      "titulo": "B5 Web e informes",
+      "bloque": "B5",
+      "sourceMd": "plantillas/b5-web-e-informes.md",
+      "html": "secciones/b5-web-e-informes.html"
+    },
+    {
+      "id": "b5-apoyos-plan-b",
+      "titulo": "B5 Apoyos y plan B",
+      "bloque": "B5",
+      "sourceMd": "plantillas/b5-apoyos-plan-b.md",
+      "html": "secciones/b5-apoyos-plan-b.html"
+    },
+    {
+      "id": "b6-guion-entorno",
+      "titulo": "B6 Guion de entorno",
+      "bloque": "B6",
+      "sourceMd": "plantillas/b6-guion-entorno.md",
+      "html": "secciones/b6-guion-entorno.html"
+    },
+    {
+      "id": "b6-preparacion-aula",
+      "titulo": "B6 Preparación de aula",
+      "bloque": "B6",
+      "sourceMd": "plantillas/b6-preparacion-aula.md",
+      "html": "secciones/b6-preparacion-aula.html"
+    },
+    {
+      "id": "b6-git-debug-ia",
+      "titulo": "B6 Git, debug e IA",
+      "bloque": "B6",
+      "sourceMd": "plantillas/b6-git-debug-ia.md",
+      "html": "secciones/b6-git-debug-ia.html"
+    },
+    {
+      "id": "b6-apoyos-plan-b",
+      "titulo": "B6 Apoyos y plan B",
+      "bloque": "B6",
+      "sourceMd": "plantillas/b6-apoyos-plan-b.md",
+      "html": "secciones/b6-apoyos-plan-b.html"
+    },
+    {
+      "id": "b7-metodologia-antizombi",
+      "titulo": "B7 Metodología antizombi",
+      "bloque": "B7",
+      "sourceMd": "plantillas/b7-metodologia-antizombi.md",
+      "html": "secciones/b7-metodologia-antizombi.html"
+    },
+    {
+      "id": "b7-contexto-y-prompts",
+      "titulo": "B7 Contexto y prompts",
+      "bloque": "B7",
+      "sourceMd": "plantillas/b7-contexto-y-prompts.md",
+      "html": "secciones/b7-contexto-y-prompts.html"
+    },
+    {
+      "id": "b7-auditoria-defensa",
+      "titulo": "B7 Auditoría y defensa",
+      "bloque": "B7",
+      "sourceMd": "plantillas/b7-auditoria-defensa.md",
+      "html": "secciones/b7-auditoria-defensa.html"
+    },
+    {
+      "id": "b7-planes-b",
+      "titulo": "B7 Planes B",
+      "bloque": "B7",
+      "sourceMd": "plantillas/b7-planes-b.md",
+      "html": "secciones/b7-planes-b.html"
+    },
+    {
+      "id": "lab-python-en-accion",
+      "titulo": "Lab Python en Acción",
+      "bloque": "Lab opcional",
+      "sourceMd": "plantillas/lab-python-en-accion.md",
+      "html": "secciones/lab-python-en-accion.html"
     }
   ],
   "pantalla": {
@@ -95,5 +254,3 @@
     }
   }
 }
-
-

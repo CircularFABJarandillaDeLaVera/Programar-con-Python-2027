@@ -1,0 +1,99 @@
+﻿<!doctype html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="source-md" content="plantillas/b4-guion-poo.md">
+  <title>B4 Guion POO - Profesor Plus</title>
+  <link rel="stylesheet" href="../../assets/edusdk-design-system/tokens/tokens.css">
+  <link rel="stylesheet" href="../../assets/edusdk-design-system/tokens/semantic-tokens.css">
+  <link rel="stylesheet" href="../../assets/edusdk-design-system/components/components.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../../assets/js/theme-toggle.js" defer></script>
+</head>
+<body>
+  <main class="pp-shell">
+    <header class="cf-topbar cf-topbar--course">
+      <a class="pp-brand" href="../inicio.html" aria-label="Volver a Profesor Plus">
+        <img src="../../assets/branding/logo-circular-fab.png" alt="Circular FAB">
+        <span><span>Circular FAB - Programar con Python en 2027</span><strong>Profesor Plus</strong></span>
+      </a>
+      <nav class="cf-nav cf-nav--horizontal" aria-label="Navegación">
+        <a class="cf-nav__link" href="../../inicio.html">Inicio</a>
+        <a class="cf-nav__link" href="../inicio.html">Profesor Plus</a>
+      </nav>
+      <button class="cf-button cf-button--secondary theme-toggle" type="button" data-theme-toggle aria-label="Activar modo oscuro" aria-pressed="false">
+        <span data-theme-icon aria-hidden="true">&#9790;</span>
+        <span data-theme-label>Modo dark</span>
+      </button>
+    </header>
+
+    <article class="pp-content">
+      <section class="pp-section-hero">
+        <div class="pp-section-hero__top">
+          <span class="cf-chip cf-chip--accent">B4</span>
+          <a class="pp-action pp-action--secondary" href="../inicio.html">Volver a Profesor Plus</a>
+        </div>
+        <h1>B4 Guion POO</h1>
+        <p>De datos y funciones a objetos.</p>
+      </section>
+
+      <section class="pp-panel pp-panel--hint">
+<h2>Secuencia recomendada</h2>
+<ol>
+<li>Mostrar un producto como diccionario.</li>
+<li>Separar funciones que trabajan sobre ese diccionario.</li>
+<li>Preguntar que ocurre cuando hay muchos productos y reglas repetidas.</li>
+<li>Crear <code>class Producto</code>.</li>
+<li>Instanciar dos productos y comparar su estado.</li>
+<li>Anadir metodos con <code>self</code>.</li>
+<li>Introducir <code>__init__</code> para evitar inicializacion repetida.</li>
+<li>Encapsular precio con validacion simple.</li>
+<li>Componer <code>Producto</code> con <code>AuditoriaMercado</code>.</li>
+<li>Crear <code>ProductoHardware</code> y <code>ProductoLicencia</code> con herencia y <code>super()</code>.</li>
+<li>Sobrescribir un metodo y observar polimorfismo.</li>
+<li>Conectar todo con SAMI-OOP.</li>
+</ol>
+</section>
+
+      <section class="pp-panel pp-panel--code">
+<h2>Demostracion base</h2>
+<pre class="pp-code"><code class="language-python">class Producto:
+    def __init__(self, nombre, precio):
+        self.nombre = nombre
+        self.precio = precio
+
+    def resumen(self):
+        return f&quot;{self.nombre}: {self.precio} euros&quot;
+
+
+teclado = Producto(&quot;Teclado&quot;, 29.90)
+raton = Producto(&quot;Raton&quot;, 14.50)
+
+print(teclado.resumen())
+print(raton.resumen())</code></pre>
+</section>
+
+      <section class="pp-panel pp-panel--hint">
+<h2>Ritmo de aula</h2>
+<ul>
+<li>Explicacion breve: una clase agrupa datos y comportamiento.</li>
+<li>Codigo minimo: una clase con dos atributos y un metodo.</li>
+<li>Predecir: que imprimen dos instancias distintas.</li>
+<li>Ejecutar: observar que cada objeto conserva su propio estado.</li>
+<li>Modificar: cambiar un precio y comprobar que no cambia el otro.</li>
+<li>Error util: quitar <code>self</code> en un metodo.</li>
+<li>Mini-reto: anadir un metodo <code>aplicar_descuento</code>.</li>
+<li>Feedback: justificar si el metodo pertenece al objeto o a una funcion externa.</li>
+</ul>
+</section>
+
+      <nav class="pp-pager" aria-label="Navegación de secciones Profesor Plus">
+        <div class="pp-pager__group"><a class="pp-action pp-action--secondary" href="b3-ampliaciones-y-plan-b.html">Anterior: B3 Apoyos</a></div>
+        <a class="pp-action pp-action--primary" href="../inicio.html">Volver a Profesor Plus</a>
+        <div class="pp-pager__group"><a class="pp-action pp-action--secondary" href="b4-errores-habituales.html">Siguiente: B4 Errores</a></div>
+      </nav>
+    </article>
+  </main>
+</body>
+</html>

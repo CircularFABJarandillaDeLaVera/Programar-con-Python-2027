@@ -1,0 +1,84 @@
+﻿<!doctype html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="source-md" content="plantillas/b5-numpy-pandas.md">
+  <title>B5 NumPy/Pandas - Profesor Plus</title>
+  <link rel="stylesheet" href="../../assets/edusdk-design-system/tokens/tokens.css">
+  <link rel="stylesheet" href="../../assets/edusdk-design-system/tokens/semantic-tokens.css">
+  <link rel="stylesheet" href="../../assets/edusdk-design-system/components/components.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../../assets/js/theme-toggle.js" defer></script>
+</head>
+<body>
+  <main class="pp-shell">
+    <header class="cf-topbar cf-topbar--course">
+      <a class="pp-brand" href="../inicio.html" aria-label="Volver a Profesor Plus">
+        <img src="../../assets/branding/logo-circular-fab.png" alt="Circular FAB">
+        <span><span>Circular FAB - Programar con Python en 2027</span><strong>Profesor Plus</strong></span>
+      </a>
+      <nav class="cf-nav cf-nav--horizontal" aria-label="Navegación">
+        <a class="cf-nav__link" href="../../inicio.html">Inicio</a>
+        <a class="cf-nav__link" href="../inicio.html">Profesor Plus</a>
+      </nav>
+      <button class="cf-button cf-button--secondary theme-toggle" type="button" data-theme-toggle aria-label="Activar modo oscuro" aria-pressed="false">
+        <span data-theme-icon aria-hidden="true">&#9790;</span>
+        <span data-theme-label>Modo dark</span>
+      </button>
+    </header>
+
+    <article class="pp-content">
+      <section class="pp-section-hero">
+        <div class="pp-section-hero__top">
+          <span class="cf-chip cf-chip--accent">B5</span>
+          <a class="pp-action pp-action--secondary" href="../inicio.html">Volver a Profesor Plus</a>
+        </div>
+        <h1>B5 NumPy/Pandas</h1>
+        <p>Arrays, CSV, índices y filtros.</p>
+      </section>
+
+      <section class="pp-panel pp-panel--default">
+<h2>NumPy</h2>
+<p class="pp-label">Demostracion:</p>
+<pre class="pp-code"><code class="language-python">import numpy as np
+
+precios = np.array([79.9, 120.0, 64.5])
+print(precios * 1.21)</code></pre>
+<p class="pp-label">Preguntas:</p>
+<ul>
+<li>Que cambia respecto a una lista normal?</li>
+<li>Que significa <code>np.nan</code>?</li>
+<li>Por que un valor ausente no es cero?</li>
+</ul>
+</section>
+
+      <section class="pp-panel pp-panel--default">
+<h2>Pandas</h2>
+<p class="pp-label">Demostracion:</p>
+<pre class="pp-code"><code class="language-python">import pandas as pd
+
+df = pd.read_csv(&quot;got_1.csv&quot;)
+df = df.set_index(&quot;Personaje&quot;)
+print(df.loc[&quot;Sansa Stark&quot;])
+print(df.iloc[0])</code></pre>
+</section>
+
+      <section class="pp-panel pp-panel--default">
+<h2>Filtros</h2>
+<pre class="pp-code"><code class="language-python">filtro = (df[&quot;Casa&quot;].isin([&quot;Stark&quot;, &quot;Lannister&quot;])) &amp; (df[&quot;Estado&quot;] == &quot;Vivo&quot;)
+print(df[filtro])</code></pre>
+<p class="pp-label">Error habitual:</p>
+<pre class="pp-code"><code class="language-python">df[&quot;Casa&quot;] == &quot;Stark&quot; and df[&quot;Estado&quot;] == &quot;Vivo&quot;</code></pre>
+<p>Feedback: en Pandas se trabaja con Series completas, por eso se usan operadores vectorizados.</p>
+</section>
+
+      <nav class="pp-pager" aria-label="Navegación de secciones Profesor Plus">
+        <div class="pp-pager__group"><a class="pp-action pp-action--secondary" href="b5-guion-aplicado.html">Anterior: B5 Guion</a></div>
+        <a class="pp-action pp-action--primary" href="../inicio.html">Volver a Profesor Plus</a>
+        <div class="pp-pager__group"><a class="pp-action pp-action--secondary" href="b5-web-e-informes.html">Siguiente: B5 Web/Informes</a></div>
+      </nav>
+    </article>
+  </main>
+</body>
+</html>

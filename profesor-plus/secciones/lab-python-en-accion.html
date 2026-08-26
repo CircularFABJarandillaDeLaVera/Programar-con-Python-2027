@@ -1,0 +1,283 @@
+﻿<!doctype html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="source-md" content="plantillas/lab-python-en-accion.md">
+  <title>Lab Python en Acción - Profesor Plus</title>
+  <link rel="stylesheet" href="../../assets/edusdk-design-system/tokens/tokens.css">
+  <link rel="stylesheet" href="../../assets/edusdk-design-system/tokens/semantic-tokens.css">
+  <link rel="stylesheet" href="../../assets/edusdk-design-system/components/components.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../../assets/js/theme-toggle.js" defer></script>
+</head>
+<body>
+  <main class="pp-shell">
+    <header class="cf-topbar cf-topbar--course">
+      <a class="pp-brand" href="../inicio.html" aria-label="Volver a Profesor Plus">
+        <img src="../../assets/branding/logo-circular-fab.png" alt="Circular FAB">
+        <span><span>Circular FAB - Programar con Python en 2027</span><strong>Profesor Plus</strong></span>
+      </a>
+      <nav class="cf-nav cf-nav--horizontal" aria-label="Navegación">
+        <a class="cf-nav__link" href="../../inicio.html">Inicio</a>
+        <a class="cf-nav__link" href="../inicio.html">Profesor Plus</a>
+      </nav>
+      <button class="cf-button cf-button--secondary theme-toggle" type="button" data-theme-toggle aria-label="Activar modo oscuro" aria-pressed="false">
+        <span data-theme-icon aria-hidden="true">&#9790;</span>
+        <span data-theme-label>Modo dark</span>
+      </button>
+    </header>
+
+    <article class="pp-content">
+      <section class="pp-section-hero">
+        <div class="pp-section-hero__top">
+          <span class="cf-chip cf-chip--accent">Lab opcional</span>
+          <a class="pp-action pp-action--secondary" href="../inicio.html">Volver a Profesor Plus</a>
+        </div>
+        <h1>Lab Python en Acción</h1>
+        <p>OpenCV, Pillow, archivos, Excel y Tkinter.</p>
+      </section>
+
+      <section class="pp-panel pp-panel--hint">
+<h2>Enfoque</h2>
+<p>Este Lab final opcional no es B8 y no forma parte de la evaluacion obligatoria. Sirve para cerrar el curso con cinco demostraciones cortas:</p>
+<p>VER -&gt; PROBAR -&gt; MODIFICAR -&gt; MINI-RETO</p>
+<p class="pp-label">Mensaje central para el alumnado:</p>
+<p>Ya sabes Python. Ahora mira todo lo que puedes hacer con el.</p>
+</section>
+
+      <section class="pp-panel pp-panel--material">
+<h2>Preparación general</h2>
+<ul>
+<li>Tener Python local funcional.</li>
+<li>Preparar un entorno donde puedan abrirse ventanas de escritorio.</li>
+<li>Instalar solo las librerias necesarias si se van a ejecutar todas las experiencias: <code>opencv-python</code>, <code>Pillow</code> y <code>openpyxl</code>.</li>
+<li>Revisar antes de clase <code>lab-python-en-accion/recursos/requirements-lab.txt</code>.</li>
+<li>No tocar SAMI ni presentar el Lab como nuevo bloque.</li>
+<li>No plantear notas, test ni microevaluaciones obligatorias.</li>
+</ul>
+</section>
+
+      <section class="pp-panel pp-panel--default">
+<h2>OpenCV</h2>
+<p class="pp-label">Preparacion:</p>
+<ul>
+<li>Comprobar webcam y permisos de camara.</li>
+<li>Probar <code>webcam_gris.py</code>.</li>
+<li>Confirmar que la ventana cambia con <code>1</code>, <code>2</code>, <code>3</code> y <code>4</code>.</li>
+<li>Confirmar que <code>s</code> guarda <code>captura_opencv.png</code>.</li>
+<li>Confirmar que se sale con <code>q</code> y se cierran camara y ventanas.</li>
+</ul>
+<p class="pp-label">Explicacion sencilla:</p>
+<p>Python abre la camara, lee muchas imagenes por segundo y deja elegir como verlas: normal, en gris, desenfocadas o solo con bordes. Tambien puede guardar una captura de lo que se esta viendo.</p>
+<p class="pp-label">Que demostrar:</p>
+<ul>
+<li><code>VideoCapture(0)</code> abre la webcam.</li>
+<li><code>read()</code> lee un frame.</li>
+<li><code>cvtColor()</code> transforma el frame a escala de grises.</li>
+<li><code>GaussianBlur()</code> suaviza la imagen mezclando pixeles vecinos.</li>
+<li><code>Canny()</code> detecta bordes a partir de una imagen gris suavizada.</li>
+<li><code>imshow()</code> muestra el modo activo.</li>
+<li><code>waitKey()</code> escucha las teclas de control.</li>
+<li><code>imwrite()</code> guarda la captura mostrada.</li>
+<li><code>release()</code> y <code>destroyAllWindows()</code> cierran recursos.</li>
+</ul>
+<p class="pp-label">Teclas:</p>
+<ul>
+<li><code>1</code> NORMAL: muestra el video original.</li>
+<li><code>2</code> GRIS: simplifica la imagen quitando color.</li>
+<li><code>3</code> BLUR: desenfoca detalles con <code>GaussianBlur</code>.</li>
+<li><code>4</code> BORDES: aplica gris, reduccion de ruido y <code>Canny</code>.</li>
+<li><code>S</code> CAPTURA: guarda el resultado visible.</li>
+<li><code>Q</code> SALIR: termina el bucle y libera recursos.</li>
+</ul>
+<p class="pp-label">Preguntas previsibles:</p>
+<ul>
+<li>&quot;¿Me esta grabando?&quot; No, el script no guarda video; solo muestra frames.</li>
+<li>&quot;¿Que guarda la tecla S?&quot; Guarda una imagen fija del modo activo.</li>
+<li>&quot;¿Por que no cambian las teclas?&quot; La ventana de video debe estar activa, no solo la terminal.</li>
+<li>&quot;¿Por que no sale mi camara?&quot; Puede estar ocupada, sin permisos o en otro indice.</li>
+</ul>
+<p class="pp-label">Errores y diagnostico:</p>
+<ul>
+<li>Si <code>read()</code> falla, cerrar apps de videollamada.</li>
+<li>Revisar permisos del sistema.</li>
+<li>Probar <code>VideoCapture(1)</code>.</li>
+<li>Si la ventana queda colgada, comprobar que el flujo llega a <code>destroyAllWindows()</code>.</li>
+<li>Si <code>Canny</code> muestra demasiados o pocos bordes, ajustar umbrales como mini-reto.</li>
+</ul>
+<p class="pp-label">Plan B:</p>
+<ul>
+<li>Demo desde el equipo del profesor.</li>
+<li>Lectura guiada del codigo si no hay webcam disponible.</li>
+<li>Probar con otra camara o cambiar temporalmente a modo normal para confirmar que la captura base funciona.</li>
+</ul>
+</section>
+
+      <section class="pp-panel pp-panel--default">
+<h2>Pillow</h2>
+<p class="pp-label">Preparacion:</p>
+<ul>
+<li>Confirmar que existe <code>lab-python-en-accion/recursos/assets/foto_original.ppm</code>.</li>
+<li>Probar <code>editar_foto.py</code>.</li>
+<li>Abrir <code>foto_editada.jpg</code>.</li>
+</ul>
+<p class="pp-label">Explicacion sencilla:</p>
+<p>Python abre una imagen de prueba, la cambia paso a paso y guarda una copia nueva.</p>
+<p class="pp-label">Que demostrar:</p>
+<ul>
+<li><code>Image.open()</code> carga.</li>
+<li><code>resize()</code>, <code>crop()</code>, <code>rotate()</code> cambian geometria.</li>
+<li><code>convert(&quot;L&quot;)</code> pasa a gris.</li>
+<li><code>ImageFilter.BLUR</code> desenfoca.</li>
+<li><code>save()</code> guarda la salida.</li>
+</ul>
+<p class="pp-label">Preguntas previsibles:</p>
+<ul>
+<li>&quot;¿Estamos tocando el logo?&quot; No. La practica usa una imagen neutra del Lab.</li>
+<li>&quot;¿Se rompe la original?&quot; No, se guarda con otro nombre.</li>
+</ul>
+<p class="pp-label">Errores y diagnostico:</p>
+<ul>
+<li>Si no encuentra la imagen, revisar carpeta y ruta.</li>
+<li>Si Pillow no esta instalado, no se ejecutara el import.</li>
+</ul>
+<p class="pp-label">Plan B:</p>
+<ul>
+<li>Usar la imagen neutra incluida.</li>
+<li>Reducir la practica a abrir, convertir a gris y guardar.</li>
+</ul>
+</section>
+
+      <section class="pp-panel pp-panel--default">
+<h2>Automatizacion</h2>
+<p class="pp-label">Preparacion:</p>
+<ul>
+<li>Revisar la carpeta <code>lab_archivos_prueba</code>.</li>
+<li>Confirmar que contiene solo archivos falsos.</li>
+<li>Explicar que nunca se usa <code>Downloads</code>, <code>Documentos</code> ni <code>Escritorio</code>.</li>
+</ul>
+<p class="pp-label">Explicacion sencilla:</p>
+<p>Python mira la extension de cada archivo falso y lo coloca en la carpeta de categoria adecuada.</p>
+<p class="pp-label">Que demostrar:</p>
+<ul>
+<li><code>Path</code> representa la carpeta.</li>
+<li><code>iterdir()</code> recorre archivos.</li>
+<li><code>is_file()</code> evita mover carpetas.</li>
+<li><code>suffix</code> decide la categoria.</li>
+<li><code>mkdir()</code> crea destinos.</li>
+<li><code>shutil.move()</code> mueve solo dentro del laboratorio.</li>
+</ul>
+<p class="pp-label">Preguntas previsibles:</p>
+<ul>
+<li>&quot;¿Puedo probarlo con mis descargas?&quot; No en esta practica.</li>
+<li>&quot;¿Que pasa con <code>.csv</code>?&quot; Irá a <code>Otros</code> salvo que se anada al diccionario.</li>
+</ul>
+<p class="pp-label">Errores y diagnostico:</p>
+<ul>
+<li>Si no mueve nada, revisar que los archivos sigan en la raiz de <code>lab_archivos_prueba</code>.</li>
+<li>Si ya se ejecuto una vez, los archivos estaran dentro de subcarpetas.</li>
+</ul>
+<p class="pp-label">Plan B:</p>
+<ul>
+<li>Cambiar <code>MOVER_ARCHIVOS = False</code> para simular.</li>
+<li>Volver a colocar archivos falsos en la raiz de la carpeta de pruebas.</li>
+</ul>
+</section>
+
+      <section class="pp-panel pp-panel--default">
+<h2>OpenPyXL</h2>
+<p class="pp-label">Preparacion:</p>
+<ul>
+<li>Instalar <code>openpyxl</code>.</li>
+<li>Cerrar <code>ventas_lab.xlsx</code> si ya existe y esta abierto.</li>
+<li>Probar <code>crear_excel.py</code>.</li>
+</ul>
+<p class="pp-label">Explicacion sencilla:</p>
+<p>Python escribe una hoja Excel completa: datos, formulas, colores y texto en negrita.</p>
+<p class="pp-label">Que demostrar:</p>
+<ul>
+<li><code>Workbook()</code> crea el libro.</li>
+<li><code>append()</code> anade filas.</li>
+<li>Las formulas se escriben como texto de Excel.</li>
+<li><code>Font</code> cambia tipografia.</li>
+<li><code>PatternFill</code> aplica color.</li>
+<li><code>iter_rows()</code> recorre rangos.</li>
+<li><code>save()</code> guarda.</li>
+</ul>
+<p class="pp-label">Preguntas previsibles:</p>
+<ul>
+<li>&quot;¿Python calcula la formula?&quot; Python escribe la formula; Excel la calcula al abrir.</li>
+<li>&quot;¿Por que no guarda?&quot; El archivo puede estar abierto.</li>
+</ul>
+<p class="pp-label">Errores y diagnostico:</p>
+<ul>
+<li>Cerrar Excel.</li>
+<li>Cambiar el nombre de salida.</li>
+<li>Revisar formulas y rangos.</li>
+</ul>
+<p class="pp-label">Plan B:</p>
+<ul>
+<li>Guardar como <code>ventas_lab_2.xlsx</code>.</li>
+<li>Hacer solo datos y formato si las formulas confunden.</li>
+</ul>
+</section>
+
+      <section class="pp-panel pp-panel--default">
+<h2>Tkinter</h2>
+<p class="pp-label">Preparacion:</p>
+<ul>
+<li>Probar que <code>import tkinter</code> funciona.</li>
+<li>Ejecutar <code>mi_app_tkinter.py</code> en un equipo con escritorio.</li>
+</ul>
+<p class="pp-label">Explicacion sencilla:</p>
+<p>Python crea una ventana con una etiqueta, una caja para escribir y un boton que llama a una funcion.</p>
+<p class="pp-label">Que demostrar:</p>
+<ul>
+<li><code>Tk()</code> crea la ventana.</li>
+<li><code>Entry</code> recoge texto.</li>
+<li><code>Button(command=...)</code> ejecuta una funcion.</li>
+<li><code>StringVar</code> actualiza el mensaje.</li>
+<li><code>pack()</code> coloca widgets.</li>
+<li><code>mainloop()</code> mantiene la app viva.</li>
+</ul>
+<p class="pp-label">Preguntas previsibles:</p>
+<ul>
+<li>&quot;¿Por que el programa no termina?&quot; Porque la ventana queda escuchando eventos.</li>
+<li>&quot;¿Por que no abre?&quot; Puede faltar Tcl/Tk o una interfaz grafica local.</li>
+</ul>
+<p class="pp-label">Errores y diagnostico:</p>
+<ul>
+<li>Revisar <code>command=saludar</code>, sin parentesis.</li>
+<li>Probar una ventana minima con <code>tk.Tk()</code>.</li>
+<li>Confirmar que <code>mainloop()</code> esta al final.</li>
+</ul>
+<p class="pp-label">Plan B:</p>
+<ul>
+<li>Usar <code>input()</code> y <code>print()</code> en consola con la misma funcion de saludo.</li>
+</ul>
+</section>
+
+      <section class="pp-panel pp-panel--hint">
+<h2>Cierre</h2>
+<p class="pp-label">Terminar con orientacion, no con nuevas obligaciones:</p>
+<ul>
+<li>Web con Flask o Django.</li>
+<li>IoT con Raspberry Pi o ESP32.</li>
+<li>Ciencia de datos.</li>
+<li>Machine Learning.</li>
+<li>Vision artificial avanzada.</li>
+<li>Automatizacion profesional.</li>
+<li>IA y agentes.</li>
+</ul>
+</section>
+
+      <nav class="pp-pager" aria-label="Navegación de secciones Profesor Plus">
+        <div class="pp-pager__group"><a class="pp-action pp-action--secondary" href="b7-planes-b.html">Anterior: B7 Planes B</a></div>
+        <a class="pp-action pp-action--primary" href="../inicio.html">Volver a Profesor Plus</a>
+        <div class="pp-pager__group"></div>
+      </nav>
+    </article>
+  </main>
+</body>
+</html>

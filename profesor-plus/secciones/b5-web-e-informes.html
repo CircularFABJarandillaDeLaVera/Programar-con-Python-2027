@@ -1,0 +1,108 @@
+﻿<!doctype html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="source-md" content="plantillas/b5-web-e-informes.md">
+  <title>B5 Web e informes - Profesor Plus</title>
+  <link rel="stylesheet" href="../../assets/edusdk-design-system/tokens/tokens.css">
+  <link rel="stylesheet" href="../../assets/edusdk-design-system/tokens/semantic-tokens.css">
+  <link rel="stylesheet" href="../../assets/edusdk-design-system/components/components.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../../assets/js/theme-toggle.js" defer></script>
+</head>
+<body>
+  <main class="pp-shell">
+    <header class="cf-topbar cf-topbar--course">
+      <a class="pp-brand" href="../inicio.html" aria-label="Volver a Profesor Plus">
+        <img src="../../assets/branding/logo-circular-fab.png" alt="Circular FAB">
+        <span><span>Circular FAB - Programar con Python en 2027</span><strong>Profesor Plus</strong></span>
+      </a>
+      <nav class="cf-nav cf-nav--horizontal" aria-label="Navegación">
+        <a class="cf-nav__link" href="../../inicio.html">Inicio</a>
+        <a class="cf-nav__link" href="../inicio.html">Profesor Plus</a>
+      </nav>
+      <button class="cf-button cf-button--secondary theme-toggle" type="button" data-theme-toggle aria-label="Activar modo oscuro" aria-pressed="false">
+        <span data-theme-icon aria-hidden="true">&#9790;</span>
+        <span data-theme-label>Modo dark</span>
+      </button>
+    </header>
+
+    <article class="pp-content">
+      <section class="pp-section-hero">
+        <div class="pp-section-hero__top">
+          <span class="cf-chip cf-chip--accent">B5</span>
+          <a class="pp-action pp-action--secondary" href="../inicio.html">Volver a Profesor Plus</a>
+        </div>
+        <h1>B5 Web e informes</h1>
+        <p>Playwright, parsing y PDFs con ReportLab.</p>
+      </section>
+
+      <section class="pp-panel pp-panel--default">
+<h2>Playwright</h2>
+<p class="pp-label">Usar solo el flujo sincronico respaldado:</p>
+<pre class="pp-code"><code class="language-python">from playwright.sync_api import sync_playwright
+
+with sync_playwright() as p:
+    browser = p.chromium.launch(headless=True)
+    page = browser.new_page()
+    page.goto(&quot;https://playwright.dev/&quot;)
+    print(page.title())
+    browser.close()</code></pre>
+<p>Pregunta clave: donde se liberan los recursos?</p>
+</section>
+
+      <section class="pp-panel pp-panel--default">
+<h2>BeautifulSoup</h2>
+<p>Tratamiento conceptual: parsing de HTML estatico cuando no hace falta controlar navegador.</p>
+<p>No convertir en tutorial de metodos no trazados.</p>
+</section>
+
+      <section class="pp-panel pp-panel--default">
+<h2>ReportLab</h2>
+<p>Tratamiento practico: generacion de PDF con Platypus.</p>
+<p class="pp-label">Problema que resuelve:</p>
+<ul>
+<li>Convertir datos calculados en un documento profesional que se pueda entregar o revisar.</li>
+</ul>
+<p class="pp-label">Platypus:</p>
+<ul>
+<li>Es la capa de alto nivel de ReportLab.</li>
+<li>Permite construir un documento como una secuencia de elementos, sin trabajar con coordenadas fijas.</li>
+</ul>
+<p class="pp-label">Story:</p>
+<ul>
+<li>Es una lista ordenada de elementos del PDF.</li>
+<li>Puede contener <code>Image</code>, <code>Paragraph</code>, <code>Spacer</code> y <code>Table</code>.</li>
+<li>El PDF se genera al llamar a <code>doc.build(story)</code>.</li>
+</ul>
+<p class="pp-label">Factura:</p>
+<ol>
+<li>Resumen.</li>
+<li>Datos de empresa.</li>
+<li>Datos de cliente.</li>
+<li>Tabla de conceptos.</li>
+<li>Base imponible, IVA y total.</li>
+</ol>
+<p class="pp-label">Enfoque obligatorio:</p>
+<pre class="pp-code"><code class="language-python">from reportlab.lib import colors
+from reportlab.lib.pagesizes import A4
+from reportlab.lib.styles import getSampleStyleSheet
+from reportlab.platypus import Image, Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle
+
+styles = getSampleStyleSheet()
+doc = SimpleDocTemplate(&quot;factura_2027_001.pdf&quot;, pagesize=A4)
+story = [Paragraph(&quot;FACTURA&quot;, styles[&quot;Heading1&quot;])]
+doc.build(story)</code></pre>
+<p>Canvas queda como ampliacion no evaluable.</p>
+</section>
+
+      <nav class="pp-pager" aria-label="Navegación de secciones Profesor Plus">
+        <div class="pp-pager__group"><a class="pp-action pp-action--secondary" href="b5-numpy-pandas.html">Anterior: B5 NumPy/Pandas</a></div>
+        <a class="pp-action pp-action--primary" href="../inicio.html">Volver a Profesor Plus</a>
+        <div class="pp-pager__group"><a class="pp-action pp-action--secondary" href="b5-apoyos-plan-b.html">Siguiente: B5 Apoyos</a></div>
+      </nav>
+    </article>
+  </main>
+</body>
+</html>

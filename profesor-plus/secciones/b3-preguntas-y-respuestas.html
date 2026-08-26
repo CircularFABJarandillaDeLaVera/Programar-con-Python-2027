@@ -1,0 +1,74 @@
+﻿<!doctype html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="source-md" content="plantillas/b3-preguntas-y-respuestas.md">
+  <title>B3 Preguntas y respuestas - Profesor Plus</title>
+  <link rel="stylesheet" href="../../assets/edusdk-design-system/tokens/tokens.css">
+  <link rel="stylesheet" href="../../assets/edusdk-design-system/tokens/semantic-tokens.css">
+  <link rel="stylesheet" href="../../assets/edusdk-design-system/components/components.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../../assets/js/theme-toggle.js" defer></script>
+</head>
+<body>
+  <main class="pp-shell">
+    <header class="cf-topbar cf-topbar--course">
+      <a class="pp-brand" href="../inicio.html" aria-label="Volver a Profesor Plus">
+        <img src="../../assets/branding/logo-circular-fab.png" alt="Circular FAB">
+        <span><span>Circular FAB - Programar con Python en 2027</span><strong>Profesor Plus</strong></span>
+      </a>
+      <nav class="cf-nav cf-nav--horizontal" aria-label="Navegación">
+        <a class="cf-nav__link" href="../../inicio.html">Inicio</a>
+        <a class="cf-nav__link" href="../inicio.html">Profesor Plus</a>
+      </nav>
+      <button class="cf-button cf-button--secondary theme-toggle" type="button" data-theme-toggle aria-label="Activar modo oscuro" aria-pressed="false">
+        <span data-theme-icon aria-hidden="true">&#9790;</span>
+        <span data-theme-label>Modo dark</span>
+      </button>
+    </header>
+
+    <article class="pp-content">
+      <section class="pp-section-hero">
+        <div class="pp-section-hero__top">
+          <span class="cf-chip cf-chip--accent">B3</span>
+          <a class="pp-action pp-action--secondary" href="../inicio.html">Volver a Profesor Plus</a>
+        </div>
+        <h1>B3 Preguntas y respuestas</h1>
+        <p>Predicción, excepciones y modularidad.</p>
+      </section>
+
+      <section class="pp-panel pp-panel--question">
+<h2>Preguntas útiles</h2>
+<ul>
+<li>Que devuelve esta funcion?</li>
+<li>Que imprime y que guarda?</li>
+<li>Cual es el parametro y cual es el argumento?</li>
+<li>Que variable es local?</li>
+<li>Que excepcion concreta esperamos?</li>
+<li>Que formato conviene: TXT, JSON o CSV?</li>
+<li>Que archivo debe tener esta responsabilidad?</li>
+</ul>
+</section>
+
+      <section class="pp-panel pp-panel--question">
+<h2>Respuestas esperadas</h2>
+<ul>
+<li><code>return</code> devuelve datos reutilizables.</li>
+<li><code>print()</code> solo muestra en consola.</li>
+<li>Un parametro esta en la firma; un argumento aparece en la llamada.</li>
+<li><code>global</code> solo se usa si la funcion debe modificar una variable exterior.</li>
+<li><code>with open()</code> evita gestionar el cierre manual del archivo.</li>
+<li><code>main.py</code> coordina; los modulos auxiliares calculan o guardan.</li>
+</ul>
+</section>
+
+      <nav class="pp-pager" aria-label="Navegación de secciones Profesor Plus">
+        <div class="pp-pager__group"><a class="pp-action pp-action--secondary" href="b3-errores-habituales.html">Anterior: B3 Errores</a></div>
+        <a class="pp-action pp-action--primary" href="../inicio.html">Volver a Profesor Plus</a>
+        <div class="pp-pager__group"><a class="pp-action pp-action--secondary" href="b3-ampliaciones-y-plan-b.html">Siguiente: B3 Apoyos</a></div>
+      </nav>
+    </article>
+  </main>
+</body>
+</html>

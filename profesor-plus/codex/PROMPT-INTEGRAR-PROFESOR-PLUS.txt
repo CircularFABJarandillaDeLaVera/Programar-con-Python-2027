@@ -14,7 +14,7 @@ Tareas:
 5. Usa iconos SVG existentes de `assets/icons/`; no uses letras placeholder como G, F, R o T.
 6. Manten los Markdown como fuente y renderizalos en el viewer.
 7. Si el Markdown contiene `{{...}}`, muestra la etiqueta `Plantilla reutilizable` y no resuelvas las variables sin datos reales.
-8. AÃ±ade enlaces de retorno claros al portal del curso y a Profesor Plus.
+8. Añade enlaces de retorno claros al portal del curso y a Profesor Plus.
 9. La distribucion del curso debe ser autocontenida: copia assets necesarios, no enlaces al repositorio EduSDK.
 10. Comprueba que el acceso funciona por HTTP y que light/dark no rompe contraste.
 

@@ -1,0 +1,97 @@
+﻿<!doctype html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="source-md" content="plantillas/b4-preguntas-y-respuestas.md">
+  <title>B4 Preguntas y respuestas - Profesor Plus</title>
+  <link rel="stylesheet" href="../../assets/edusdk-design-system/tokens/tokens.css">
+  <link rel="stylesheet" href="../../assets/edusdk-design-system/tokens/semantic-tokens.css">
+  <link rel="stylesheet" href="../../assets/edusdk-design-system/components/components.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../../assets/js/theme-toggle.js" defer></script>
+</head>
+<body>
+  <main class="pp-shell">
+    <header class="cf-topbar cf-topbar--course">
+      <a class="pp-brand" href="../inicio.html" aria-label="Volver a Profesor Plus">
+        <img src="../../assets/branding/logo-circular-fab.png" alt="Circular FAB">
+        <span><span>Circular FAB - Programar con Python en 2027</span><strong>Profesor Plus</strong></span>
+      </a>
+      <nav class="cf-nav cf-nav--horizontal" aria-label="Navegación">
+        <a class="cf-nav__link" href="../../inicio.html">Inicio</a>
+        <a class="cf-nav__link" href="../inicio.html">Profesor Plus</a>
+      </nav>
+      <button class="cf-button cf-button--secondary theme-toggle" type="button" data-theme-toggle aria-label="Activar modo oscuro" aria-pressed="false">
+        <span data-theme-icon aria-hidden="true">&#9790;</span>
+        <span data-theme-label>Modo dark</span>
+      </button>
+    </header>
+
+    <article class="pp-content">
+      <section class="pp-section-hero">
+        <div class="pp-section-hero__top">
+          <span class="cf-chip cf-chip--accent">B4</span>
+          <a class="pp-action pp-action--secondary" href="../inicio.html">Volver a Profesor Plus</a>
+        </div>
+        <h1>B4 Preguntas y respuestas</h1>
+        <p>Instancias, encapsulación y polimorfismo.</p>
+      </section>
+
+      <section class="pp-panel pp-panel--default">
+<h2>Clase y objeto</h2>
+<p><strong>Pregunta:</strong> Si <code>Producto</code> es la clase, que es <code>Producto(&quot;Teclado&quot;, 29.90)</code>?</p>
+<p><strong>Respuesta esperada:</strong> Un objeto o instancia concreta de la clase.</p>
+</section>
+
+      <section class="pp-panel pp-panel--default">
+<h2>self</h2>
+<p><strong>Pregunta:</strong> Por que un metodo necesita <code>self</code>?</p>
+<p><strong>Respuesta esperada:</strong> Para acceder a los datos del objeto que esta ejecutando el metodo.</p>
+</section>
+
+      <section class="pp-panel pp-panel--default">
+<h2>__init__</h2>
+<p><strong>Pregunta:</strong> Cuando se ejecuta <code>__init__</code>?</p>
+<p><strong>Respuesta esperada:</strong> Al crear una nueva instancia.</p>
+</section>
+
+      <section class="pp-panel pp-panel--default">
+<h2>Encapsulacion</h2>
+<p><strong>Pregunta:</strong> Por que no conviene cambiar el precio directamente desde cualquier lugar?</p>
+<p><strong>Respuesta esperada:</strong> Porque puede saltarse validaciones y dejar el objeto en un estado incorrecto.</p>
+</section>
+
+      <section class="pp-panel pp-panel--default">
+<h2>Composicion</h2>
+<p><strong>Pregunta:</strong> Si un producto tiene una auditoria, que relacion es?</p>
+<p><strong>Respuesta esperada:</strong> Composicion: el producto tiene otro objeto asociado.</p>
+</section>
+
+      <section class="pp-panel pp-panel--default">
+<h2>Herencia</h2>
+<p><strong>Pregunta:</strong> Si <code>ProductoHardware</code> es un tipo de <code>Producto</code>, que relacion es?</p>
+<p><strong>Respuesta esperada:</strong> Herencia: ProductoHardware es un Producto especializado.</p>
+</section>
+
+      <section class="pp-panel pp-panel--default">
+<h2>super()</h2>
+<p><strong>Pregunta:</strong> Para que usamos <code>super()</code>?</p>
+<p><strong>Respuesta esperada:</strong> Para reutilizar la inicializacion o comportamiento de la clase padre.</p>
+</section>
+
+      <section class="pp-panel pp-panel--default">
+<h2>Polimorfismo</h2>
+<p><strong>Pregunta:</strong> Por que puedo llamar a <code>resumen()</code> sobre productos distintos?</p>
+<p><strong>Respuesta esperada:</strong> Porque comparten el mismo metodo aunque cada clase pueda resolverlo a su manera.</p>
+</section>
+
+      <nav class="pp-pager" aria-label="Navegación de secciones Profesor Plus">
+        <div class="pp-pager__group"><a class="pp-action pp-action--secondary" href="b4-errores-habituales.html">Anterior: B4 Errores</a></div>
+        <a class="pp-action pp-action--primary" href="../inicio.html">Volver a Profesor Plus</a>
+        <div class="pp-pager__group"><a class="pp-action pp-action--secondary" href="b4-ampliaciones-y-plan-b.html">Siguiente: B4 Apoyos</a></div>
+      </nav>
+    </article>
+  </main>
+</body>
+</html>

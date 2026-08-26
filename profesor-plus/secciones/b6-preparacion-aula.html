@@ -1,0 +1,82 @@
+﻿<!doctype html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="source-md" content="plantillas/b6-preparacion-aula.md">
+  <title>B6 Preparación de aula - Profesor Plus</title>
+  <link rel="stylesheet" href="../../assets/edusdk-design-system/tokens/tokens.css">
+  <link rel="stylesheet" href="../../assets/edusdk-design-system/tokens/semantic-tokens.css">
+  <link rel="stylesheet" href="../../assets/edusdk-design-system/components/components.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../../assets/js/theme-toggle.js" defer></script>
+</head>
+<body>
+  <main class="pp-shell">
+    <header class="cf-topbar cf-topbar--course">
+      <a class="pp-brand" href="../inicio.html" aria-label="Volver a Profesor Plus">
+        <img src="../../assets/branding/logo-circular-fab.png" alt="Circular FAB">
+        <span><span>Circular FAB - Programar con Python en 2027</span><strong>Profesor Plus</strong></span>
+      </a>
+      <nav class="cf-nav cf-nav--horizontal" aria-label="Navegación">
+        <a class="cf-nav__link" href="../../inicio.html">Inicio</a>
+        <a class="cf-nav__link" href="../inicio.html">Profesor Plus</a>
+      </nav>
+      <button class="cf-button cf-button--secondary theme-toggle" type="button" data-theme-toggle aria-label="Activar modo oscuro" aria-pressed="false">
+        <span data-theme-icon aria-hidden="true">&#9790;</span>
+        <span data-theme-label>Modo dark</span>
+      </button>
+    </header>
+
+    <article class="pp-content">
+      <section class="pp-section-hero">
+        <div class="pp-section-hero__top">
+          <span class="cf-chip cf-chip--accent">B6</span>
+          <a class="pp-action pp-action--secondary" href="../inicio.html">Volver a Profesor Plus</a>
+        </div>
+        <h1>B6 Preparación de aula</h1>
+        <p>Python, VS Code, PATH y venv.</p>
+      </section>
+
+      <section class="pp-panel pp-panel--material">
+<h2>Comprobacion previa</h2>
+<ul>
+<li>Python disponible en los equipos.</li>
+<li>VS Code disponible.</li>
+<li>Extension Python/Jupyter si el aula la usa.</li>
+<li>Terminal integrada funcional.</li>
+<li>Permisos para crear carpetas.</li>
+<li>Acceso a Internet solo si la practica lo requiere.</li>
+</ul>
+</section>
+
+      <section class="pp-panel pp-panel--material">
+<h2>Requisito tecnico / laguna</h2>
+<p>La instalacion fisica de Python, VS Code, PATH y extensiones no esta detallada en las fuentes. Prepararla antes de clase o usar equipos ya configurados.</p>
+</section>
+
+      <section class="pp-panel pp-panel--error">
+<h2>Problemas habituales</h2>
+<ul>
+<li>Python no aparece en terminal.</li>
+<li>VS Code usa otro interprete.</li>
+<li><code>pip</code> instala fuera del entorno.</li>
+<li>No aparece <code>(venv)</code>.</li>
+<li>Rutas absolutas copiadas de otro equipo.</li>
+</ul>
+</section>
+
+      <section class="pp-panel pp-panel--default">
+<h2>Plan rapido</h2>
+<p>Si falla el entorno: trabajar con arbol de carpetas, lectura de tracebacks simulados y protocolo de validacion.</p>
+</section>
+
+      <nav class="pp-pager" aria-label="Navegación de secciones Profesor Plus">
+        <div class="pp-pager__group"><a class="pp-action pp-action--secondary" href="b6-guion-entorno.html">Anterior: B6 Guion</a></div>
+        <a class="pp-action pp-action--primary" href="../inicio.html">Volver a Profesor Plus</a>
+        <div class="pp-pager__group"><a class="pp-action pp-action--secondary" href="b6-git-debug-ia.html">Siguiente: B6 Git/Debug/IA</a></div>
+      </nav>
+    </article>
+  </main>
+</body>
+</html>
