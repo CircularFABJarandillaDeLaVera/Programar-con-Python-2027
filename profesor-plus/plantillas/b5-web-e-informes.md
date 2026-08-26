@@ -25,14 +25,43 @@ No convertir en tutorial de metodos no trazados.
 
 ## ReportLab
 
-Tratamiento conceptual: diseno del informe final.
+Tratamiento practico: generacion de PDF con Platypus.
 
-Secciones recomendadas:
+Problema que resuelve:
+
+- Convertir datos calculados en un documento profesional que se pueda entregar o revisar.
+
+Platypus:
+
+- Es la capa de alto nivel de ReportLab.
+- Permite construir un documento como una secuencia de elementos, sin trabajar con coordenadas fijas.
+
+Story:
+
+- Es una lista ordenada de elementos del PDF.
+- Puede contener `Image`, `Paragraph`, `Spacer` y `Table`.
+- El PDF se genera al llamar a `doc.build(story)`.
+
+Factura:
 
 1. Resumen.
-2. Tabla de precios.
-3. Alertas.
-4. Conclusion.
+2. Datos de empresa.
+3. Datos de cliente.
+4. Tabla de conceptos.
+5. Base imponible, IVA y total.
 
-No desarrollar APIs detalladas si no estan respaldadas.
+Enfoque obligatorio:
 
+```python
+from reportlab.lib import colors
+from reportlab.lib.pagesizes import A4
+from reportlab.lib.styles import getSampleStyleSheet
+from reportlab.platypus import Image, Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle
+
+styles = getSampleStyleSheet()
+doc = SimpleDocTemplate("factura_2027_001.pdf", pagesize=A4)
+story = [Paragraph("FACTURA", styles["Heading1"])]
+doc.build(story)
+```
+
+Canvas queda como ampliacion no evaluable.

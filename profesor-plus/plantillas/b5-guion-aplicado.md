@@ -2,7 +2,7 @@
 
 ## Hilo conductor
 
-DATOS -> PROCESAR -> ANALIZAR -> OBTENER INFORMACION -> AUTOMATIZAR -> RESULTADOS
+DATOS -> CALCULOS -> ESTRUCTURA -> REPORTLAB -> PDF
 
 ## Secuencia
 
@@ -12,8 +12,8 @@ DATOS -> PROCESAR -> ANALIZAR -> OBTENER INFORMACION -> AUTOMATIZAR -> RESULTADO
 4. Pandas: transferir la tecnica a hardware sin mezclar datasets.
 5. Playwright: automatizar carga minima y cerrar navegador.
 6. BeautifulSoup: decidir cuando basta HTML estatico.
-7. ReportLab: disenar informe a nivel conceptual.
-8. SAMI-Applied: producir CSV analizado, resumen y esquema de informe.
+7. ReportLab: construir una factura PDF con Platypus.
+8. SAMI-Applied: producir tabla analizada, resumen y PDF de informe.
 
 ## Dinamica
 
@@ -27,5 +27,14 @@ DATOS -> PROCESAR -> ANALIZAR -> OBTENER INFORMACION -> AUTOMATIZAR -> RESULTADO
 
 ## Cierre
 
-La evidencia debe mostrar datos procesados y una decision explicable.
+La evidencia debe mostrar datos procesados, calculos correctos, PDF generado y una decision explicable.
 
+## Claves para explicar ReportLab
+
+- ReportLab resuelve la salida profesional: pasar de datos a documento.
+- Platypus permite apilar elementos en una `story`.
+- Los datos y calculos se preparan antes de la presentacion.
+- `Paragraph` evita desbordes de texto.
+- `Table` organiza lineas de factura o filas de mercado.
+- `TableStyle` da formato visual a la tabla.
+- `build(story)` crea el archivo PDF final.

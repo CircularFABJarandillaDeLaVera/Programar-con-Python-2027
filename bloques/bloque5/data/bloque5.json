@@ -17,16 +17,16 @@
     "Practicar Pandas con got_1.csv sin mezclarlo con SAMI-Applied.",
     "Automatizar una carga web minima con Playwright y cerrar el navegador.",
     "Distinguir BeautifulSoup de Playwright a nivel conceptual.",
-    "Disenar el resultado de un informe PDF sin inventar APIs no trazadas.",
+    "Generar una factura PDF sencilla con ReportLab usando Platypus.",
     "Evolucionar SAMI-OOP hacia SAMI-Applied con datos de hardware."
   ],
   "slides": [
     {
       "titulo": "Una libreria por necesidad",
       "objetivo": "Evitar aprender librerias como islas y ver un flujo de datos completo.",
-      "guion": "Presenta el hilo: datos -> procesar -> analizar -> obtener informacion -> automatizar -> resultados.",
+      "guion": "Presenta el hilo: datos -> calculos -> estructura -> ReportLab -> PDF.",
       "pregunta": "Que problema resuelve cada libreria en un flujo real?",
-      "ejemplo": "flujo = [\"datos\", \"procesar\", \"analizar\", \"automatizar\", \"informar\"]\nfor paso in flujo:\n    print(paso)",
+      "ejemplo": "flujo = [\"datos\", \"calculos\", \"estructura\", \"reportlab\", \"pdf\"]\nfor paso in flujo:\n    print(paso)",
       "modificar": "Anade una necesidad concreta a cada paso.",
       "predecir": "Que orden debe seguir un informe fiable?",
       "error_util": "Forzar una libreria porque existe, no porque haga falta.",
@@ -130,16 +130,16 @@
       "comprobar": "El alumno no memoriza APIs no respaldadas por las fuentes."
     },
     {
-      "titulo": "ReportLab: informe como diseno",
-      "objetivo": "Preparar un informe PDF a nivel conceptual sin inventar sintaxis no respaldada.",
-      "guion": "Define estructura: portada, resumen, tabla, conclusiones y avisos de datos.",
-      "pregunta": "Que debe contener un informe antes de pensar en la libreria?",
-      "ejemplo": "secciones = [\"resumen\", \"tabla de precios\", \"alertas\", \"conclusion\"]\nfor seccion in secciones:\n    print(seccion)",
-      "modificar": "Ordena las secciones segun utilidad para un cliente.",
-      "predecir": "Que se desborda si una tabla no tiene ancho pensado?",
-      "error_util": "Empezar por coordenadas sin saber que datos se van a mostrar.",
-      "reto": "Dibuja el esquema textual de un informe de mercado.",
-      "comprobar": "El alumno diferencia diseno del informe y API concreta."
+      "titulo": "ReportLab: factura con Platypus",
+      "objetivo": "Generar una factura PDF real desde datos estructurados.",
+      "guion": "Usa el flujo DATOS -> CALCULOS -> ESTRUCTURA -> REPORTLAB -> PDF con SimpleDocTemplate, Paragraph, Image, Table, TableStyle, Spacer, colors, A4 y build().",
+      "pregunta": "Que aporta Platypus frente a colocar elementos por coordenadas?",
+      "ejemplo": "from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer\nfrom reportlab.lib.pagesizes import A4\nfrom reportlab.lib.styles import getSampleStyleSheet\n\nstyles = getSampleStyleSheet()\ndoc = SimpleDocTemplate(\"factura_2027_001.pdf\", pagesize=A4)\nstory = [Paragraph(\"FACTURA\", styles[\"Heading1\"]), Spacer(1, 12)]\ndoc.build(story)",
+      "modificar": "Anade un Paragraph con el cliente.",
+      "predecir": "Que metodo genera fisicamente el PDF?",
+      "error_util": "Meter textos largos en una Table como strings crudos en lugar de Paragraph.",
+      "reto": "Construye una tabla con conceptos, base imponible, IVA y total.",
+      "comprobar": "El alumno genera factura_2027_001.pdf con Platypus."
     },
     {
       "titulo": "SAMI-Applied: datos coherentes",
@@ -168,14 +168,14 @@
     {
       "titulo": "SAMI-Applied: resultado",
       "objetivo": "Producir una evidencia clara sin convertir B5 en proyecto final.",
-      "guion": "Entrega CSV analizado, resumen por consola y esquema de informe.",
+      "guion": "Entrega tabla analizada, resumen por consola y PDF de informe con ReportLab Platypus.",
       "pregunta": "Que evidencia demuestra que el flujo funciono?",
-      "ejemplo": "resultado = {\n    \"ofertas_validas\": 3,\n    \"precio_medio\": 112.5,\n    \"alerta\": \"revisar stock bajo\"\n}\nprint(resultado)",
+      "ejemplo": "resultado = {\n    \"ofertas_validas\": 3,\n    \"precio_medio\": 112.5,\n    \"salida\": \"reporte_final_sami.pdf\"\n}\nprint(resultado)",
       "modificar": "Anade una alerta si el stock total es bajo.",
       "predecir": "Que salida puede revisar una persona sin leer codigo?",
       "error_util": "Ocultar resultados en estructuras internas sin resumen final.",
-      "reto": "Exporta resultados limpios y escribe el esquema del informe.",
-      "comprobar": "Hay evidencia de datos procesados y decision razonada."
+      "reto": "Genera resultados limpios y un PDF de informe.",
+      "comprobar": "Hay evidencia de datos procesados, PDF generado y decision razonada."
     }
   ],
   "flashcards": [
@@ -221,7 +221,7 @@
     ],
     [
       "ReportLab en este bloque es...",
-      "Diseno conceptual de informe, sin APIs no trazadas."
+      "Generacion de PDF con Platypus: story, tablas, parrafos, logo y build()."
     ],
     [
       "SAMI-Applied usa datos de...",
@@ -276,10 +276,10 @@
     },
     {
       "titulo": "Informe de mercado",
-      "situacion": "El equipo tiene tabla limpia, media de precios y alertas.",
+      "situacion": "El equipo tiene tabla limpia, media de precios, alertas y debe generar un PDF con Platypus.",
       "preguntas": [
         "Que secciones debe tener el informe?",
-        "Que parte es conceptual?",
+        "Que elementos van como Paragraph, Image o Table?",
         "Que evidencia se entrega?"
       ]
     }
@@ -385,37 +385,37 @@
       "explicacion": "browser.close() cierra el navegador abierto por el script."
     },
     {
-      "tipo": "playwright-headless",
-      "pregunta": "Con chromium.launch(headless=True), que se espera?",
+      "tipo": "reportlab-image",
+      "pregunta": "Para insertar el logo en la story de Platypus usamos...",
       "opciones": [
-        "Navegador sin ventana visible",
-        "Siempre abre una ventana",
-        "No crea navegador"
+        "Image",
+        "Paragraph",
+        "pd.read_csv()"
       ],
       "correcta": 0,
-      "explicacion": "headless=True ejecuta el navegador en segundo plano."
+      "explicacion": "Image es el Flowable de Platypus para colocar imagenes dentro de la story."
     },
     {
-      "tipo": "beautifulsoup",
-      "pregunta": "BeautifulSoup se presenta aqui principalmente para...",
+      "tipo": "reportlab-table",
+      "pregunta": "Para las lineas de factura conviene partir de...",
       "opciones": [
-        "Parsear HTML estatico de forma conceptual",
-        "Controlar un navegador",
-        "Generar PDFs"
+        "Una lista de diccionarios con descripcion, cantidad y precio",
+        "Un string largo con todos los conceptos",
+        "Un set de precios desordenado"
       ],
       "correcta": 0,
-      "explicacion": "La ingenieria limita BeautifulSoup a parsing estatico conceptual."
+      "explicacion": "La lista de diccionarios conserva el orden y permite calcular subtotales antes de construir la Table."
     },
     {
-      "tipo": "reportlab",
-      "pregunta": "En B5 ReportLab se trabaja como...",
+      "tipo": "reportlab-build",
+      "pregunta": "Que combinacion genera el PDF final con estilos de tabla?",
       "opciones": [
-        "Diseno conceptual de informes PDF",
-        "Tutorial detallado de Canvas y Table",
-        "Sustituto de Pandas"
+        "Table + TableStyle + doc.build(story)",
+        "Guardar un CSV intermedio",
+        "np.array + df.loc + browser.close()"
       ],
       "correcta": 0,
-      "explicacion": "La sintaxis detallada no esta respaldada; se trabaja el diseno del informe."
+      "explicacion": "Table organiza la cuadricula, TableStyle aplica formato y build(story) compila fisicamente el PDF."
     }
   ],
   "proyecto": {
@@ -428,7 +428,7 @@
       "generador_informe.py",
       "main.py"
     ],
-    "evidencia": "CSV de hardware, tabla analizada, resumen por consola y esquema de informe PDF.",
+    "evidencia": "CSV de hardware, tabla analizada, resumen por consola y reporte_final_sami.pdf.",
     "alcance": "Python aplicado con datos de hardware; GOT queda solo como practica didactica de Pandas."
   },
   "mapa_mental_fuente": "recursos/mapa-mental.md"

@@ -6,7 +6,7 @@ Python aplicado y librerias.
 
 ## Flujo
 
-DATOS -> PROCESAR -> ANALIZAR -> OBTENER INFORMACION -> AUTOMATIZAR -> RESULTADOS
+DATOS -> CALCULOS -> ESTRUCTURA -> REPORTLAB -> PDF
 
 ## Ramas
 
@@ -14,8 +14,8 @@ DATOS -> PROCESAR -> ANALIZAR -> OBTENER INFORMACION -> AUTOMATIZAR -> RESULTADO
 - Pandas: CSV, DataFrame, set_index, loc, iloc, isin, drop y rename.
 - Playwright: navegador sincronico, page.goto y browser.close.
 - BeautifulSoup: parsing estatico conceptual.
-- ReportLab: diseno conceptual de informe PDF.
-- SAMI-Applied: precios y disponibilidad de hardware.
+- ReportLab: PDF con Platypus, story, Paragraph, Image, Table, TableStyle y build().
+- SAMI-Applied: precios, disponibilidad de hardware e informe PDF.
 
 ## Idea clave
 
