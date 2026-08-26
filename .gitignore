@@ -18,3 +18,10 @@ Thumbs.db
 # Logs y temporales
 *.log
 *.tmp
+
+# Resultados generados por las practicas
+bloques/bloque5/recursos/practicas/factura_2027_001.pdf
+lab-python-en-accion/recursos/ventas_lab.xlsx
+lab-python-en-accion/recursos/assets/foto_editada.jpg
+lab-python-en-accion/recursos/captura_opencv.png
+**/.~lock.*#

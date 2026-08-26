@@ -22,6 +22,9 @@
     .card h2 { font-size: 1.1rem; line-height: 1.2; margin: 0; }
     .card p { color: var(--cf-color-text-muted); line-height: 1.45; margin: 0; }
     .tools { display: grid; gap: var(--cf-space-4); grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .optional-lab { background: var(--cf-color-surface); border: var(--cf-border-width) solid var(--cf-color-border); border-radius: var(--cf-radius-lg); box-shadow: var(--cf-shadow-sm); display: grid; gap: var(--cf-space-3); padding: var(--cf-space-5); }
+    .optional-lab h2 { font-family: var(--cf-font-heading); font-size: clamp(1.8rem, 4vw, 3rem); line-height: 1.05; margin: 0; }
+    .optional-lab p { color: var(--cf-color-text-muted); line-height: 1.6; margin: 0; max-width: 780px; }
     @media (max-width: 1120px) { .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
     @media (max-width: 720px) { .grid, .tools { grid-template-columns: 1fr; } .shell { padding: var(--cf-space-3); } }
   </style>
@@ -35,6 +38,7 @@
       </a>
       <nav class="cf-nav cf-nav--horizontal" aria-label="Navegacion del curso">
         <a class="cf-nav__link is-active" href="inicio.html" aria-current="page">Inicio</a>
+        <a class="cf-nav__link" href="lab-python-en-accion/index.html">Lab opcional</a>
         <a class="cf-nav__link" href="profesor-plus/inicio.html">Profesor Plus</a>
       </nav>
       <button class="cf-button cf-button--secondary theme-toggle" type="button" data-theme-toggle aria-label="Activar modo oscuro" aria-pressed="false">
@@ -54,9 +58,16 @@
       <a class="card cf-card cf-card--interactive" href="bloques/bloque2/inicio.html"><span class="cf-chip cf-chip--success">Generado</span><h2>B2 · Estructuras de datos</h2><p>Cadenas, listas, tuplas, conjuntos, diccionarios y comprehensions.</p></a>
       <a class="card cf-card cf-card--interactive" href="bloques/bloque3/inicio.html"><span class="cf-chip cf-chip--success">Generado</span><h2>B3 · Funciones y modularidad</h2><p>Def, parametros, return, scope, try/except, archivos y modulos.</p></a>
       <a class="card cf-card cf-card--interactive" href="bloques/bloque4/inicio.html"><span class="cf-chip cf-chip--success">Generado</span><h2>B4 · Programacion orientada a objetos</h2><p>Clases, objetos, metodos, composicion, herencia y polimorfismo.</p></a>
-      <a class="card cf-card cf-card--interactive" href="bloques/bloque5/inicio.html"><span class="cf-chip cf-chip--success">Generado</span><h2>B5 · Python aplicado y librerias</h2><p>NumPy, Pandas, Playwright, parsing conceptual e informes.</p></a>
+      <a class="card cf-card cf-card--interactive" href="bloques/bloque5/inicio.html"><span class="cf-chip cf-chip--success">Generado</span><h2>B5 · Python aplicado y librerias</h2><p>NumPy · Pandas · Playwright · ReportLab · informes PDF.</p></a>
       <a class="card cf-card cf-card--interactive" href="bloques/bloque6/inicio.html"><span class="cf-chip cf-chip--success">Generado</span><h2>B6 · Entorno profesional</h2><p>Script, VS Code, venv, Git, GitHub, debugger e IA controlada.</p></a>
       <a class="card cf-card cf-card--interactive" href="bloques/bloque7/inicio.html"><span class="cf-chip cf-chip--success">Generado</span><h2>B7 · Python + IA</h2><p>Programacion asistida critica, SAMI Final, defensa y LangGraph opcional.</p></a>
+    </section>
+
+    <section class="optional-lab" aria-label="Lab final opcional">
+      <span class="cf-chip cf-chip--accent">Lab final opcional</span>
+      <h2>Python en Accion · 5 cosas mas que puedes hacer</h2>
+      <p>Ya sabes Python. Ahora mira todo lo que puedes hacer con el: webcam, imagenes, archivos, Excel y una pequena app grafica.</p>
+      <p><a class="cf-button cf-button--primary" href="lab-python-en-accion/index.html">Abrir Lab opcional</a></p>
     </section>
 
     <section class="tools">

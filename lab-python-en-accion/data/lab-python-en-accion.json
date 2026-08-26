@@ -1,0 +1,61 @@
+{
+  "titulo": "Python en Accion",
+  "subtitulo": "5 cosas mas que puedes hacer",
+  "lema": "Ya sabes Python. Ahora mira todo lo que puedes hacer con el.",
+  "experiencias": [
+    {
+      "id": "opencv",
+      "titulo": "OpenCV",
+      "nombre": "Webcam interactiva",
+      "resultado": "1 normal · 2 gris · 3 blur · 4 bordes · S captura · Q salir",
+      "duracion": "15-25 min",
+      "href": "recursos/experiencias/01-opencv-webcam.md",
+      "script": "recursos/scripts/webcam_gris.py"
+    },
+    {
+      "id": "pillow",
+      "titulo": "Pillow",
+      "nombre": "Modifica una foto con Python",
+      "resultado": "Imagen -> transformacion -> nueva imagen",
+      "duracion": "10-20 min",
+      "href": "recursos/experiencias/02-pillow-foto.md",
+      "script": "recursos/scripts/editar_foto.py"
+    },
+    {
+      "id": "automatizacion",
+      "titulo": "Automatizacion",
+      "nombre": "Ordena una carpeta automaticamente",
+      "resultado": "Carpeta segura -> clasificacion por tipo",
+      "duracion": "15-30 min",
+      "href": "recursos/experiencias/03-automatizacion-archivos.md",
+      "script": "recursos/scripts/organizar_carpeta_segura.py"
+    },
+    {
+      "id": "openpyxl",
+      "titulo": "OpenPyXL",
+      "nombre": "Python trabaja con Excel",
+      "resultado": "Datos -> formulas -> ventas_lab.xlsx",
+      "duracion": "20-30 min",
+      "href": "recursos/experiencias/04-openpyxl-excel.md",
+      "script": "recursos/scripts/crear_excel.py"
+    },
+    {
+      "id": "tkinter",
+      "titulo": "Tkinter",
+      "nombre": "Convierte tu codigo en una app",
+      "resultado": "Ventana -> entrada -> boton -> resultado",
+      "duracion": "10-20 min",
+      "href": "recursos/experiencias/05-tkinter-app.md",
+      "script": "recursos/scripts/mi_app_tkinter.py"
+    }
+  ],
+  "cierre": [
+    "Desarrollo web con Flask o Django",
+    "IoT con Raspberry Pi o ESP32",
+    "Ciencia de datos",
+    "Machine Learning",
+    "Vision artificial avanzada",
+    "Automatizacion profesional",
+    "IA y agentes"
+  ]
+}

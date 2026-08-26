@@ -14,10 +14,9 @@
 | isin y filtros | B5 final | Practica 03 | Operador & | Tabla filtrada |
 | Playwright sincronico | B5 final | Practica 04 | browser.close | Titulo extraido |
 | BeautifulSoup conceptual | B5 final | Practica 05 | Parsing estatico | Decision razonada |
-| ReportLab conceptual | B5 final | Practica 05 | Diseno PDF | Esquema de informe |
-| SAMI-Applied | V4 y B5 final | Proyecto | Flujo aplicado | CSV, resumen y esquema |
+| ReportLab Platypus | B5 final | Practica 05 | Image, Table y build | factura_2027_001.pdf generado |
+| SAMI-Applied | V4 y B5 final | Proyecto | Flujo aplicado | CSV, resumen y PDF |
 
 ## Lagunas respetadas
 
-No se desarrollan tutoriales detallados de BeautifulSoup ni ReportLab cuando la ingenieria los declara no trazados. No se introducen fusiones avanzadas, agrupaciones complejas ni visualizacion cientifica.
-
+BeautifulSoup se mantiene como referencia conceptual para parsing estatico. No se introducen fusiones avanzadas, agrupaciones complejas ni visualizacion cientifica.
