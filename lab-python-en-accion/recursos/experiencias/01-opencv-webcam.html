@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>OpenCV · Webcam interactiva</title>
+  <link rel="stylesheet" href="../../../assets/edusdk-design-system/tokens/tokens.css">
+  <link rel="stylesheet" href="../../../assets/edusdk-design-system/tokens/semantic-tokens.css">
+  <link rel="stylesheet" href="../../../assets/edusdk-design-system/components/components.css">
+  <link rel="stylesheet" href="../../style.css">
+  <script src="../../../assets/js/theme-toggle.js" defer></script>
+</head>
+<body>
+  <main class="lab-shell">
+    <header class="cf-topbar cf-topbar--course lab-topbar">
+      <a class="lab-brand" href="../../index.html" aria-label="Volver al Lab">
+        <img src="../../../assets/branding/logo-circular-fab.png" alt="Circular FAB">
+        <span><b>Python en Accion</b><span>OpenCV</span></span>
+      </a>
+      <nav class="cf-nav cf-nav--horizontal lab-nav" aria-label="Navegacion">
+        <a class="cf-nav__link" href="../../../inicio.html">Curso</a>
+        <a class="cf-nav__link" href="../../index.html">Lab</a>
+        <a class="cf-nav__link" href="../index.html">Recursos</a>
+      </nav>
+      <button class="cf-button cf-button--secondary theme-toggle" type="button" data-theme-toggle aria-label="Activar modo oscuro" aria-pressed="false">
+        <span data-theme-icon aria-hidden="true">&#9790;</span>
+        <span data-theme-label>Modo dark</span>
+      </button>
+    </header>
+
+    <article class="lab-experience">
+      <section class="lab-hero">
+        <div class="lab-experience__header">
+          <div>
+            <p class="lab-kicker">Experiencia 1 · 15-25 min</p>
+            <h1 class="lab-experience__title">Webcam interactiva con OpenCV</h1>
+          </div>
+          <div class="lab-actions">
+            <a class="lab-action lab-action--primary" href="../scripts/webcam_gris.py" download>Descargar script .py</a>
+          </div>
+        </div>
+        <p>Objetivo: abrir la webcam desde Python, cambiar el modo de imagen en tiempo real y guardar una captura.</p>
+      </section>
+
+      <section class="lab-phase-grid" aria-label="Flujo de la experiencia">
+        <div class="lab-phase"><h2>VER</h2><p>Una ventana de video cambia entre normal, gris, desenfoque y bordes.</p></div>
+        <div class="lab-phase"><h2>PROBAR</h2><p>Ejecuta el script y pulsa las teclas con la ventana activa.</p></div>
+        <div class="lab-phase"><h2>MODIFICAR</h2><p>Cambia el kernel de blur, los umbrales de Canny o el nombre de captura.</p></div>
+        <div class="lab-phase"><h2>MINI-RETO</h2><p>Haz que la captura incluya el modo activo en el nombre.</p></div>
+      </section>
+
+      <section class="lab-panel">
+        <h2>Que vas a conseguir</h2>
+        <p>Una webcam interactiva con cuatro modos y una imagen guardada como `captura_opencv.png` al pulsar `S`.</p>
+        <div class="lab-controls" aria-label="Controles OpenCV">
+          <span class="lab-control">1 NORMAL</span>
+          <span class="lab-control">2 GRIS</span>
+          <span class="lab-control">3 BLUR</span>
+          <span class="lab-control">4 BORDES</span>
+          <span class="lab-control">S CAPTURA</span>
+          <span class="lab-control">Q SALIR</span>
+        </div>
+      </section>
+
+      <section class="lab-panel">
+        <h2>Instalacion y ejecucion</h2>
+        <pre class="lab-code"><code>pip install opencv-python
+python ../scripts/webcam_gris.py</code></pre>
+        <p>La ventana de OpenCV debe estar activa para que `waitKey()` detecte las teclas.</p>
+      </section>
+
+      <section class="lab-panel">
+        <h2>Codigo relevante</h2>
+        <pre class="lab-code"><code>if modo == "gris":
+    mostrado = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+elif modo == "blur":
+    mostrado = cv2.GaussianBlur(frame, (15, 15), 0)
+elif modo == "bordes":
+    gris = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    suave = cv2.GaussianBlur(gris, (5, 5), 0)
+    mostrado = cv2.Canny(suave, 100, 200)</code></pre>
+      </section>
+
+      <section class="lab-panel">
+        <h2>Resultado esperado y Plan B</h2>
+        <p>Resultado: video interactivo en tiempo real y captura local si pulsas `S`. Si la webcam no abre, revisa permisos, cierra otras apps que usen la camara o prueba `VideoCapture(1)`.</p>
+      </section>
+
+      <nav class="lab-pager" aria-label="Experiencias">
+        <a class="lab-action lab-action--secondary" href="../../index.html">Volver al LAB</a>
+        <a class="lab-action lab-action--secondary" href="02-pillow-foto.html">Siguiente: Pillow</a>
+      </nav>
+    </article>
+  </main>
+</body>
+</html>

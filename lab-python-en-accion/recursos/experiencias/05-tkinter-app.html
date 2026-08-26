@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Tkinter · Convierte tu codigo en una app</title>
+  <link rel="stylesheet" href="../../../assets/edusdk-design-system/tokens/tokens.css">
+  <link rel="stylesheet" href="../../../assets/edusdk-design-system/tokens/semantic-tokens.css">
+  <link rel="stylesheet" href="../../../assets/edusdk-design-system/components/components.css">
+  <link rel="stylesheet" href="../../style.css">
+  <script src="../../../assets/js/theme-toggle.js" defer></script>
+</head>
+<body>
+  <main class="lab-shell">
+    <header class="cf-topbar cf-topbar--course lab-topbar">
+      <a class="lab-brand" href="../../index.html" aria-label="Volver al Lab">
+        <img src="../../../assets/branding/logo-circular-fab.png" alt="Circular FAB">
+        <span><b>Python en Accion</b><span>Tkinter</span></span>
+      </a>
+      <nav class="cf-nav cf-nav--horizontal lab-nav" aria-label="Navegacion">
+        <a class="cf-nav__link" href="../../../inicio.html">Curso</a>
+        <a class="cf-nav__link" href="../../index.html">Lab</a>
+        <a class="cf-nav__link" href="../index.html">Recursos</a>
+      </nav>
+      <button class="cf-button cf-button--secondary theme-toggle" type="button" data-theme-toggle aria-label="Activar modo oscuro" aria-pressed="false">
+        <span data-theme-icon aria-hidden="true">&#9790;</span>
+        <span data-theme-label>Modo dark</span>
+      </button>
+    </header>
+
+    <article class="lab-experience">
+      <section class="lab-hero">
+        <div class="lab-experience__header">
+          <div>
+            <p class="lab-kicker">Experiencia 5 · 10-20 min</p>
+            <h1 class="lab-experience__title">Convierte tu codigo en una app</h1>
+          </div>
+          <div class="lab-actions">
+            <a class="lab-action lab-action--primary" href="../scripts/mi_app_tkinter.py" download>Descargar script .py</a>
+          </div>
+        </div>
+        <p>Objetivo: crear una pequena ventana con campo de texto, boton y resultado.</p>
+      </section>
+
+      <section class="lab-phase-grid" aria-label="Flujo de la experiencia">
+        <div class="lab-phase"><h2>VER</h2><p>Una ventana local saluda al usuario.</p></div>
+        <div class="lab-phase"><h2>PROBAR</h2><p>Ejecuta el script y escribe un nombre.</p></div>
+        <div class="lab-phase"><h2>MODIFICAR</h2><p>Cambia el texto del boton y el mensaje final.</p></div>
+        <div class="lab-phase"><h2>MINI-RETO</h2><p>Anade un segundo campo para la edad.</p></div>
+      </section>
+
+      <section class="lab-panel">
+        <h2>Que vas a conseguir</h2>
+        <p>Una app local con `Entry`, `Button`, `StringVar` y `Label`, mantenida viva por `mainloop()`.</p>
+      </section>
+
+      <section class="lab-panel">
+        <h2>Instalacion y ejecucion</h2>
+        <pre class="lab-code"><code>python ../scripts/mi_app_tkinter.py</code></pre>
+        <p>Tkinter suele venir con Python.</p>
+      </section>
+
+      <section class="lab-panel">
+        <h2>Codigo relevante</h2>
+        <pre class="lab-code"><code>def saludar():
+    nombre = entrada.get()
+    mensaje.set(f"Hola, {nombre}. Tu codigo ya tiene ventana.")
+
+tk.Button(root, text="Saludar", command=saludar).pack()
+tk.Label(root, textvariable=mensaje).pack()
+root.mainloop()</code></pre>
+      </section>
+
+      <section class="lab-panel">
+        <h2>Resultado esperado y Plan B</h2>
+        <p>Resultado: una app local que saluda al usuario. Si Tcl/Tk no esta disponible o el equipo no puede abrir ventanas, adapta la funcion a consola con `input()` y `print()`.</p>
+      </section>
+
+      <nav class="lab-pager" aria-label="Experiencias">
+        <a class="lab-action lab-action--secondary" href="04-openpyxl-excel.html">Anterior: OpenPyXL</a>
+        <a class="lab-action lab-action--secondary" href="../../index.html">Volver al LAB</a>
+      </nav>
+    </article>
+  </main>
+</body>
+</html>

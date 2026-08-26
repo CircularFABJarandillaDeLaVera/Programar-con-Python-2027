@@ -41,6 +41,9 @@ Cada vez que el Copiloto del Profesor proporcione información técnica al forma
 | **Generación de Informes en PDF** | Uso canónico de **ReportLab** (`SimpleDocTemplate`, `Paragraph`, `Table`, `Spacer`) para maquetar tablas y resúmenes ejecutivos en B5. | No se cubre maquetación gráfica compleja de imprenta, diseño vectorial milimétrico ni librerías externas no respaldadas en los materiales. |
 | **Automatización Web (Scraping)** | Automatización de flujos básicos de navegación, esperas de elementos y extracción de texto visible con **Playwright** en B5. | No se cubren técnicas de evasión de sistemas anti-bot, resolución de captchas ni pipelines distribuidos de scraping masivo. |
 | **Orquestación de Agentes (LangGraph)** | El proyecto final obligatorio de B7 se completa y valida con asistentes de IA en VS Code. **LangGraph es una ampliación avanzada y estrictamente opcional**. | No es obligatorio ni evaluable para la superación del curso. Se reserva como reto optativo para alumnos avanzados. |
+| **Lab Python en Acción** | Recurso final opcional con cinco experiencias: OpenCV, Pillow, automatización segura, openpyxl y Tkinter. | No es B8, no es evaluable, no pertenece a SAMI y no debe alterar la progresión obligatoria B1-B7. |
+| **OpenCV en el Lab** | Webcam interactiva con `VideoCapture`, `read`, `imshow`, `waitKey`, `cvtColor`, `GaussianBlur`, `Canny`, `imwrite`, `release` y `destroyAllWindows`. | No incluye reconocimiento facial, reconocimiento de objetos, `CascadeClassifier`, YOLO, MediaPipe ni modelos de IA. |
+| **Automatización de archivos del Lab** | Organización de archivos falsos exclusivamente dentro de `lab_archivos_prueba/`. | No recomendar Descargas, Documentos, Escritorio ni carpetas reales externas del alumno. |
 
 ---
 
@@ -57,3 +60,8 @@ Cuando el formador de Circular FAB consulte sobre algún tema que sobrepase el a
 4. **Reconducir la atención hacia el objetivo del bloque:**
    > *"Para la práctica de hoy, lo importante es que el grupo domine [Concepto del curso] antes de pasar al siguiente paso."*
 
+## 5. Límites Específicos de ReportLab
+
+Según el curso, ReportLab se trabaja de forma práctica en B5 mediante Platypus. La factura `factura_2027_001.pdf` y el informe PDF de SAMI-Applied son salidas reales.
+
+El Copiloto no debe presentar como contenido del curso: OCR, PyPDF, XML, facturación electrónica, normativa fiscal, firma digital, bases de datos ni aplicaciones web de facturación.

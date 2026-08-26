@@ -174,6 +174,33 @@ Para cada cuestión, el formador de la **Red Circular FAB** dispone de:
 
 ---
 
+### P5.4. ¿Cómo explico ReportLab a alguien que nunca lo ha usado?
+* **Naturaleza:** `[SEGÚN EL CURSO · Contenido actualizado B5]`
+* **Explicación Sencilla:** ReportLab sirve para convertir datos calculados por Python en un PDF real. En el curso usamos Platypus: en vez de dibujar con coordenadas, creamos una lista `story` con piezas como `Paragraph`, `Image`, `Table` y `Spacer`, y al final `build()` fabrica el PDF.
+* **Analogía Cotidiana:** Es como preparar una bandeja de impresión: primero pones el logo, luego el título, después los datos y por último la tabla. La imprenta (`build`) lo convierte en documento.
+
+---
+
+### P5.5. La factura PDF no se genera. ¿Qué compruebo?
+* **Naturaleza:** `[SEGÚN EL CURSO · Diagnóstico docente]`
+* **Respuesta para el Formador:** Comprueba en este orden: que `reportlab` está instalado, que se ejecuta el script correcto, que la carpeta permite escribir, que el PDF no está abierto en otro visor, que el logo existe en la ruta esperada y que la llamada final `doc.build(story)` se ejecuta.
+* **Pistas al Alumno:** "¿Dónde se crea el documento?", "¿qué contiene la lista `story` justo antes de `build()`?", "¿la ruta del logo existe desde la carpeta desde la que estás ejecutando?"
+
+---
+
+### P5.6. ¿Qué diferencia hay entre los datos de la factura y su maquetación?
+* **Naturaleza:** `[SEGÚN EL CURSO · Contenido actualizado B5]`
+* **Explicación Sencilla:** Los datos son la información: empresa, cliente, cantidades, precios, base imponible, IVA y total. La maquetación es cómo se colocan esos datos en el PDF: párrafos, logo, tabla, colores y espacios.
+* **Analogía Cotidiana:** Los datos son los ingredientes; la maquetación es emplatar la comida para servirla bien.
+
+---
+
+### P5.7. ¿Qué conocimientos anteriores utiliza la práctica de factura?
+* **Naturaleza:** `[SEGÚN EL CURSO · Conexión B1-B5]`
+* **Explicación Sencilla:** Usa operaciones de B1 para calcular subtotales e IVA, listas y diccionarios de B2 para representar líneas de factura, funciones de B3 para separar cálculos y creación del PDF, y criterio modular de B4 como mejora opcional, sin hacer obligatoria la POO.
+
+---
+
 # BLOQUE 6: DEL NOTEBOOK AL ENTORNO PROFESIONAL
 
 ### P6.1. ¿Por qué usamos entornos virtuales (`venv`) si las librerías ya se pueden instalar en el ordenador?
@@ -219,3 +246,24 @@ Para cada cuestión, el formador de la **Red Circular FAB** dispone de:
 * **Naturaleza:** `[SEGÚN EL CURSO · Contenido existente]`
 * **Explicación Sencilla:** **NO.** LangGraph está definido formalmente en el currículo como una **ampliación avanzada y opcional**. El proyecto evaluable estándar de SAMI Final se completa y defiende mediante programación modular/orientada a objetos validada y asistida por IA en VS Code. LangGraph se reserva únicamente para alumnos que dominen el núcleo y deseen explorar agentes conversacionales con estado e intervención humana (*human-in-the-loop*).
 
+---
+
+# LAB FINAL OPCIONAL: PYTHON EN ACCIÓN
+
+### L1. OpenCV no abre la webcam. ¿Qué compruebo?
+* **Naturaleza:** `[SEGÚN EL CURSO · Recurso final opcional]`
+* **Respuesta para el Formador:** Revisar permisos de cámara, cerrar videollamadas u otras apps que la estén usando, comprobar que la ventana de OpenCV puede abrirse en ese equipo y probar el índice `0` o `1` en `VideoCapture`.
+* **Plan B:** Hacer la demo desde el equipo del profesor o leer el flujo del código: abrir cámara, leer frame, procesar, mostrar, escuchar tecla y cerrar recursos.
+
+---
+
+### L2. Quiero hacer reconocimiento facial. ¿Forma parte de este curso?
+* **Naturaleza:** `[SEGÚN EL CURSO · Límite curricular]`
+* **Respuesta Sencilla:** No. El Lab de OpenCV trabaja webcam interactiva, escala de grises, desenfoque, detección de bordes y captura. Reconocimiento facial, reconocimiento de objetos, `CascadeClassifier`, YOLO, MediaPipe y modelos de IA quedan fuera del Lab.
+* **Reconducción:** Si el alumno tiene interés, se puede presentar como camino futuro, pero no como tarea ni requisito del curso.
+
+---
+
+### L3. ¿Cómo preparo una versión de 30 minutos del Lab?
+* **Naturaleza:** `[SEGÚN EL CURSO · Adaptación docente]`
+* **Respuesta para el Formador:** Elige una sola experiencia, muestra el resultado final en 3 minutos, ejecuta el script con el grupo, cambia un parámetro pequeño y cierra con un mini-reto. No intentes cubrir las cinco experiencias en 30 minutos.

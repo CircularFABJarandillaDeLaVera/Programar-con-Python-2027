@@ -28,6 +28,7 @@ La carpeta `copiloto-profesor/` está organizada en módulos autocontenidos y co
 | **`05-EVALUACION-Y-ERRORES.md`** | Catálogo sistemático de excepciones de Python y lectura de Tracebacks, banco de microevaluaciones analizadas y rúbrica formativa docente. |
 | **`06-SAMI.md`** | Eje vertebrador de proyectos: evolución de SAMI-Lite (B3) ➔ SAMI-OOP (B4) ➔ SAMI-Applied (B5) ➔ SAMI-Local (B6) ➔ SAMI Final (B7), arquitecturas y criterios de defensa. |
 | **`07-LAGUNAS-Y-LIMITES.md`** | Delimitación estricta entre contenido canónico y ampliaciones complementarias, lagunas identificadas de las fuentes y directivas de acotación. |
+| **`08-LAB-PYTHON-EN-ACCION.md`** | Recurso final opcional independiente: OpenCV, Pillow, automatización segura de archivos, openpyxl y Tkinter. No es B8 ni evaluable. |
 | **`fuentes/`** | Fuentes maestras de ingeniería curricular consolidadas y saneadas en codificación UTF-8 estricta (0% mojibake). |
 
 ---
@@ -41,14 +42,39 @@ El agente generado a partir de esta base de conocimiento debe aplicar de forma t
 
 ---
 
-## 🚀 Guía de Ingesta en un Custom GPT / Asistente IA
+## CREA TU PROPIO COPILOTO PROFESOR
 
-Para configurar el GPT personalizado en OpenAI, Gemini Gems o plataformas similares:
+Este pack es portable y puede utilizarse en cualquier herramienta que permita definir instrucciones y añadir archivos de conocimiento.
 
-1. **Instrucciones del Sistema (System Prompt):** Copiar e incorporar el contenido íntegro de `00-INSTRUCCIONES-AGENTE.md`.
-2. **Archivos de Conocimiento (Knowledge Base Files):** Adjuntar los documentos `01-GUIA-CURSO.md` a `07-LAGUNAS-Y-LIMITES.md` junto con los archivos de la carpeta `fuentes/`.
-3. **Capacidades Habilitadas:** Habilitar *Code Interpreter* y *Browsing* si la plataforma lo permite para análisis en tiempo real de fragmentos de código.
+1. Crear un asistente personalizado en la herramienta elegida.
+2. Utilizar `00-INSTRUCCIONES-AGENTE.md` como instrucciones base.
+3. Añadir los restantes documentos del pack como conocimiento.
+4. Añadir la carpeta `fuentes/` como respaldo curricular.
+5. Configurarlo sin navegación web si se quiere máxima fidelidad al curso.
+6. Realizar preguntas de prueba antes de usarlo en aula.
+7. Comprobar que distingue siempre contenido del curso de explicación complementaria.
+
+No es necesario conectar APIs externas, claves, tokens ni servicios adicionales para usar este pack como base de conocimiento docente.
+
+## Banco de Pruebas del Copiloto
+
+Usa estas preguntas para comprobar que el asistente respeta el alcance del curso:
+
+- "Voy a impartir el B5. ¿Qué tengo que preparar?"
+- "Explícame la diferencia entre print() y return como si tuviera 12 años."
+- "Un alumno no entiende los diccionarios. Dame una analogía y una demostración."
+- "La factura PDF no se genera. Ayúdame a diagnosticarlo."
+- "OpenCV no abre la webcam. ¿Qué compruebo?"
+- "Quiero hacer reconocimiento facial. ¿Forma parte de este curso?"
+- "Prepárame una versión de 30 minutos de una actividad."
+
+## Guía de Ingesta en un Custom GPT / Asistente IA
+
+Para configurar el asistente personalizado en cualquier plataforma equivalente:
+
+1. **Instrucciones base:** Incorporar el contenido íntegro de `00-INSTRUCCIONES-AGENTE.md`.
+2. **Archivos de conocimiento:** Adjuntar los documentos `01-GUIA-CURSO.md` a `08-LAB-PYTHON-EN-ACCION.md` junto con los archivos de la carpeta `fuentes/`.
+3. **Capacidades:** Mantener la configuración simple y sin navegación web si el objetivo es responder solo según el curso.
 
 ---
 *Red de Centros Circular FAB · Formación Técnica y Fabricación Digital*
-

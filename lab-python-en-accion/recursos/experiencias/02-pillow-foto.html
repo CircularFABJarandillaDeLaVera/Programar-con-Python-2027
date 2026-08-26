@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pillow · Modifica una foto</title>
+  <link rel="stylesheet" href="../../../assets/edusdk-design-system/tokens/tokens.css">
+  <link rel="stylesheet" href="../../../assets/edusdk-design-system/tokens/semantic-tokens.css">
+  <link rel="stylesheet" href="../../../assets/edusdk-design-system/components/components.css">
+  <link rel="stylesheet" href="../../style.css">
+  <script src="../../../assets/js/theme-toggle.js" defer></script>
+</head>
+<body>
+  <main class="lab-shell">
+    <header class="cf-topbar cf-topbar--course lab-topbar">
+      <a class="lab-brand" href="../../index.html" aria-label="Volver al Lab">
+        <img src="../../../assets/branding/logo-circular-fab.png" alt="Circular FAB">
+        <span><b>Python en Accion</b><span>Pillow</span></span>
+      </a>
+      <nav class="cf-nav cf-nav--horizontal lab-nav" aria-label="Navegacion">
+        <a class="cf-nav__link" href="../../../inicio.html">Curso</a>
+        <a class="cf-nav__link" href="../../index.html">Lab</a>
+        <a class="cf-nav__link" href="../index.html">Recursos</a>
+      </nav>
+      <button class="cf-button cf-button--secondary theme-toggle" type="button" data-theme-toggle aria-label="Activar modo oscuro" aria-pressed="false">
+        <span data-theme-icon aria-hidden="true">&#9790;</span>
+        <span data-theme-label>Modo dark</span>
+      </button>
+    </header>
+
+    <article class="lab-experience">
+      <section class="lab-hero">
+        <div class="lab-experience__header">
+          <div>
+            <p class="lab-kicker">Experiencia 2 · 10-20 min</p>
+            <h1 class="lab-experience__title">Modifica una foto con Python</h1>
+          </div>
+          <div class="lab-actions">
+            <a class="lab-action lab-action--primary" href="../scripts/editar_foto.py" download>Descargar script .py</a>
+          </div>
+        </div>
+        <p>Objetivo: abrir una imagen neutra de prueba, transformarla y guardar una nueva imagen.</p>
+      </section>
+
+      <section class="lab-phase-grid" aria-label="Flujo de la experiencia">
+        <div class="lab-phase"><h2>VER</h2><p>Python abre `foto_original.ppm` y prepara una copia editada.</p></div>
+        <div class="lab-phase"><h2>PROBAR</h2><p>Ejecuta el script y abre `foto_editada.jpg`.</p></div>
+        <div class="lab-phase"><h2>MODIFICAR</h2><p>Cambia tamano, angulo de rotacion o recorte.</p></div>
+        <div class="lab-phase"><h2>MINI-RETO</h2><p>Genera dos salidas: una en gris y otra recortada.</p></div>
+      </section>
+
+      <section class="lab-panel">
+        <h2>Que vas a conseguir</h2>
+        <p>Una nueva imagen procesada sin alterar la imagen neutra original del Lab.</p>
+      </section>
+
+      <section class="lab-panel">
+        <h2>Instalacion y ejecucion</h2>
+        <pre class="lab-code"><code>pip install Pillow
+python ../scripts/editar_foto.py</code></pre>
+        <p>El script usa `../assets/foto_original.ppm`, no el logotipo corporativo.</p>
+      </section>
+
+      <section class="lab-panel">
+        <h2>Codigo relevante</h2>
+        <pre class="lab-code"><code>imagen = Image.open(entrada)
+pequena = imagen.resize((400, 300))
+recortada = pequena.crop((30, 20, 370, 280))
+gris = recortada.rotate(8).convert("L")
+gris.filter(ImageFilter.BLUR).save(salida)</code></pre>
+      </section>
+
+      <section class="lab-panel">
+        <h2>Resultado esperado y Plan B</h2>
+        <p>Resultado: `foto_editada.jpg`. Si no encuentra la imagen, comprueba que existe `lab-python-en-accion/recursos/assets/foto_original.ppm`.</p>
+      </section>
+
+      <nav class="lab-pager" aria-label="Experiencias">
+        <a class="lab-action lab-action--secondary" href="01-opencv-webcam.html">Anterior: OpenCV</a>
+        <a class="lab-action lab-action--secondary" href="../../index.html">Volver al LAB</a>
+        <a class="lab-action lab-action--secondary" href="03-automatizacion-archivos.html">Siguiente: Automatizacion</a>
+      </nav>
+    </article>
+  </main>
+</body>
+</html>

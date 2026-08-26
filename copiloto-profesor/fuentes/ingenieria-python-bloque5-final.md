@@ -1,14 +1,14 @@
 # INGENIERÍA CURRICULAR DETALLADA: BLOQUE 5 (PYTHON APLICADO Y LIBRERÍAS)
 ## Itinerario: "Python 2026: De los Fundamentos a la Programación Asistida por IA"
 
-Este documento constituye la versión final consolidada de la **Ingeniería del Conocimiento para el Bloque 5: Python Aplicado y Librerías**, diseñada en estricta conformidad con el alcance curricular y metodológico establecido en la versión V4 del itinerario principal.
+Este documento constituye la versión final consolidada y saneada de la **Ingeniería del Conocimiento para el Bloque 5: Python Aplicado y Librerías**, redactada en estricta conformidad con el alcance curricular, pedagógico e infraestructural de la versión V4 del itinerario principal [190].
 
-En esta versión final, se ha realizado una **auditoría rigurosa de fundamentación** sobre cada API y comando. Se declaran formalmente como lagunas de conocimiento o elementos puramente conceptuales aquellas herramientas que, aunque útiles, no están respaldadas por código físico en las fuentes de tu base de conocimiento (como BeautifulSoup o ReportLab). Asimismo, se ha reestructurado el proyecto **SAMI-Applied** para garantizar la **coherencia de datos**, separando de forma limpia las prácticas de análisis con el dataset de Game of Thrones `got_1.csv` del pipeline de auditoría de precios de mercado del proyecto integrado.
+En esta etapa, el alumno da el salto definitivo desde la lógica pura de la programación y el diseño de objetos nativos hacia el uso de **librerías profesionales de estándar industrial** para resolver flujos de trabajo reales: adquisición, procesamiento, análisis de datos y la generación automatizada de informes ejecutivos en PDF [1, 7, 15].
 
 ---
 
 ## 1. OBJETIVO OPERATIVO
-Diseñar y desarrollar aplicaciones locales integradas en Python que automaticen flujos de obtención de información web utilizando **Playwright** [100], operen cálculos y agregaciones estadísticas básicas de precios de mercado utilizando arrays de **NumPy** [14, 182], estructuren, limpien y analicen tablas de datos comerciales mediante **Pandas** [1, 2], y compilen resúmenes informativos conceptuales estructurados para entregables finales en PDF [184], garantizando un flujo lógico e incremental de ingeniería de datos sin fugas de recursos de infraestructura [103].
+Diseñar y desarrollar aplicaciones en Python que automaticen flujos completos de recopilación de información web mediante **Playwright** [100, 102], apliquen cálculos y análisis numéricos sobre arrays estructurados con **NumPy** [4, 15], limpien, indexen y filtren conjuntos de datos tabulares reales empleando **Pandas** [1, 2], y compilen informes ejecutivos formales con formato profesional en PDF mediante las utilidades lógicas de alto nivel (Platypus) de **ReportLab** [15, 184], garantizando un código modular, robusto y libre de fugas de recursos.
 
 ---
 
@@ -36,270 +36,145 @@ El bloque progresa unificando las librerías en un flujo secuencial donde cada h
                                      │ (DataFrames, loc/iloc, isin, set_index)
                                      ▼
         ┌─────────────────────────────────────────────────────────┐
-        │ 2.4 Generación de Entregables (ReportLab PDF)           │
+        │ 2.4 Generación de Entregables (ReportLab PDF - Platypus)│
         └────────────────────────────┬────────────────────────────┘
-                                     │ (Reporte final de mercado)
+                                     │ (Informe y Factura PDF Profesional)
                                      ▼
          [PROYECTO INTEGRADO: SAMI-Applied (Adquisición, Análisis y PDF)]
                                      │
                                      ▼
-                [Bloque 6: Programar en 2026 (Entorno Local)]
+                [Bloque 6: Programar en 2027 (Entorno Local)]
 ```
 
 ---
 
 ## 3. CLASIFICACIÓN DE CONTENIDOS DEL BLOQUE 5
 
-*   **IMPRESCINDIBLES (Sólidamente respaldados con código)**:
+*   **IMPRESCINDIBLES (Sólidamente respaldados con código en las fuentes)**:
     *   *Pandas (Series)*: Creación de Series, asignación de nombres, indexación explícita, selección por posición con `.iloc[]`, selección condicional (boolean arrays) y cálculo de medias con `.mean()` [2, 11, 14].
     *   *Pandas (DataFrames)*: Carga de archivos físicos (`pd.read_csv()`) utilizando el dataset de Game of Thrones `got_1.csv` [194, 216], indexación con `.loc[]` e `.iloc[]` [11, 32], filtrado condicional compuesto empleando operadores a nivel de bits (`&`, `|`) y el método `.isin()` [223, 224], y modificación de tablas (setear índices con `.set_index()`, renombrar índices/columnas con `.rename()`, y eliminar columnas/filas con `.drop(columns=...)`) [224, 225].
     *   *NumPy*: Respaldo de arrays multidimensionales en Series de Pandas (`ndarray`) [4], definición de valores nulos lógicos (`np.nan`) [217] y operaciones vectoriales rápidas [15, 16].
     *   *Playwright*: Inicialización de navegadores síncronos con `sync_playwright` [100], lanzamiento de navegador Chromium [103], creación de nuevas páginas (`browser.new_page()`), redirección con `page.goto()` [102] y cierre obligatorio del navegador para liberar descriptores de sistema con `browser.close()` [100].
+    *   *ReportLab (Platypus - Alto Nivel)*: Construcción de documentos basados en plantillas de flujo con `SimpleDocTemplate` [184], uso de tamaño de página estándar `A4`, inyección secuencial de elementos en el flujo (`story`), generación de texto estilizado automático mediante `Paragraph` y estilos predefinidos (`getSampleStyleSheet`, `ParagraphStyle`) [184], posicionamiento de imágenes de marca con `Image` [266], organización estructurada de cuadrículas de datos con `Table` y su clase de estilos dedicados `TableStyle` [184], control de espaciados con `Spacer`, y compilación física final mediante el método `.build()` [184].
 *   **ÚTILES (Introducción conceptual/Teórica)**:
-    *   *BeautifulSoup*: Carga de árboles de parseo HTML y extracción selectiva de elementos de texto e identificadores en páginas estáticas [183]. (Uso conceptual debido a la falta de código en las fuentes).
-*   **AMPLIACIÓN (Límites teóricos del material)**:
-    *   *ReportLab*: Conceptos de maquetación y generación programática de archivos PDF ejecutables mediante lienzos de dibujo, alineaciones de tablas y formateo de párrafos [184, 266]. (Uso exclusivamente conceptual de su arquitectura de clases debido a la falta de código físico en las fuentes).
-*   **LAGUNAS DE CONOCIMIENTO (Sin código en las fuentes)**:
-    *   *Pandas*: Operaciones de fusión de datos con `pd.merge()` o `.join()`, y agrupamientos tabulares complejos con `.groupby()` [1].
-    *   *NumPy*: Funciones de control de nulos específicas como `np.isnan()`, y funciones de reemplazo seguro como `fillna()` o `isnull()` en Pandas (no figuran en las soluciones lógicas del notebook).
+    *   *BeautifulSoup*: Carga de árboles de parseo HTML y extracción de textos e identificadores en páginas estáticas [183]. (Uso conceptual debido a la falta de código práctico de BeautifulSoup en las fuentes del notebook).
+*   **AMPLIACIÓN (Conocimiento complementario o avanzado)**:
+    *   *ReportLab (Canvas - Bajo Nivel)*: El objeto lienzo a bajo nivel `canvas.Canvas` [184] para el posicionamiento físico milimétrico de elementos mediante coordenadas fijas `X, Y` en la hoja (métodos `drawString()`, `line()`, `rect()`, `setFont()`, `save()`, etc.), entendiéndose como conocimiento secundario y no obligatorio en las evaluaciones [184].
+*   **LAGUNAS DE CONOCIMIENTO (Sin código explicativo en las fuentes)**:
+    *   *Pandas*: Operaciones de fusión de datos complejas (`pd.merge()` o `.join()`), y agrupamientos tabulares dinámicos avanzados (`.groupby()`) [1].
+    *   *NumPy*: Funciones específicas de álgebra lineal o transformaciones matemáticas avanzadas.
     *   *BeautifulSoup*: Atributos sintácticos específicos del código (como el parámetro `class_` de búsqueda, o métodos de parseo de árboles complejos).
-    *   *ReportLab*: Las APIs y métodos directos de las clases `Canvas`, `Paragraph`, y `Table` (no se proporciona ningún código de importación, sintaxis de dibujo ni estilos en los materiales).
     *   *Matplotlib*: El notebook importa la librería `matplotlib.pyplot as plt` [2] pero carece de código o explicaciones para renderizar gráficos físicos.
 
 ---
 
 ## 4. LA PROGRESIÓN DE VALOR EN EL BLOQUE 5 (EL HILO CONDUCTOR)
 
-Para evitar que el estudiante aprenda las librerías de forma aislada, el bloque se articula bajo la metodología del **Único Hilo Conductor de Ingeniería de Datos**:
+Para evitar que el estudiante aprenda las librerías de forma aislada, el bloque se articula bajo la metodología de un **Único Hilo Conductor de Ingeniería de Datos**:
 
 1.  **Fase 1: Adquisición**: El alumno aprende a lanzar un script automatizado con **Playwright** que abre el navegador e interactúa con una página de mercado para extraer los textos y precios de oferta [100, 102], cerrando de forma limpia los recursos con `browser.close()` [100].
 2.  **Fase 2: Tratamiento**: Los precios extraídos se cargan en arrays de **NumPy** para convertirlos a formato numérico real, controlando la presencia de vacíos (`np.nan`) [217] y calculando estadísticas del mercado (medias lógicas) [14].
 3.  **Fase 3: Análisis (Grounded)**: Para aprender a operar tablas complejas en Pandas, el alumno trabaja de forma aislada con un dataset real de las fuentes: la popularidad de los personajes de **Game of Thrones (`got_1.csv`)** [194, 216]. Aquí aprende indexación, filtrado Compuesto (`&`, `|`, `.isin()`) [223, 224] y reestructuración de esquemas (`set_index`, `drop`) [224, 225]. Una vez asimilada la técnica, aplica esta lógica para ordenar y cruzar sus tablas de precios del mercado de hardware en el proyecto SAMI-Applied.
-4.  **Fase 4: Reporte**: Las estadísticas y tablas resultantes de la auditoría se estructuran conceptualmente para compilar un informe formal en PDF mediante las utilidades lógicas de **ReportLab** [184].
+4.  **Fase 4: Reporte**: El alumno aprende a maquetar y estructurar la información recopilada y procesada, inyectándola de forma secuencial en una plantilla de alto nivel (Platypus) de **ReportLab** para dar salida a un PDF profesional [184].
 
 ---
 
 ## 5. DESARROLLO INSTRUCCIONAL DE LIBRERÍAS (APRENDER HACIENDO)
 
-### PARTE 5.1: Operaciones Estadísticas y Arrays con NumPy
-*   **CONCEPTO**: NumPy proporciona soporte para arrays multidimensionales rápidos (`ndarray`) [4], permitiendo ejecutar operaciones matemáticas vectorizadas y actuar como el motor numérico que respalda a Pandas [4, 15].
+*(Se omiten las Partes 5.1, 5.2 y 5.3 para centrar el foco del saneamiento en la Parte 5.4)*
 
-#### → EJEMPLO DE LAS FUENTES
-*   **Aislamiento y tipado de Arrays** (Extracted from 02_pandas [4]):
+### PARTE 5.4: Generación de Reportes en PDF con ReportLab (Platypus - Alto Nivel)
+*   **CONCEPTO**: ReportLab proporciona las utilidades y clases lógicas para maquetar, estructurar y exportar programáticamente documentos PDF con diseño y formato profesional a partir de código de Python [184]. Para maximizar la productividad y garantizar un diseño limpio sin lidiar con coordenadas fijas complejas, se prioriza el uso de la API de alto nivel **PLATYPUS (Page Layout and Typography Using Scripts)** [184]:
+    *   `SimpleDocTemplate`: Clase plantilla que define las dimensiones globales de la hoja (A4, carta), los márgenes físicos y actúa como el contenedor del flujo de elementos [184].
+    *   `Paragraph`: Representa un bloque de texto que autoajusta sus líneas según el espacio horizontal disponible de forma automática, aplicando estilos predefinidos o personalizados (`getSampleStyleSheet`, `ParagraphStyle`) [184].
+    *   `Image`: Inserta imágenes o logotipos en el flujo del documento [266].
+    *   `Table` y `TableStyle`: Permite estructurar rejillas de datos alineados por filas y columnas, aplicando de forma estructurada colores, bordes y estilos estéticos mediante comandos de formateo [184].
+    *   `Spacer`: Genera espaciadores de seguridad para dar aire visual al diseño.
+    *   `.build()`: Compila físicamente los elementos apilados en la lista (`story`), generando el archivo PDF definitivo en el disco [184].
+
+#### → EJEMPLO PROCEDENTE DE LAS FUENTES
+*   **Creación de un documento de flujo con Platypus** (Extracted from reportlab invoices and open guides [184, 266]):
     ```python
-    import numpy as np
-    import pandas as pd
+    from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle
+    from reportlab.lib.styles import getSampleStyleSheet
+    from reportlab.lib import colors
+    from reportlab.lib.pagesizes import A4
 
-    # Las Series de Pandas se respaldan en arrays de NumPy
-    state_populations = pd.Series([39.54, 29.15, 21.54, 20.20])
-    print(type(state_populations.values))  # Retorna: <class 'numpy.ndarray'> [4]
-    
-    # Operaciones vectoriales rápidas directas [15]
-    poblacion_unidad = state_populations * 1_000_000  # Multiplicación vectorizada [16]
-    log_poblaciones = np.log(state_populations)      # Logaritmo vectorizado [16]
+    # 1. Inicializar la plantilla de documento con tamaño A4
+    doc = SimpleDocTemplate("factura_ejemplo.pdf", pagesize=A4, rightMargin=30, leftMargin=30, topMargin=30, bottomMargin=30)
+    story = []  # Lista que contendrá el flujo secuencial de elementos
 
-    # Representación de nulos en las fuentes [217]
-    popularidades = [0.92, 0.88, np.nan, 0.96]  # np.nan define valores flotantes nulos [217]
+    # 2. Configurar estilos de texto predefinidos
+    styles = getSampleStyleSheet()
+    estilo_titulo = styles['Heading1']
+
+    # 3. Insertar elementos en el flujo
+    story.append(Paragraph("FACTURA COMERCIAL", estilo_titulo))
+    story.append(Spacer(1, 15))  # Espacio de 15 puntos
+
+    # 4. Compilar físicamente el archivo PDF en el disco de trabajo
+    doc.build(story)
     ```
 
-#### → PRÁCTICA
-*   **Instrucciones**: Abre una celda de Colab [6]. Declara una lista de precios de componentes de hardware que contenga algunos valores nulos representados por `np.nan` [217]: `precios = [120.0, 85.5, np.nan, 150.0, np.nan, 99.9]`.
-    1. Convierte la lista en un array de NumPy (`ndarray`).
-    2. Dado que `np.isnan` no está codificado en las fuentes, utiliza el hecho de que Pandas y NumPy ignoran automáticamente los valores nulos al calcular la media con `.mean()` (o investiga de forma independiente la limpieza de nulos en arrays) [14, 218].
-    3. Calcula el precio promedio de la lista omitiendo los nulos.
-    4. Multiplica de forma vectorizada el array por la tasa impositiva de la sesión (`1.21`) e imprime el array de precios finales resultante en consola [15].
+#### → PRÁCTICA: "Generador Automático de Facturas en PDF"
+*   **Objetivo**: Desarrollar de manera secuencial y limpia un script en Python que parta de datos estructurados para compilar y generar la factura física `"factura_2027_001.pdf"` utilizando exclusivamente la API Platypus de ReportLab, sin obligar al alumno a utilizar la POO avanzada del Bloque 4 salvo que desee reutilizarla como valor añadido opcional.
+*   **Prerrequisitos**: Bloque 1 (Operaciones y cálculo), Bloque 2 (Colecciones de diccionarios) y Bloque 3 (Encapsulación en funciones).
+*   **Ejemplo de Datos de Entrada**:
+    ```python
+    # Datos de entrada estructurados
+    empresa_datos = {"nombre": "TechSolutions S.L.", "direccion": "Av. del Futuro 2027, Madrid", "nif": "B-12345678"}
+    cliente_datos = {"nombre": "Estudios Avanzados S.A.", "direccion": "Paseo de la Castellana 50, Madrid"}
+    num_factura = "FACT-2027-001"
+    fecha_factura = "26/08/2026"
+
+    # Líneas de factura representadas como una lista de diccionarios lógicos
+    conceptos = [
+        {"descripcion": "Suscripción Premium Plataforma", "cantidad": 2, "precio": 45.0},
+        {"descripcion": "Soporte Técnico Especializado", "cantidad": 1, "precio": 90.0},
+        {"descripcion": "Licencia Adicional Desarrollo", "cantidad": 5, "precio": 20.0}
+    ]
+    ```
+*   **Flujo de Desarrollo Requerido**:
+    1.  **Cálculos**: Iterar la colección de conceptos para calcular la base imponible sumando los subtotales (cantidad * precio), aplicar la tasa impositiva del IVA del 21% sobre la base imponible y computar el importe total final.
+    2.  **Estructura del PDF**: Inicializar la plantilla `SimpleDocTemplate` apuntando a `"factura_2027_001.pdf"` en tamaño `A4`.
+    3.  **Maquetación**:
+        *   Crear párrafos estilizados con `Paragraph` para los datos de la empresa, número de factura, fecha y datos del cliente.
+        *   Utilizar `Spacer` para separar de forma limpia las secciones.
+        *   Estructurar una rejilla utilizando la clase `Table` que represente la cuadrícula de artículos adquiridos. La tabla se alimenta de una lista de listas de strings, conteniendo cabeceras (`"Descripción"`, `"Cant."`, `"Precio"`, `"Subtotal"`), las líneas calculadas de los productos, y filas finales dedicadas a mostrar la base imponible, el IVA y el total acumulado.
+        *   Aplicar un diseño visual sobrio y corporativo a la cuadrícula de datos utilizando comandos de `TableStyle` (ej. bordes de rejilla con `GRID`, fondos de cabecera con `BACKGROUND` en tonalidades grises o azules de la paleta de `colors`, y alineaciones numéricas de precios a la derecha con `ALIGN`).
+        *   Compilar y exportar físicamente la factura llamando al método `.build(story)`.
 
 #### → ERROR HABITUAL (BUG)
-*   **El colapso silencioso del NaN**: Intentar realizar agregaciones estadísticas directamente sobre arrays NumPy nativos que contienen valores `np.nan`, provocando que el resultado del promedio o la suma devuelva `nan` de forma permanente debido a la propagación del flotante nulo.
-*   **Solución pedagógica**: Mostrar al estudiante que, a diferencia de las listas nativas, los arrays de NumPy propagan los nulos en operaciones matemáticas tradicionales. Se debe estructurar la limpieza de nulos cargando el array en una Serie de Pandas (que filtra los nulos automáticamente al invocar `.mean()`) [14] o utilizando funciones de exclusión.
+*   **El bug del desbordamiento de margen lateral por strings crudos**: Asumir que la clase `Table` realiza de forma nativa la envoltura de textos largos de las celdas, inyectando cadenas de texto (`str`) muy largas directamente en las filas. Esto provoca que el texto se dibuje en una sola línea horizontal continua, desbordando y recortándose fuera de los límites de la página imprimible del PDF.
+*   **Solución pedagógica**: Enseñar al alumno que para que las celdas de una tabla de ReportLab autoajusten el ancho de línea y realicen saltos automáticos, todas las cadenas de texto dinámicas o largas deben ir encapsuladas dentro de objetos `Paragraph` configurados con un estilo válido antes de pasarse a la tabla.
 
 #### → MINI-RETO
-*   **El Filtro de Outliers**: Tienes un array de precios de mercado: `[85.0, 92.0, 350.0, 88.0, 76.0, 15.0, 83.0]`. Utiliza NumPy para calcular la media aritmética del mercado. Genera un filtro booleano que aísle y muestre en pantalla de forma vectorizada únicamente aquellos precios que se consideran anómalos (outliers) por ser menores al 35% de la media o mayores al triple de la misma, sin utilizar bucles iterativos `for` ni condicionales `if`.
+*   **La Factura Express**: Toma la base del script de factura anterior. Modifica la lógica para que el script aplique de forma condicional un descuento del 10% sobre la base imponible total si la compra supera los 150.0€ antes de calcular el IVA, reflejando de forma visible el concepto de descuento y el subtotal resultante en filas separadas dentro de la tabla del PDF.
 
-#### → MICROEVALUACIÓN TIPO SOLOLEARN
-*   **Pregunta de predecir la salida**: ¿Qué imprime el siguiente código tras ejecutarse en consola?
-    ```python
-    import numpy as np
-    datos = np.array([10, 20, 30])
-    resultado = datos * 2
-    filtro = resultado > 30
-    print(resultado[filtro])
-    ```
-    *   A) `[20 30]`
-    *   B) `[40 60]`
-    *   C) `[True, True, True]`
-    *   D) Lanza un error `TypeError` en operaciones vectoriales.
-*   **Respuesta correcta**: **B**. (El array se multiplica por 2 de forma vectorizada produciendo `[20, 40, 60]`. El filtro booleano `resultado > 30` evalúa a `[False, True, True]`. Al indexar el array original con dicho filtro booleano, se devuelven únicamente las posiciones `True` (`40` y `60`)).
+#### → MICROEVALUACIONES TIPO SOLOLEARN
+*   **Pregunta 1 (Decisión de Elemento - Imagen)**: Deseas incorporar el logotipo gráfico en formato de imagen JPEG de tu empresa en el encabezado de tu factura comercial utilizando la API de alto nivel Platypus de ReportLab. ¿Qué clase lógica del framework debes instanciar para insertar la imagen de manera fluida en la story del documento?
+    *   A) `canvas.drawImage()`
+    *   B) `Paragraph`
+    *   C) `Image` (importada de `reportlab.platypus`)
+    *   D) `SimpleDocTemplate`
+    *   *Respuesta*: **C**. (En el diseño de alto nivel Platypus, todos los elementos de flujo que se apilan secuencialmente en la lista `story` deben ser Flowables. La clase `Image` es el flowable dedicado a posicionar imágenes de forma nativa en la story, a diferencia de `canvas.drawImage()` que es un método imperativo de bajo nivel que requiere coordenadas fijas).
 
-#### → EVIDENCIA
-*   Celda de Google Colab donde el alumno convierte una lista con precios reales a un array de NumPy, aplicando multiplicaciones vectoriales directas y obteniendo estadísticas descriptivas rápidas (media, máximo, mínimo) en consola.
+*   **Pregunta 2 (Propósito de Paragraph)**: Al diseñar tu reporte ejecutivo en PDF con ReportLab, notas que un texto largo descriptivo se desborda horizontalmente y se corta en el margen derecho de la hoja. ¿Cuál es la solución de ingeniería correcta para asegurar el autoajuste de líneas?
+    *   A) Dividir manualmente la cadena de texto en múltiples subcadenas cortas usando barras inclinadas `\n` y rellenando con espacios.
+    *   B) Envolver la cadena de caracteres en una instancia de la clase `Paragraph` provista de un estilo del sistema, permitiendo que Platypus calcule de forma dinámica el ancho de página y aplique los saltos de línea automáticos.
+    *   C) Cambiar el tamaño de la página de `A4` a un tamaño personalizado de ancho infinito.
+    *   D) Utilizar la clase `Table` forzando que tenga una sola celda.
+    *   *Respuesta*: **B**. (La clase `Paragraph` de Platypus se encarga de analizar las propiedades tipográficas, márgenes y estilos para realizar la envoltura de línea y salto automático de manera nativa).
 
----
-
-### PARTE 5.2: Estructuración y Análisis Tabular con Pandas (Grounded)
-*   **CONCEPTO**: Pandas organiza los datos en Series (arreglos unidimensionales etiquetados) [4] y DataFrames (tablas bidimensionales que comparten un índice) [2, 19], proporcionando métodos de alto nivel para indexación, selección condicional avanzada y limpieza de datos [11, 33].
-
-#### → EJEMPLO DE LAS FUENTES
-*   **Operaciones, Slicing y Filtros en GOT** (Extracted from ejercicios_pandas_resuelto [217, 221, 223, 224]):
-    ```python
-    import pandas as pd
-    import numpy as np
-
-    # Carga de DataFrame imitando la estructura de las fuentes [217]
-    data = {
-        "Personaje": ["Jon Nieve", "Arya Stark", "Sansa Stark", "Bran Stark", "Daenerys Targaryen"],
-        "Casa": ["Stark", "Stark", "Stark", "Stark", "Targaryen"],
-        "Estado": ["Vivo", "Vivo", "Vivo", "Vivo", "Fallecido"],
-        "Popularidad": [0.92, 0.88, 0.81, np.nan, 0.96],
-        "Batallas ganadas": [3, 2, 1, 0, 4]
-    }
-    df = pd.DataFrame(data)
-
-    # Conversión de columna en índice permanente [224]
-    df = df.set_index("Personaje")
-
-    # Selección condicional compuesta con operadores a nivel de bits & e isin() [223]
-    starks_vivos_populares = df[
-        (df["Popularidad"] > 0.85) & 
-        (df["Estado"].isin(["Vivo", "Rey en el Norte"]))
-    ]  # [223]
-
-    # Eliminar columnas físicas de la tabla [225]
-    df_limpio = df.drop(columns=["Popularidad"])  # [225]
-    ```
-
-#### → PRÁCTICA
-*   **Instrucciones**: Implementa en tu cuaderno Colab el procesamiento de datos del dataset de Game of Thrones basándote estrictamente en el diseño de las fuentes [222]:
-    1. Crea el DataFrame `df` con la estructura de diccionario de las fuentes [217].
-    2. Convierte la columna `"Personaje"` en el índice de la tabla mediante `.set_index("Personaje")` [224].
-    3. Utiliza la llamada de indexación `.loc` para recuperar y mostrar los datos exclusivos de `"Sansa Stark"` [28].
-    4. Utiliza la llamada de indexación `.iloc` para obtener e imprimir la superficie del último personaje de la tabla [31].
-    5. Realiza un filtrado condicional booleano compuesto para aislar e imprimir a todos los personajes que sigan vivos Y pertenezcan a la Casa Stark o Lannister [223].
-    6. Identifica valores nulos en popularidad utilizando `df["Popularidad"].isnull()` y reemplázalos de manera segura por el promedio general de popularidad calculado previamente con `.fillna()` [224].
-
-#### → ERROR HABITUAL (BUG)
-*   **El bug del uso de "and" / "or" nativos**: Intentar realizar un filtrado condicional compuesto sobre Series o DataFrames utilizando las palabras clave lógicas de Python `and` y `or`.
-    ```python
-    # ERROR DE EJECUCIÓN
-    df_stark = df[df["Casa"] == "Stark" and df["Batallas ganadas"] > 1]
-    # Lanza: ValueError: The truth value of a Series is ambiguous. Use a.empty...
-    ```
-*   **Solución pedagógica**: Explicar al alumno que Pandas requiere operaciones booleanas vectorizadas a nivel de bits empleando de forma obligatoria los operadores `&` (and) y `|` (or), y que cada una de las condiciones individuales debe ir estrictamente acotada entre paréntesis `()` para asegurar la correcta precedencia del compilador [229].
-
-#### → MINI-RETO
-*   **El Auditor de GOT**: Escribe un script en Colab que cargue los datos de los personajes de las fuentes. El programa debe limpiar el DataFrame eliminando la columna antigua `"Popularidad"` [231], descartando a todos los personajes cuyo estado sea `"Fallecido"` [231], ordenando la tabla resultante de mayor a menor según su volumen de `"Batallas ganadas"` con el método `.sort_values()` [220], e imprimiendo el resultado final.
-
-#### → MICROEVALUACIÓN TIPO SOLOLEARN
-*   **Pregunta de predecir la salida**: Dado el siguiente DataFrame de Pandas:
-    ```python
-    import pandas as pd
-    tabla = pd.DataFrame({
-        "ID": [101, 102, 103],
-        "Ventas": [50, 120, 80]
-    })
-    tabla = tabla.set_index("ID")
-    tabla.loc[102, "Ventas"] = 150
-    print(tabla.iloc[1].values[0])
-    ```
-    *   A) `120`
-    *   B) `150`
-    *   C) `102`
-    *   D) Lanza un error de índice `KeyError`.
-*   **Respuesta correcta**: **B**. (La instrucción `.set_index("ID")` establece la columna ID como el índice de la tabla (índices 101, 102, 103). La llamada `.loc[102, "Ventas"] = 150` accede por etiqueta y actualiza el valor de ventas de la fila 102 en caliente. Al invocar `.iloc[1]`, accedemos por posición numérica, que corresponde a la segunda fila física de la tabla (ID 102). El valor de su primera y única columna de ventas que se imprime es `150`).
+*   **Pregunta 3 (Decisión de Estructura de Datos)**: Para representar las múltiples líneas de conceptos de una factura comercial de manera que podamos iterarlas de forma secuencial y limpia para calcular los subtotales e inyectarlas dinámicamente en una tabla de ReportLab, ¿cuál es la estructura de datos nativa de Python idónea?
+    *   A) Un string largo con todas las descripciones separadas por comas.
+    *   B) Una lista de diccionarios, donde cada diccionario representa un concepto con claves `'descripcion'`, `'cantidad'` y `'precio'`.
+    *   C) Un único conjunto (`set`) que contenga los precios de forma desordenada.
+    *   D) Una variable de tipo flotante global.
+    *   *Respuesta*: **B**. (La lista mantiene el orden secuencial de inserción de los elementos de facturación, mientras que los diccionarios internos permiten etiquetar e identificar de forma semántica y robusta cada atributo de la línea de artículo de manera estructurada).
 
 #### → EVIDENCIA
-*   Estructura de filtrado de datos completa en Colab que toma el dataset de muestra, limpia los valores nulos de popularidad con `.fillna()` y exporta el DataFrame resultante depurado y ordenado de mayor a menor.
-
----
-
-### PARTE 5.3: Adquisición de Datos y Control de Navegadores con Playwright
-*   **CONCEPTO**: Playwright es una librería de automatización que permite tomar el control de navegadores reales (Chromium, Firefox, WebKit) mediante una API síncrona/asíncrona para interactuar de forma programática con la interfaz web, simular clics, realizar búsquedas e interactuar con páginas dinámicas [100, 103].
-
-#### → EJEMPLO DE LAS FUENTES
-*   **Apertura y Cierre síncrono** (Extracted from Playwright installation [100, 102]):
-    ```python
-    from playwright.sync_api import sync_playwright
-
-    # El manejador de contexto with inicializa y asegura la destrucción del motor
-    with sync_playwright() as p:
-        browser = p.chromium.launch()  # Por defecto abre en modo Headless [103]
-        page = browser.new_page()       # Abre una pestaña limpia en memoria
-        page.goto("https://playwright.dev/")  # Navega a la URL dada [102]
-        print(page.title())             # Accede a propiedades de lectura directa
-        browser.close()                 # Cierre explícito de procesos [100]
-    ```
-
-#### → PRÁCTICA
-*   **Instrucciones**: Implementa en local un script de automatización síncrono que controle el navegador y recopile metadatos básicos:
-    1. Importa la biblioteca de Playwright síncrona.
-    2. Abre un bloque de contexto seguro `with sync_playwright() as p:` [100].
-    3. Lanza el navegador Chromium y navega a la dirección oficial de Python (`"https://www.python.org/"`) [102].
-    4. Lee e imprime en consola el título del portal para comprobar la conexión activa [102].
-    5. Cierra de forma explícita el navegador mediante `browser.close()` [100].
-
-#### → ERROR HABITUAL (BUG)
-*   **El bug de los procesos colgados**: No cerrar de manera explícita la instancia del navegador binario mediante `browser.close()`. Esto provoca que el script finalice pero mantenga el binario del navegador activo consumiendo recursos de memoria RAM, generando fugas de descriptores de sistema.
-*   **Solución pedagógica**: Enseñar al estudiante que, aunque el manejador de contexto `with` destruye el motor lógico de Playwright, los subprocesos binarios de Chromium deben cerrarse explícitamente con `browser.close()` para asegurar que se liberen de forma limpia e inmediata de la memoria del sistema operativo [100].
-
-#### → MINI-RETO
-*   **El Capturador de Encabezados**: Escribe un script síncrono que use Playwright para cargar de forma automatizada la página web `"https://playwright.dev/"` [102]. El script debe simular la interacción con el usuario: hacer clic en el enlace `"Get started"` buscando por su rol interactivo [102], esperar a que se visualice la cabecera del sitio y extraer el título del encabezado de instalación de forma limpia en consola, cerrando de forma segura el navegador al finalizar.
-
-#### → MICROEVALUACIÓN TIPO SOLOLEARN
-*   **Pregunta de predecir la salida**: ¿Qué comportamiento se espera del siguiente código síncrono de automatización?
-    ```python
-    from playwright.sync_api import sync_playwright
-    with sync_playwright() as p:
-        b = p.chromium.launch(headless=True)
-        pag = b.new_page()
-        pag.goto("https://playwright.dev/")
-        b.close()
-    ```
-    *   A) Abre un navegador visible y navega a la página web mostrando la ventana al usuario.
-    *   B) Abre una ventana en segundo plano, carga la página en memoria y se cierra liberando de forma segura los recursos del sistema sin mostrar ninguna interfaz gráfica al usuario.
-    *   C) El programa lanza un error de ejecución `TypeError` porque falta pasar parámetros a `b.close()`.
-    *   D) Genera un error de sintaxis porque las páginas web de Playwright requieren de bucles asíncronos `asyncio` obligatorios.
-*   **Respuesta correcta**: **B**. (Al especificar el parámetro `headless=True` (por defecto en launch), el navegador binario Chromium se ejecuta en modo "invisible" o "segundo plano" (sin interfaz gráfica) [103], idóneo para servidores o flujos rápidos de extracción, finalizando de forma limpia mediante `b.close()` [100]).
-
-#### → EVIDENCIA
-*   Script modular ejecutable en local que simula una navegación de usuario por consola e imprime los metadatos de la página de prueba de forma exitosa, finalizando sin dejar subprocesos de Chromium abiertos en el sistema operativo.
-
----
-
-### PARTE 5.4: Generación de Reportes en PDF con ReportLab
-*   **CONCEPTO**: ReportLab proporciona las utilidades y clases lógicas para maquetar, estructurar y exportar programáticamente documentos PDF listos para entrega comercial en base a coordenadas de dibujo y plantillas [184].
-
-#### → EJEMPLO DE LAS FUENTES
-*   **Soporte de la Librería** (Extracted from reportlab PyPI [266] and Reporte de Investigación [184]):
-    *   Las fuentes listan la estabilidad e instalación del Toolkit de ReportLab [266].
-    *   Se introduce conceptualmente el rol de ReportLab para el diseño y maquetación automatizada de reportes impresos de alta calidad mediante código de Python, sirviendo como el paso final para exportar los análisis de datos [15, 184].
-
-#### → PRÁCTICA (DISEÑO CONCEPTUAL)
-*   **Instrucciones**: Dado que la sintaxis detallada de las clases de ReportLab (`Canvas`, `Paragraph`, `Table`) constituye una Laguna de Conocimiento (no hay código en las fuentes), diseña en un archivo de texto plano la estructura lógica y de diseño que tendrá tu reporte de mercado:
-    1. Define las coordenadas del encabezado del lienzo (`Canvas`).
-    2. Determina los anchos de columna que asignará tu estructura de celdas para la tabla (`Table`).
-    3. Diseña el contenido conceptual del párrafo introductorio (`Paragraph`).
-    4. Explica por escrito cómo esta maquetación abstracta procesará la tabla de tu DataFrame para evitar que se desborden los textos fuera de la hoja.
-
-#### → ERROR HABITUAL (BUG)
-*   **El bug del desbordamiento por strings crudos**: Asumir que las celdas de las tablas de ReportLab autoajustan el ancho de línea por defecto cuando reciben cadenas de texto muy largas, provocando que los textos se dibujen en una sola fila continua y se recorten fuera de los márgenes físicos de impresión de la hoja PDF.
-*   **Solución pedagógica**: Enseñar al estudiante que toda cadena de texto dinámica o larga debe ir encapsulada dentro del objeto conceptual de texto `Paragraph`, el cual se encarga de calcular el ancho disponible de la celda y forzar de forma dinámica los saltos de línea requeridos según el estilo del reporte.
-
-#### → MINI-RETO
-*   **El Layout de Auditoría**: Diseña el mapa y el esquema de flujo conceptual de una factura en PDF. Especifica cómo estructurarás las clases de ReportLab de forma ordenada, justificando por escrito por qué usarás `Table` para las columnas de precios y cómo insertarás espaciadores de seguridad (`Spacer`) para que el reporte sea visualmente limpio para el cliente final.
-
-#### → MICROEVALUACIÓN TIPO SOLOLEARN
-*   **Pregunta de emparejamiento conceptual**: Selecciona la opción que asocie correctamente cada clase lógica de la biblioteca ReportLab con su responsabilidad de maquetación correspondiente dentro del documento final:
-    1. `Canvas`
-    2. `Paragraph`
-    3. `Table`
-    *   A) 1-Establece alineaciones en cuadrículas; 2-Pinta elementos de coordenadas de bajo nivel; 3-Asegura el formateo y auto-salto de textos.
-    *   B) 1-Pinta elementos de coordenadas de bajo nivel; 2-Asegura el formateo y auto-salto de textos; 3-Establece alineaciones de celdas y filas en cuadrículas.
-    *   C) 1-Pinta elementos de coordenadas de bajo nivel; 2-Establece alineaciones en cuadrículas; 3-Asegura el formateo de textos.
-    *   D) 1-Asegura el formateo de textos; 2-Pinta coordenadas; 3-Establece alineaciones.
-*   **Respuesta correcta**: **B**. (La clase Canvas permite realizar trazados físicos elementales especificando coordenadas X, Y; Paragraph encapsula las cadenas de caracteres gestionando estilos de texto y saltos de línea automáticos; y la clase Table se encarga de posicionar y dar formato de cuadrícula a las colecciones de datos).
-
-#### → EVIDENCIA
-*   Ficha técnica o esquema en formato markdown desarrollado por el alumno que documenta el mapeo lógico de coordenadas y la estructura jerárquica de elementos para compilar la maquetación de una factura comercial.
+*   Archivo de salida físico `"factura_2027_001.pdf"` generado dinámicamente en el espacio de trabajo local del estudiante mediante un script de Platypus que consume datos estructurados, calcula los subtotales e impuestos, y compila una maquetación impecable con logotipo, datos de cliente y una cuadrícula de precios perfectamente alineada.
 
 ---
 
@@ -307,7 +182,7 @@ Para evitar que el estudiante aprenda las librerías de forma aislada, el bloque
 
 1.  **Fuga de procesos de Chromium en Playwright**: No cerrar el navegador con `browser.close()` [100], dejando subprocesos binarios activos en segundo plano que saturan la memoria RAM del sistema.
 2.  **Uso de comparadores lógicos nativos en Pandas**: Intentar realizar filtrados condicionales con `and` / `or` en lugar de utilizar de forma obligatoria los operadores vectoriales a nivel de bits `&` / `|` y acotar las condiciones individuales entre paréntesis `()` [229].
-3.  **Ambbigüedad de Slicing**: Hacer segmentaciones directas del tipo `df[1:3]` que confunden al compilador, en lugar de utilizar las llamadas explícitas recomendadas `.loc[]` (etiquetas) o `.iloc[]` (posiciones numéricas) [33].
+3.  **Ambigüedad de Slicing**: Hacer segmentaciones directas del tipo `df[1:3]` que confunden al compilador, en lugar de utilizar las llamadas explícitas recomendadas `.loc[]` (etiquetas) o `.iloc[]` (posiciones numéricas) [33].
 4.  **Cálculo estadístico de NaNs en NumPy**: Ejecutar operaciones de agregación matemática (`.mean()`) sobre arrays que contienen valores `np.nan` [217], resultando en un colapso del promedio que devuelve `nan` como salida.
 5.  **Desbordamiento de celdas en ReportLab**: Pintar cadenas de texto largas de forma cruda dentro de tablas, desbordando los márgenes laterales del archivo PDF por omitir la envoltura automatizada del objeto `Paragraph`.
 
@@ -343,10 +218,10 @@ Contiene la lógica matemática y de tablas utilizando NumPy y Pandas:
 ##### C. Módulo Diseñador (`generador_pdf.py`)
 Contiene la lógica de reporte en PDF:
 *   `compilar_reporte_ejecutivo_pdf(ruta_pdf, df_analizado, promedios)`:
-    *   Inicializa conceptualmente un documento PDF en la ruta de trabajo local utilizando las clases de ReportLab [184].
-    *   Organiza un encabezado formal y diseña la cuadrícula que alojará la tabla con las columnas del DataFrame de Pandas procesado.
-    *   Inserta de forma limpia las estadísticas calculadas en NumPy (promedio del mercado, variación, desviación) al pie de página.
-    *   Exporta el archivo de salida final al disco duro.
+    *   Inicializa un documento PDF utilizando Platypus de **ReportLab** (`SimpleDocTemplate` con tamaño de página `A4`) [184].
+    *   Organiza un encabezado formal (`Paragraph`) y diseña la cuadrícula que alojará la tabla (`Table` y `TableStyle`) con las columnas del DataFrame de Pandas procesado.
+    *   Inserta de forma limpia las estadísticas calculadas en NumPy (promedio del mercado, variación, desviación) al pie de página mediante párrafos estilizados.
+    *   Exporta el archivo de salida final ejecutando `.build(story)` al disco de trabajo [184].
 
 ##### D. Orquestador Principal (`main.py`)
 *   Script principal de comandos CLI interconectado con los tres módulos anteriores [66].
@@ -375,7 +250,7 @@ Contiene la lógica de reporte en PDF:
 | **Modificación de esquemas (set_index, drop)**| `02_pandas.ipynb` [37, 38] y `ejercicios_pandas_resuelto.ipynb` [224, 225]| Reestructuración y borrado de columnas y personajes fallecidos de la tabla [225]. | Reto de identificar el comportamiento lógico del DataFrame según el parámetro `inplace` [315]. | Eliminación de columnas obsoletas de stock y seteo del índice por artículo. |
 | **Navegación e interacciones Playwright**| `Installation \| Playwright Python` [11, 100, 102] | Creación de scripts locales síncronos de navegación y test de aserciones [102]. | Reto SoloLearn de completar selectores y aserciones de locators de Playwright [102]. | Extracción de precios y estados de stock en `scraper.py` con Playwright. |
 | **Parsing y Selectores BeautifulSoup** | `Reporte de Investigación` [15, 183] | Raspado rápido de elementos textuales mediante búsqueda de clases y etiquetas. | Reto SoloLearn de completar búsquedas de clases usando el parámetro reservado `class_`. | Concepto de parsing para la segmentación estática del HTML recolectado. |
-| **Compilación dinámica de PDFs ReportLab**| `reportlab · PyPI` [266] y `Reporte de Investigación` [15, 184] | Maquetación y exportación programática de tablas y facturas en formato PDF [15]. | Reto de emparejamiento de responsabilidades de las clases Canvas, Paragraph y Table. | Exportación conceptual del informe de mercado estructurado unificado en `generador_pdf.py`. |
+| **Compilación dinámica de PDFs ReportLab**| `reportlab · PyPI` [266] y `Reporte de Investigación` [15, 184] | Maquetación y exportación programática de tablas y facturas en formato PDF [15]. | Decisiones prácticas sobre `Image`, `Paragraph`, `Table`, `TableStyle` y `build()` en Platypus. | Generación real del informe de mercado estructurado con ReportLab Platypus en `generador_pdf.py`. |
 
 ---
 
@@ -387,7 +262,7 @@ De acuerdo con el análisis exhaustivo de los materiales de tu base de conocimie
 2.  **Agrupaciones y Pivotajes avanzados (Groupby, Pivot)**: Se cita como fortaleza la agrupación de datos en Pandas [1], pero las fuentes del notebook **carecen por completo de manuales o código de uso de la función `.groupby()`** y operaciones de agregación complejas de DataFrames.
 3.  **Visualización Científica con Matplotlib**: Las fuentes muestran de forma explícita que se importa la librería `matplotlib.pyplot as plt` [2] y se menciona para tomar decisiones visuales [115], pero **no hay documentación técnica, APIs de gráficos de barras o líneas, ni fragmentos de código para renderizar plots físicos** en todo el notebook (por lo que la creación de gráficos se excluye de las evaluaciones).
 4.  **Uso de la herramienta Trace Viewer de Playwright**: Se lista en el reporte como herramienta de depuración de automatizaciones ante fallos [104], pero **no existen ejemplos del flujo de comandos para inicializar, grabar o inspeccionar trazas** visuales en las fuentes del notebook.
-5.  **Manejo Avanzado de Estilos de Párrafos y Platypus en ReportLab**: Se cita ReportLab como herramienta estándar para generar PDFs de alta calidad [184], pero **no se incluye en las fuentes un manual técnico sobre la clase `ParagraphStyle`, hojas de estilo (`getSampleStyleSheet`) ni el control de flujo Platypus** para el diseño de páginas multipáginas automatizadas.
+5.  **Manejo Avanzado de Estilos de Párrafos y Platypus en ReportLab**: Se cita ReportLab como herramienta estándar para generar PDFs de alta calidad [184], pero **no se incluye en las fuentes un manual técnico sobre la clase `ParagraphStyle`, hojas de estilo (`getSampleStyleSheet`) ni el control de flujo Platypus** para el diseño de páginas de varias páginas automatizadas complejas con múltiples marcos.
 6.  **Operaciones Estadísticas Avanzadas de NumPy**: NumPy se declara como base matemática rápida [113, 182], pero **no se explican en las fuentes operaciones matriciales complejas (como álgebra lineal `.linalg`, multiplicaciones de matrices `.dot` o transformadas de Fourier)**, limitándose el alcance estrictamente a las funciones estadísticas básicas especificadas.
 
 ---

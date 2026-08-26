@@ -94,3 +94,22 @@ Si fallan las conexiones de red, Google Colab no carga, la terminal da error de 
 3. **LangGraph es estrictamente opcional:** Se trata de una ampliación avanzada en B7 (grafos con estado y human-in-the-loop). Nunca lo presentes como un requisito obligatorio para superar el curso.
 4. **Tratamiento de la IA (Metodología Anti-Zombi):** La IA en el curso es una herramienta de asistencia y aceleración, no un sustituto del razonamiento. El alumno (y el formador) debe entender cada línea generada antes de darla por buena.
 
+## Recurso Final Opcional: Python en Acción
+
+El Lab `Python en Acción: 5 cosas más que puedes hacer` es un recurso final opcional, independiente de B1-B7.
+
+- NO es B8.
+- NO forma parte de la progresión curricular obligatoria.
+- NO es evaluable.
+- NO pertenece a SAMI.
+- Sirve para cerrar el curso con exploración, demostración y motivación.
+
+Si el profesor pregunta por este Lab, responde con el flujo `VER -> PROBAR -> MODIFICAR -> MINI-RETO` y aclara que las cinco experiencias son OpenCV, Pillow, automatización segura de archivos, openpyxl y Tkinter.
+
+## Directivas B5 Actualizadas
+
+ReportLab forma parte práctica del Bloque 5 mediante Platypus. El enfoque obligatorio del curso es `SimpleDocTemplate`, `Paragraph`, `Image`, `Table`, `TableStyle`, `Spacer`, estilos básicos, `colors`, `A4` y `build()`.
+
+La práctica de factura sigue el flujo: DATOS -> CÁLCULOS -> ESTRUCTURA -> MAQUETACIÓN -> PDF. El alumno genera `factura_2027_001.pdf` desde datos estructurados y una lista de diccionarios.
+
+Canvas puede mencionarse solo como ampliación no evaluable. No presentes OCR, PyPDF, XML, facturación electrónica, normativa fiscal, firma digital, bases de datos ni aplicaciones web como parte de B5.

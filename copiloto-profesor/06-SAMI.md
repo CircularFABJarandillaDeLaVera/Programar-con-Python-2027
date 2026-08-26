@@ -63,6 +63,7 @@ graph TD
   2. **Tratamiento Numérico (NumPy):** Convierte las series de mediciones en arrays `ndarray` para calcular estadísticas vectorizadas (medias, desviaciones, picos de consumo eléctrico en el taller).
   3. **Análisis Tabular (Pandas):** Estructura los registros en un `DataFrame`, realiza filtros condicionales por rango de fechas o umbrales de alerta y ordena por criticidad.
   4. **Informe Ejecutivo (ReportLab):** Genera automáticamente un documento formal `informe_auditoria_sami.pdf` con título, tabla formateada y conclusiones.
+     En la versión actual de B5, este informe se genera realmente con ReportLab Platypus mediante `SimpleDocTemplate`, `Paragraph`, `Table`, `TableStyle`, `Spacer`, estilos básicos, `colors`, `A4` y `build()`.
 
 ---
 
@@ -110,6 +111,10 @@ graph TD
   * **Nodos:** `NodoAuditoria` (analiza anomalías en sensores) ➔ `NodoDecisor` (evalúa si una alerta requiere parada de emergencia) ➔ `NodoInforme` (redacta el resumen).
   * **Intervención Humana (*Human-in-the-loop*):** El grafo se pausa en un punto de control (*checkpoint*) y solicita confirmación interactiva al formador/operador antes de ejecutar una acción crítica.
 
+## Nota de Alcance: Python en Acción
+
+El Lab final opcional **Python en Acción** no pertenece a la progresión SAMI. No debe intercalarse como fase nueva entre SAMI-Applied, SAMI-Local y SAMI Final. Si el profesor lo utiliza, debe presentarlo como exploración final independiente.
+
 ---
 
 ## 5. Rúbrica de Defensa Técnica de SAMI para el Formador
@@ -119,4 +124,3 @@ Al evaluar la entrega final de SAMI, el formador de Circular FAB debe formular 3
 1. *"Señala una función o método de tu código y explícame qué contiene la memoria en la línea X justo antes del `return`."*
 2. *"Si cambio este tipo de dato o desconecto este archivo JSON, ¿en qué línea saltaría la excepción y cómo la captura tu código?"*
 3. *"Enséñame tu `registro-ia.md`: ¿qué error cometió la IA cuando le pediste esta parte y cómo lo arreglaste tú a mano?"*
-

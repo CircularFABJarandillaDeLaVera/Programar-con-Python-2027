@@ -24,3 +24,4 @@ Para optimizar la ventana de contexto y la precisión del modelo GPT:
 | **`ingenieria-python-bloque5-final.md`** | Ingeniería de Detalle: Playwright, NumPy, Pandas (dataset GoT), ReportLab y SAMI-Applied. |
 | **`ingenieria-python-bloque6-refinada.md`** | Ingeniería de Detalle: De Notebook a Script, VS Code, `venv`, `pip`, Git/GitHub, Debugger y SAMI-Local. |
 | **`ingenieria-python-bloque7.md`** | Ingeniería de Detalle: Flujo Asistido por IA 2027, Metodología Anti-Zombi, SAMI Final y LangGraph opcional. |
+| **`ingenieria-lab-python-en-accion.md`** | Ingeniería del Lab final opcional: OpenCV interactivo, Pillow, automatización segura, openpyxl y Tkinter. |

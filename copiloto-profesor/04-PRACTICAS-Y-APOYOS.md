@@ -275,12 +275,23 @@ Para cada práctica se detalla:
 ---
 
 ## Práctica 5.5: Informes en PDF con ReportLab
-* **Objetivo:** Construir un documento PDF simple con `SimpleDocTemplate`, un título con `Paragraph` y una tabla resumen con `Table`.
+* **Objetivo:** Generar `factura_2027_001.pdf` a partir de datos estructurados utilizando ReportLab Platypus.
+* **Flujo docente:** DATOS -> CÁLCULOS -> ESTRUCTURA -> MAQUETACIÓN -> PDF.
+* **APIs del curso:** `SimpleDocTemplate`, `Paragraph`, `Image`, `Table`, `TableStyle`, `Spacer`, `getSampleStyleSheet`, estilos básicos, `colors`, `A4` y `build()`.
+* **Datos de partida:** empresa, número de factura, fecha, cliente y líneas de factura como lista de diccionarios con `descripcion`, `cantidad` y `precio`.
+* **Cálculos:** base imponible = suma de subtotales, IVA = base * 0.21, total = base + IVA.
+* **Pistas Graduales:**
+  * *Nivel 1:* "¿Qué parte son datos y qué parte es presentación?"
+  * *Nivel 2:* "Calcula primero los importes en variables normales antes de crear la tabla."
+  * *Nivel 3:* "La lista `story` debe recibir elementos Platypus y al final se llama a `doc.build(story)`."
+* **Plan B:** Si no se genera el PDF, comprobar instalación de `reportlab`, ruta de salida, permisos de escritura, existencia del logo y que el archivo PDF no esté abierto en otro programa.
+* **Límite:** `canvas` puede mencionarse como ampliación no evaluable; la práctica obligatoria usa Platypus.
 
 ---
 
 ## Proyecto B5: SAMI-Applied
-* **Objetivo:** Pipeline integral: simulación o scraping de precios ➔ cálculo estadístico con NumPy ➔ estructuración y filtrado con Pandas ➔ generación de informe final en PDF con ReportLab.
+* **Objetivo:** Pipeline integral: simulación o scraping de precios ➔ cálculo estadístico con NumPy ➔ estructuración y filtrado con Pandas ➔ generación real de informe final en PDF con ReportLab Platypus.
+* **Equilibrio:** Playwright -> NumPy -> Pandas -> ReportLab. No convertir SAMI-Applied en un proyecto de facturación.
 
 ---
 
@@ -356,3 +367,12 @@ Para cada práctica se detalla:
 * **Carácter:** Estrictamente opcional / Avanzado.
 * **Objetivo:** Introducir la orquestación de flujos de IA conversacionales cíclicos mediante nodos, bordes condicionales, memoria persistente por hilos (*checkpointers*) e intervención humana (*human-in-the-loop*).
 
+---
+
+# LAB FINAL OPCIONAL: PYTHON EN ACCIÓN
+
+* **Carácter:** Recurso final opcional. No es B8, no es evaluable y no forma parte de SAMI.
+* **Flujo común:** VER -> PROBAR -> MODIFICAR -> MINI-RETO.
+* **Experiencias:** OpenCV, Pillow, automatización segura de archivos, openpyxl y Tkinter.
+* **Uso docente:** emplear como cierre motivador del itinerario, no como nuevo bloque académico.
+* **Referencia operativa:** consultar `08-LAB-PYTHON-EN-ACCION.md`.

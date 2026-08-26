@@ -238,6 +238,8 @@ Integrar librerías del ecosistema estándar de la ciencia de datos y automatiza
 ## 5.2. Mesa del Instructor y Preparación
 * **Archivos en carpeta:** `got_1.csv` listo para cargar en Colab / VS Code.
 * **Instalación previa de paquetes:** Celdas iniciales con `!pip install numpy pandas playwright reportlab` y `!playwright install`.
+* **Factura PDF:** Tener localizada la práctica de ReportLab Platypus y comprobar que el logo de ejemplo existe antes de ejecutar el script.
+* **Mensaje clave:** separar datos y presentación. Primero se calculan base imponible, IVA y total; después se maqueta el PDF con `story` y `build()`.
 
 ---
 
@@ -274,10 +276,10 @@ Integrar librerías del ecosistema estándar de la ciencia de datos y automatiza
 ---
 
 ## 5.5. Adaptaciones Temporales (B5)
-* **150 min:** NumPy vectorial (25 min) + Pandas con `got_1.csv` (45 min) + Playwright y ReportLab (30 min) + Integración SAMI-Applied (50 min).
-* **90 min:** NumPy esencial + Pandas y filtrado de datos (45 min), Automatización Playwright y demo PDF (30 min), Práctica 02 y 03 (15 min).
-* **60 min:** Pandas intensivo (carga, filtrado condicional, estadísticas) (35 min), generación de reporte simple (25 min).
-* **30 min:** Carga de un CSV con Pandas, cálculo de métricas agregadas con NumPy y guardado de informe resumen.
+* **150 min:** NumPy vectorial (25 min) + Pandas con `got_1.csv` (45 min) + Playwright y ReportLab Platypus (30 min) + Integración SAMI-Applied (50 min).
+* **90 min:** NumPy esencial + Pandas y filtrado de datos (45 min), Automatización Playwright y factura PDF con ReportLab (30 min), Práctica 02 y 03 (15 min).
+* **60 min:** Pandas intensivo (carga, filtrado condicional, estadísticas) (35 min), generación de factura PDF simple (25 min).
+* **30 min:** Carga de un CSV con Pandas, cálculo de métricas agregadas con NumPy y explicación guiada del flujo DATOS -> CÁLCULOS -> PDF.
 
 ---
 
@@ -385,4 +387,3 @@ Al finalizar cualquier bloque formativo, el formador de Circular FAB debe asegur
 - [ ] Se han recogido las dudas no resueltas para la apertura de la siguiente sesión.
 - [ ] Los alumnos han completado las microevaluaciones del bloque para consolidar conceptos.
 - [ ] Se ha recordado el avance en el proyecto integrador SAMI.
-

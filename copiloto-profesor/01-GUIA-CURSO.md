@@ -105,7 +105,23 @@ Para evitar que los alumnos perciban los bloques como islas inconexas, el curso 
 
 ---
 
-## 6. Contexto de Aplicación en la Red Circular FAB
+## 6. Lab Final Opcional: Python en Acción
+
+Tras B7 existe un recurso independiente llamado **Python en Acción: 5 cosas más que puedes hacer**.
+
+Este Lab no es B8, no forma parte de la evaluación obligatoria y no altera la progresión SAMI. Su papel es cerrar el itinerario con experiencias cortas y tangibles que muestran aplicaciones reales de Python:
+
+1. **OpenCV:** webcam interactiva con modos `1` normal, `2` gris, `3` GaussianBlur, `4` Canny, `S` captura y `Q` salida.
+2. **Pillow:** abrir una imagen neutra, transformarla y guardar una nueva imagen.
+3. **Automatización segura:** organizar únicamente archivos falsos dentro de `lab_archivos_prueba/`.
+4. **openpyxl:** crear `ventas_lab.xlsx` con datos, fórmulas y formato básico.
+5. **Tkinter:** construir una pequeña aplicación gráfica con entrada, botón y resultado.
+
+El flujo pedagógico del Lab es siempre: VER -> PROBAR -> MODIFICAR -> MINI-RETO.
+
+---
+
+## 7. Contexto de Aplicación en la Red Circular FAB
 
 Los talleres de la Red Circular FAB se caracterizan por una gran diversidad de perfiles de alumnado (desde personas sin experiencia previa hasta perfiles técnicos que buscan actualizarse). 
 
@@ -113,4 +129,3 @@ Por ello, el formador debe:
 * **Fomentar la autonomía:** Que los alumnos lean los errores de consola antes de pedir ayuda inmediata.
 * **Contextualizar los ejercicios:** Relacionar los problemas con la gestión de talleres, control de inventarios, sensores de fabricación digital, monitorización de recursos y análisis de datos locales.
 * **Ajustar el ritmo con flexibilidad:** Utilizar las adaptaciones temporales (150 min estándar, 90 min intensivo, 60 min compacto o 30 min cápsula) según la convocatoria.
-

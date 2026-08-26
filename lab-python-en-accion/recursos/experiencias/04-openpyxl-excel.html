@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>OpenPyXL · Python trabaja con Excel</title>
+  <link rel="stylesheet" href="../../../assets/edusdk-design-system/tokens/tokens.css">
+  <link rel="stylesheet" href="../../../assets/edusdk-design-system/tokens/semantic-tokens.css">
+  <link rel="stylesheet" href="../../../assets/edusdk-design-system/components/components.css">
+  <link rel="stylesheet" href="../../style.css">
+  <script src="../../../assets/js/theme-toggle.js" defer></script>
+</head>
+<body>
+  <main class="lab-shell">
+    <header class="cf-topbar cf-topbar--course lab-topbar">
+      <a class="lab-brand" href="../../index.html" aria-label="Volver al Lab">
+        <img src="../../../assets/branding/logo-circular-fab.png" alt="Circular FAB">
+        <span><b>Python en Accion</b><span>OpenPyXL</span></span>
+      </a>
+      <nav class="cf-nav cf-nav--horizontal lab-nav" aria-label="Navegacion">
+        <a class="cf-nav__link" href="../../../inicio.html">Curso</a>
+        <a class="cf-nav__link" href="../../index.html">Lab</a>
+        <a class="cf-nav__link" href="../index.html">Recursos</a>
+      </nav>
+      <button class="cf-button cf-button--secondary theme-toggle" type="button" data-theme-toggle aria-label="Activar modo oscuro" aria-pressed="false">
+        <span data-theme-icon aria-hidden="true">&#9790;</span>
+        <span data-theme-label>Modo dark</span>
+      </button>
+    </header>
+
+    <article class="lab-experience">
+      <section class="lab-hero">
+        <div class="lab-experience__header">
+          <div>
+            <p class="lab-kicker">Experiencia 4 · 20-30 min</p>
+            <h1 class="lab-experience__title">Python trabaja con Excel</h1>
+          </div>
+          <div class="lab-actions">
+            <a class="lab-action lab-action--primary" href="../scripts/crear_excel.py" download>Descargar script .py</a>
+          </div>
+        </div>
+        <p>Objetivo: crear un archivo Excel con ventas, importes, formulas y formato basico.</p>
+      </section>
+
+      <section class="lab-phase-grid" aria-label="Flujo de la experiencia">
+        <div class="lab-phase"><h2>VER</h2><p>Python genera una hoja de ventas completa.</p></div>
+        <div class="lab-phase"><h2>PROBAR</h2><p>Ejecuta el script y abre `ventas_lab.xlsx`.</p></div>
+        <div class="lab-phase"><h2>MODIFICAR</h2><p>Anade una fila y ajusta la formula total.</p></div>
+        <div class="lab-phase"><h2>MINI-RETO</h2><p>Pinta de otro color las filas con muchas unidades.</p></div>
+      </section>
+
+      <section class="lab-panel">
+        <h2>Que vas a conseguir</h2>
+        <p>`ventas_lab.xlsx` con encabezados, varias filas, importes, formula de total y formato con `Font` y `PatternFill`.</p>
+      </section>
+
+      <section class="lab-panel">
+        <h2>Instalacion y ejecucion</h2>
+        <pre class="lab-code"><code>pip install openpyxl
+python ../scripts/crear_excel.py</code></pre>
+      </section>
+
+      <section class="lab-panel">
+        <h2>Codigo relevante</h2>
+        <pre class="lab-code"><code>ws.append(["Producto", "Unidades", "Precio", "Importe"])
+ws.append(["Kit robotica", 2, 49.90, "=B2*C2"])
+ws["D7"] = "=SUM(D2:D5)"
+celda.font = Font(bold=True, color="FFFFFF")
+celda.fill = cabecera</code></pre>
+      </section>
+
+      <section class="lab-panel">
+        <h2>Resultado esperado y Plan B</h2>
+        <p>Resultado: `ventas_lab.xlsx`. Si Excel no deja guardar, cierra el archivo y vuelve a ejecutar; tambien puedes abrirlo con LibreOffice o Google Sheets.</p>
+      </section>
+
+      <nav class="lab-pager" aria-label="Experiencias">
+        <a class="lab-action lab-action--secondary" href="03-automatizacion-archivos.html">Anterior: Automatizacion</a>
+        <a class="lab-action lab-action--secondary" href="../../index.html">Volver al LAB</a>
+        <a class="lab-action lab-action--secondary" href="05-tkinter-app.html">Siguiente: Tkinter</a>
+      </nav>
+    </article>
+  </main>
+</body>
+</html>
